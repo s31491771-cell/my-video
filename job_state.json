@@ -91,6 +91,15 @@
         "scripts/qc.py",
         "scripts/package_delivery.sh"
       ]
+    },
+    {
+      "step": "font_loading_fixed_loadFont_staticFile",
+      "files": [
+        "src/fonts.ts",
+        "src/theme.ts",
+        "src/index.ts",
+        "package.json"
+      ]
     }
   ],
   "scenes": [
@@ -137,5 +146,5 @@
   ],
   "next_step": "Push the repository to GitHub and run the 'Render Bengali Explainer' workflow; download the render-N artifact, then review QC and preview stills.",
   "render": null,
-  "updated_at": "2026-11-16T00:58:00+05:30"
+  "updated_at": "2026-11-16T01:10:00+05:30"
 }

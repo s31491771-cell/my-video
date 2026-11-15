@@ -14,5 +14,9 @@ export const COLORS = {
   white: "#FFFFFF",
 } as const;
 
+/** Plain family name used by the font loader / FontFace API. */
+export const FONT_FAMILY_NAME = "Noto Sans Bengali";
+
+/** CSS stack used by components. */
 export const FONT_FAMILY =
-  '"Noto Sans Bengali", "Noto Sans", "Segoe UI", sans-serif';
+  `"${FONT_FAMILY_NAME}", "Noto Sans", "Segoe UI", sans-serif`;
