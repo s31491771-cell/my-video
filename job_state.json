@@ -1,0 +1,141 @@
+{
+  "state": "PROJECT_BUILD",
+  "gate": {
+    "upload_question_asked": true,
+    "upload_question_text": "কিছু ছবি বা উপাদান কি আপলোড করা বাকি আছে?",
+    "uploads_confirmed_complete": true,
+    "aspect_ratio": 1,
+    "aspect_ratio_label": "16:9 (1920x1080)",
+    "start_command_received": true,
+    "start_command_at": "2026-11-16T00:52:00+05:30"
+  },
+  "assets": {
+    "voiceover": {
+      "original_path": "/data/user/0/com.termux/files/home/.antigem/uploads/31a9bb9c168444ca/Generated Audio November 14, 2026 - 12_45PM.wav",
+      "project_copy": "public/audio/voiceover.wav",
+      "duration_seconds": 49.44,
+      "sample_rate": 24000,
+      "channels": 1,
+      "peak_dbfs": -0.4,
+      "modified": false
+    },
+    "srt": {
+      "original_path": "/data/user/0/com.termux/files/home/.antigem/uploads/efdfe4d083104fdb/bengali_financial_voiceover_subtitles.srt",
+      "project_copy": "assets/original-subtitles.srt",
+      "cue_count": 19,
+      "validation": "ok",
+      "burned_in": false
+    },
+    "images": [],
+    "images_note": "Zero images delivered: the two attached JPGs could not be read by the current model and were not stored. User proceeded with graphics-only visuals."
+  },
+  "completed_steps": [
+    {
+      "step": "asset_validation",
+      "files": [
+        "manifest.json"
+      ]
+    },
+    {
+      "step": "gate_passed_ratio_16_9",
+      "files": []
+    },
+    {
+      "step": "scene_plan",
+      "files": [
+        "scene-plan.json"
+      ]
+    },
+    {
+      "step": "sfx_library_generated",
+      "files": [
+        "public/audio/sfx/",
+        "assets/sfx/"
+      ]
+    },
+    {
+      "step": "font_bundled",
+      "files": [
+        "public/fonts/NotoSansBengali.ttf",
+        "assets/OFL.txt"
+      ]
+    },
+    {
+      "step": "remotion_project_written",
+      "files": [
+        "src/",
+        "package.json",
+        "tsconfig.json",
+        "remotion.config.ts"
+      ]
+    },
+    {
+      "step": "syntax_check_esbuild",
+      "files": []
+    },
+    {
+      "step": "manifest_written",
+      "files": [
+        "manifest.json"
+      ]
+    },
+    {
+      "step": "github_actions_workflow",
+      "files": [
+        ".github/workflows/render.yml"
+      ]
+    },
+    {
+      "step": "qc_script_and_packager",
+      "files": [
+        "scripts/qc.py",
+        "scripts/package_delivery.sh"
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "S01",
+      "status": "written"
+    },
+    {
+      "id": "S02",
+      "status": "written"
+    },
+    {
+      "id": "S03",
+      "status": "written"
+    },
+    {
+      "id": "S04",
+      "status": "written"
+    },
+    {
+      "id": "S05",
+      "status": "written"
+    },
+    {
+      "id": "S06",
+      "status": "written"
+    },
+    {
+      "id": "S07",
+      "status": "written"
+    },
+    {
+      "id": "S08",
+      "status": "written"
+    },
+    {
+      "id": "S09",
+      "status": "written"
+    },
+    {
+      "id": "S10",
+      "status": "written"
+    }
+  ],
+  "next_step": "Push the repository to GitHub and run the 'Render Bengali Explainer' workflow; download the render-N artifact, then review QC and preview stills.",
+  "render": null,
+  "updated_at": "2026-11-16T00:58:00+05:30"
+}

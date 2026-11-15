@@ -1,0 +1,24 @@
+{
+  "name": "bengali-finance-pay-yourself-first",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bengali 2D explainer: Pay Yourself First (16:9, 1920x1080, 30fps)",
+  "scripts": {
+    "studio": "remotion studio",
+    "render": "remotion render PayYourselfFirst out/final-video.mp4",
+    "still": "remotion still PayYourselfFirst out/preview.png",
+    "upgrade": "remotion upgrade"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "remotion": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.6.0"
+  }
+}

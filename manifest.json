@@ -1,0 +1,98 @@
+{
+  "project": "bengali-finance-pay-yourself-first",
+  "composition_id": "PayYourselfFirst",
+  "status": "project_generated_render_pending",
+  "created_at": "2026-11-16T00:50:00+05:30",
+  "render": {
+    "width": 1920,
+    "height": 1080,
+    "aspect_ratio": "16:9",
+    "fps": 30,
+    "duration_in_frames": 1484,
+    "duration_seconds": 49.467,
+    "source_audio_duration_seconds": 49.44,
+    "video_codec": "h264",
+    "pixel_format": "yuv420p",
+    "crf": 18,
+    "audio_codec": "aac",
+    "audio_bitrate": "192k",
+    "container": "mp4"
+  },
+  "sources": {
+    "voiceover": {
+      "project_path": "public/audio/voiceover.wav",
+      "original_archive_path": "assets/original-voiceover.wav",
+      "original_filename": "Generated Audio November 14, 2026 - 12_45PM.wav",
+      "codec": "pcm_s16le",
+      "sample_rate": 24000,
+      "channels": 1,
+      "duration_seconds": 49.44,
+      "peak_dbfs": -0.4,
+      "mean_dbfs": -16.2,
+      "modified": false
+    },
+    "subtitles": {
+      "project_path": "assets/original-subtitles.srt",
+      "original_filename": "bengali_financial_voiceover_subtitles.srt",
+      "cue_count": 19,
+      "use": "timing reference only",
+      "burned_in": false
+    },
+    "images": {
+      "count": 0,
+      "note": "No user images were available. All visuals are original vector graphics, charts and typography."
+    },
+    "font": {
+      "family": "Noto Sans Bengali",
+      "file": "public/fonts/NotoSansBengali.ttf",
+      "license": "SIL Open Font License 1.1 (assets/OFL.txt)",
+      "bengali_glyph_coverage_verified": true
+    }
+  },
+  "scene_plan": "scene-plan.json",
+  "scene_count": 10,
+  "scene_list": [
+    {"scene_id": "S01", "start_frame": 0, "duration_in_frames": 156},
+    {"scene_id": "S02", "start_frame": 156, "duration_in_frames": 229},
+    {"scene_id": "S03", "start_frame": 385, "duration_in_frames": 178},
+    {"scene_id": "S04", "start_frame": 563, "duration_in_frames": 174},
+    {"scene_id": "S05", "start_frame": 737, "duration_in_frames": 140},
+    {"scene_id": "S06", "start_frame": 877, "duration_in_frames": 190},
+    {"scene_id": "S07", "start_frame": 1067, "duration_in_frames": 121},
+    {"scene_id": "S08", "start_frame": 1188, "duration_in_frames": 137},
+    {"scene_id": "S09", "start_frame": 1325, "duration_in_frames": 83},
+    {"scene_id": "S10", "start_frame": 1408, "duration_in_frames": 76}
+  ],
+  "subtitles": "none",
+  "audio_policy": {
+    "voiceover": "original track, unmodified level and timing",
+    "background_music": "none supplied",
+    "sfx_enabled": true,
+    "sfx_source": "code-synthesized by scripts/generate_sfx.py",
+    "sfx_library": [
+      "whoosh",
+      "swipe",
+      "pop",
+      "tick",
+      "click",
+      "ding",
+      "coin",
+      "riser",
+      "warn"
+    ],
+    "sfx_total_count": 19,
+    "sfx_mix_note": "Library peaks at -3 dBFS; gains 0.24-0.34 keep effects about 12-18 dB under the -0.4 dBFS voiceover peak."
+  },
+  "palette": {
+    "navy": "#142D4E",
+    "green": "#19B77A",
+    "gold": "#FFC247",
+    "blue": "#398CE5",
+    "coral": "#F16B75",
+    "cream": "#F7F4EC"
+  },
+  "qc": {
+    "status": "not_run",
+    "reason": "No render has been produced yet; QC runs on the MP4."
+  }
+}

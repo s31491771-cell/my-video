@@ -1,0 +1,354 @@
+{
+  "project": "bengali-finance-video",
+  "composition_id": "PayYourselfFirst",
+  "aspect_ratio": "16:9",
+  "resolution": "1920x1080",
+  "fps": 30,
+  "total_frames": 1484,
+  "voiceover_duration_seconds": 49.44,
+  "subtitles": "none",
+  "sfx_enabled": true,
+  "scenes": [
+    {
+      "scene_id": "S01",
+      "start_seconds": 0.0,
+      "end_seconds": 5.2,
+      "start_frame": 0,
+      "duration_in_frames": 156,
+      "narration_context": "Two friends, Rakib and Suman, both earn 30 thousand taka.",
+      "visual_concept": "Title card with two flat vector characters in side-by-side cards, each carrying the same salary chip so the equal starting point is obvious.",
+      "asset_filename": null,
+      "graphic_elements": [
+        "Kicker: আজকের গল্প",
+        "Headline: দুই বন্ধু, একই বেতন",
+        "Two character cards: রাকিব (green) and সুমন (coral)",
+        "Salary chip on both cards: বেতন ৩০,০০০ টাকা"
+      ],
+      "animation_direction": "Header rises in first, cards stagger up 8 frames apart, characters pop with a soft spring and breathe gently.",
+      "transition": "cut from black at 0.0s",
+      "srt_cue_ids": [
+        1,
+        2
+      ],
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 1.2,
+          "gain": 0.26
+        },
+        {
+          "sound": "tick",
+          "at_seconds": 2.81,
+          "gain": 0.24
+        }
+      ]
+    },
+    {
+      "scene_id": "S02",
+      "start_seconds": 5.2,
+      "end_seconds": 12.833,
+      "start_frame": 156,
+      "duration_in_frames": 229,
+      "narration_context": "Ten years later Rakib has 14 lakh taka, Suman only 80 thousand.",
+      "visual_concept": "Full-width comparison panel with two horizontal money bars: Rakib's bar fills the panel, Suman's stays a sliver. The gap is labelled.",
+      "asset_filename": null,
+      "graphic_elements": [
+        "Kicker: ১০ বছর পর",
+        "Headline: একই বেতন, ভিন্ন ফল",
+        "Bar 1: রাকিবের অ্যাকাউন্ট — ৳ ১৪,০০,০০০",
+        "Bar 2: সুমনের অ্যাকাউন্ট — ৳ ৮০,০০০",
+        "Footer: উভয়ের মাসিক বেতন ৩০,০০০ টাকা",
+        "Chip: পার্থক্য ১৩ লাখ ২০ হাজার"
+      ],
+      "animation_direction": "Rakib's bar sweeps to 100% with a spring, Suman's bar crawls to 6%, numbers fade in as each bar passes 60% of its travel.",
+      "transition": "hard cut on the 5.2s gap",
+      "srt_cue_ids": [
+        3,
+        4
+      ],
+      "sfx": [
+        {
+          "sound": "riser",
+          "at_seconds": 5.45,
+          "gain": 0.3
+        },
+        {
+          "sound": "ding",
+          "at_seconds": 6.55,
+          "gain": 0.34
+        },
+        {
+          "sound": "coin",
+          "at_seconds": 7.6,
+          "gain": 0.34
+        },
+        {
+          "sound": "warn",
+          "at_seconds": 9.95,
+          "gain": 0.34
+        }
+      ]
+    },
+    {
+      "scene_id": "S03",
+      "start_seconds": 12.833,
+      "end_seconds": 18.767,
+      "start_frame": 385,
+      "duration_in_frames": 178,
+      "narration_context": "The difference is one habit: Suman spends first and saves whatever is left.",
+      "visual_concept": "Centered typographic reveal — পার্থক্য? then একটি অভ্যাস। with a gold underline — followed by Suman's two-step flow.",
+      "asset_filename": null,
+      "graphic_elements": [
+        "Text: পার্থক্য?",
+        "Text: একটি অভ্যাস।",
+        "Gold underline",
+        "Flow chips: আগে খরচ → পরে যা থাকে জমা",
+        "Caption: সুমনের অভ্যাস এটাই"
+      ],
+      "animation_direction": "Question fades up, answer scales in, underline draws left to right, then the flow chips swipe in and the arrow draws itself.",
+      "transition": "cut with swipe SFX",
+      "srt_cue_ids": [
+        5,
+        6,
+        7
+      ],
+      "sfx": [
+        {
+          "sound": "swipe",
+          "at_seconds": 12.84,
+          "gain": 0.3
+        },
+        {
+          "sound": "pop",
+          "at_seconds": 15.13,
+          "gain": 0.26
+        }
+      ]
+    },
+    {
+      "scene_id": "S04",
+      "start_seconds": 18.767,
+      "end_seconds": 24.567,
+      "start_frame": 563,
+      "duration_in_frames": 174,
+      "narration_context": "Rakib moves 20% to investments within ten minutes of payday.",
+      "visual_concept": "Salary card with a segmented bar; the green 20% segment grows first and an arrow sends it to an investment label.",
+      "asset_filename": null,
+      "graphic_elements": [
+        "Kicker: রাকিবের নিয়ম",
+        "Headline: বেতন আসার ১০ মিনিটের মধ্যে",
+        "Salary card: ৳ ৩০,০০০",
+        "Segmented bar: ২০% বিনিয়োগ / বাকি খরচ",
+        "Labels: বিনিয়োগ ৬,০০০ টাকা, খরচ ২৪,০০০ টাকা",
+        "Arrow to chip: ইনভেস্টমেন্টে যায়"
+      ],
+      "animation_direction": "Card enters from left, the green segment grows to 20% with a damped spring, arrow draws toward the right-hand explanation.",
+      "transition": "cut",
+      "srt_cue_ids": [
+        8,
+        9
+      ],
+      "sfx": [
+        {
+          "sound": "swipe",
+          "at_seconds": 18.77,
+          "gain": 0.3
+        },
+        {
+          "sound": "coin",
+          "at_seconds": 21.9,
+          "gain": 0.34
+        }
+      ]
+    },
+    {
+      "scene_id": "S05",
+      "start_seconds": 24.567,
+      "end_seconds": 29.233,
+      "start_frame": 737,
+      "duration_in_frames": 140,
+      "narration_context": "Then he spends the rest. This is called pay yourself first; give yourself money first.",
+      "visual_concept": "Statement scene: the English habit name as hero type with a Bengali one-line explanation in a numbered card.",
+      "asset_filename": null,
+      "graphic_elements": [
+        "Line: তারপর বাকি টাকা দিয়ে খরচ",
+        "Hero: Pay Yourself First",
+        "Explainer card: নিজেকে আগে টাকা দিন",
+        "Chip: আগে জমা — পরে খরচ"
+      ],
+      "animation_direction": "Text lines rise sequentially; the numbered card slides up and settles; chip pops last.",
+      "transition": "cut",
+      "srt_cue_ids": [
+        10,
+        11
+      ],
+      "sfx": [
+        {
+          "sound": "ding",
+          "at_seconds": 26.5,
+          "gain": 0.34
+        }
+      ]
+    },
+    {
+      "scene_id": "S06",
+      "start_seconds": 29.233,
+      "end_seconds": 35.567,
+      "start_frame": 877,
+      "duration_in_frames": 190,
+      "narration_context": "Six thousand taka a month at 12% return becomes 14 lakh in ten years.",
+      "visual_concept": "Three factor cards multiplied together, then a navy result banner where the total counts up to 14,00,000 with the invested amount beside it.",
+      "asset_filename": null,
+      "graphic_elements": [
+        "Kicker: হিসাবটা দেখুন",
+        "Factor cards: ৳ ৬,০০০, ১২%, ১০ বছর",
+        "Result banner: ৳ ১৪,০০,০০০",
+        "Secondary: মোট বিনিয়োগ ৭,২০,০০০ টাকা",
+        "Caption: একই ৬,০০০ টাকা — শুধু আগে আলাদা করার অভ্যাস"
+      ],
+      "animation_direction": "Factors enter left to right, result banner scales in, number counts up from zero over ~1.5s.",
+      "transition": "cut into the math",
+      "srt_cue_ids": [
+        12,
+        13
+      ],
+      "sfx": [
+        {
+          "sound": "riser",
+          "at_seconds": 30.99,
+          "gain": 0.3
+        },
+        {
+          "sound": "coin",
+          "at_seconds": 33.4,
+          "gain": 0.34
+        }
+      ]
+    },
+    {
+      "scene_id": "S07",
+      "start_seconds": 35.567,
+      "end_seconds": 39.6,
+      "start_frame": 1067,
+      "duration_in_frames": 121,
+      "narration_context": "Of that, seven lakh is only the magic of compounding.",
+      "visual_concept": "Growth chart comparing contributions and total value; the green area between the lines is the compounding gain.",
+      "asset_filename": null,
+      "graphic_elements": [
+        "Kicker: কম্পাউন্ডিং",
+        "Headline: এর মধ্যে ৭ লাখ শুধু কম্পাউন্ডিংয়ের জাদু",
+        "Chips: মোট জমা ৭,২০,০০০ / মুনাফা ৬,৬০,০০০",
+        "Area chart 0-10 years",
+        "Legend: নীল রেখা = জমানো টাকা, সবুজ এলাকা = মোট মূল্য"
+      ],
+      "animation_direction": "Chart draws left to right behind a clip rect; headline and chips arrive first so the eye knows what to read.",
+      "transition": "whoosh cut",
+      "srt_cue_ids": [
+        14
+      ],
+      "sfx": [
+        {
+          "sound": "whoosh",
+          "at_seconds": 35.57,
+          "gain": 0.3
+        },
+        {
+          "sound": "ding",
+          "at_seconds": 37.6,
+          "gain": 0.34
+        }
+      ]
+    },
+    {
+      "scene_id": "S08",
+      "start_seconds": 39.6,
+      "end_seconds": 44.167,
+      "start_frame": 1188,
+      "duration_in_frames": 137,
+      "narration_context": "Set an auto transfer in the bank app tonight; it takes ten minutes.",
+      "visual_concept": "Phone mockup of a bank app with the auto-transfer toggle flipping on, next to the call to action.",
+      "asset_filename": null,
+      "graphic_elements": [
+        "Kicker: আজকের কাজ",
+        "Headline: আজ রাতেই অটো ট্রান্সফার সেট করুন",
+        "Phone mockup with ৳ ৬,০০০ monthly auto transfer",
+        "Toggle switching to সক্রিয়",
+        "Chips: ১০ মিনিট লাগবে / একবারই সেট করতে হবে"
+      ],
+      "animation_direction": "Headline rises, phone slides up and tilts straight, the toggle knob slides right on the click beat.",
+      "transition": "cut",
+      "srt_cue_ids": [
+        15,
+        16
+      ],
+      "sfx": [
+        {
+          "sound": "click",
+          "at_seconds": 39.6,
+          "gain": 0.26
+        }
+      ]
+    },
+    {
+      "scene_id": "S09",
+      "start_seconds": 44.167,
+      "end_seconds": 46.933,
+      "start_frame": 1325,
+      "duration_in_frames": 83,
+      "narration_context": "Ten minutes now; ten years will change.",
+      "visual_concept": "Short contrast card: ১০ মিনিট arrow ১০ বছর with the payoff line underneath.",
+      "asset_filename": null,
+      "graphic_elements": [
+        "১০ মিনিট → ১০ বছর",
+        "Headline: ১০ বছর বদলে যাবে",
+        "Caption: একবারের সেটিং, দীর্ঘমেয়াদি ফল"
+      ],
+      "animation_direction": "Numbers rise from opposite sides, the gold underline draws, payoff line fades in.",
+      "transition": "hard cut",
+      "srt_cue_ids": [
+        17,
+        18
+      ],
+      "sfx": [
+        {
+          "sound": "riser",
+          "at_seconds": 44.18,
+          "gain": 0.3
+        },
+        {
+          "sound": "ding",
+          "at_seconds": 45.1,
+          "gain": 0.34
+        }
+      ]
+    },
+    {
+      "scene_id": "S10",
+      "start_seconds": 46.933,
+      "end_seconds": 49.467,
+      "start_frame": 1408,
+      "duration_in_frames": 76,
+      "narration_context": "Follow, and the next video will cover where to invest.",
+      "visual_concept": "Outro card with follow CTA and a preview strip for the next video topic.",
+      "asset_filename": null,
+      "graphic_elements": [
+        "Kicker: শেষ কথা",
+        "Headline: ফলো করুন",
+        "Chips: পেই ইওরসেলফ ফার্স্ট / আজই শুরু করুন",
+        "Next-video strip: পরের ভিডিও: টাকা কোথায় বিনিয়োগ করবেন?"
+      ],
+      "animation_direction": "Headline first, chips pop in, then the next-video strip slides up; holds to the final frame.",
+      "transition": "swipe cut, no fade to black",
+      "srt_cue_ids": [
+        19
+      ],
+      "sfx": [
+        {
+          "sound": "swipe",
+          "at_seconds": 46.94,
+          "gain": 0.3
+        }
+      ]
+    }
+  ]
+}
