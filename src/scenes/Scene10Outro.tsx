@@ -3,10 +3,14 @@ import {AbsoluteFill} from "remotion";
 import {Body, Chip, Kicker, Stage, Title, useEnter} from "../components/Type";
 import {COLORS} from "../theme";
 
+/**
+ * Voiceover: "ফলো করুন" 46.22 s, "পরের ভিডিওতে বলবো টাকা কোথায় বিনিয়োগ করবেন"
+ * 46.94-49.24 s. Scene starts at 46.000 s (frame 1380).
+ */
 export const Scene10Outro: React.FC = () => {
-  const top = useEnter(0);
-  const cta = useEnter(10);
-  const next = useEnter(20);
+  const top = useEnter(7);
+  const cta = useEnter(24);
+  const next = useEnter(30);
 
   return (
     <AbsoluteFill>

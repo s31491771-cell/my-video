@@ -2,10 +2,10 @@ import React from "react";
 import {interpolate, spring, useCurrentFrame, useVideoConfig} from "remotion";
 import {COLORS, FONT_FAMILY} from "../theme";
 
-type Props = {delay?: number};
+type Props = {delay?: number; toggleDelay?: number};
 
 /** Bank-app mockup with an auto-transfer toggle switching itself on. */
-export const PhoneCard: React.FC<Props> = ({delay = 0}) => {
+export const PhoneCard: React.FC<Props> = ({delay = 0, toggleDelay = 22}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const enter = spring({
@@ -14,7 +14,7 @@ export const PhoneCard: React.FC<Props> = ({delay = 0}) => {
     config: {damping: 18, stiffness: 90},
   });
   const toggle = spring({
-    frame: frame - delay - 22,
+    frame: frame - delay - toggleDelay,
     fps,
     config: {damping: 18, stiffness: 120},
   });

@@ -48,7 +48,7 @@ export const MoneyBar: React.FC<Props> = ({
             fontSize: 54,
             fontWeight: 800,
             color,
-            opacity: interpolate(grow, [0, 0.6], [0, 1], {extrapolateRight: "clamp"}),
+            opacity: interpolate(grow, [0, 0.25], [0, 1], {extrapolateRight: "clamp"}),
           }}
         >
           {value}

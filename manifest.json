@@ -1,7 +1,7 @@
 {
   "project": "bengali-finance-pay-yourself-first",
   "composition_id": "PayYourselfFirst",
-  "status": "project_generated_render_pending",
+  "status": "timing_synced_render_pending",
   "created_at": "2026-11-16T00:50:00+05:30",
   "render": {
     "width": 1920,
@@ -52,16 +52,76 @@
   "scene_plan": "scene-plan.json",
   "scene_count": 10,
   "scene_list": [
-    {"scene_id": "S01", "start_frame": 0, "duration_in_frames": 156},
-    {"scene_id": "S02", "start_frame": 156, "duration_in_frames": 229},
-    {"scene_id": "S03", "start_frame": 385, "duration_in_frames": 178},
-    {"scene_id": "S04", "start_frame": 563, "duration_in_frames": 174},
-    {"scene_id": "S05", "start_frame": 737, "duration_in_frames": 140},
-    {"scene_id": "S06", "start_frame": 877, "duration_in_frames": 190},
-    {"scene_id": "S07", "start_frame": 1067, "duration_in_frames": 121},
-    {"scene_id": "S08", "start_frame": 1188, "duration_in_frames": 137},
-    {"scene_id": "S09", "start_frame": 1325, "duration_in_frames": 83},
-    {"scene_id": "S10", "start_frame": 1408, "duration_in_frames": 76}
+    {
+      "scene_id": "S01",
+      "start_frame": 0,
+      "duration_in_frames": 172,
+      "start_seconds": 0.0,
+      "end_seconds": 5.733
+    },
+    {
+      "scene_id": "S02",
+      "start_frame": 172,
+      "duration_in_frames": 206,
+      "start_seconds": 5.733,
+      "end_seconds": 12.6
+    },
+    {
+      "scene_id": "S03",
+      "start_frame": 378,
+      "duration_in_frames": 180,
+      "start_seconds": 12.6,
+      "end_seconds": 18.6
+    },
+    {
+      "scene_id": "S04",
+      "start_frame": 558,
+      "duration_in_frames": 175,
+      "start_seconds": 18.6,
+      "end_seconds": 24.433
+    },
+    {
+      "scene_id": "S05",
+      "start_frame": 733,
+      "duration_in_frames": 195,
+      "start_seconds": 24.433,
+      "end_seconds": 30.933
+    },
+    {
+      "scene_id": "S06",
+      "start_frame": 928,
+      "duration_in_frames": 142,
+      "start_seconds": 30.933,
+      "end_seconds": 35.667
+    },
+    {
+      "scene_id": "S07",
+      "start_frame": 1070,
+      "duration_in_frames": 125,
+      "start_seconds": 35.667,
+      "end_seconds": 39.833
+    },
+    {
+      "scene_id": "S08",
+      "start_frame": 1195,
+      "duration_in_frames": 126,
+      "start_seconds": 39.833,
+      "end_seconds": 44.033
+    },
+    {
+      "scene_id": "S09",
+      "start_frame": 1321,
+      "duration_in_frames": 59,
+      "start_seconds": 44.033,
+      "end_seconds": 46.0
+    },
+    {
+      "scene_id": "S10",
+      "start_frame": 1380,
+      "duration_in_frames": 104,
+      "start_seconds": 46.0,
+      "end_seconds": 49.467
+    }
   ],
   "subtitles": "none",
   "audio_policy": {
@@ -94,5 +154,23 @@
   "qc": {
     "status": "not_run",
     "reason": "No render has been produced yet; QC runs on the MP4."
+  },
+  "timing": {
+    "source": "measured_voiceover",
+    "method": "ffmpeg silencedetect (noise -32 dB, min 0.12 s) + 20 ms RMS envelope, merged gaps < 0.12 s",
+    "speech_segments": 35,
+    "scene_boundaries_seconds": {
+      "S01": 0.0,
+      "S02": 5.733,
+      "S03": 12.6,
+      "S04": 18.6,
+      "S05": 24.433,
+      "S06": 30.933,
+      "S07": 35.667,
+      "S08": 39.833,
+      "S09": 44.033,
+      "S10": 46.0
+    },
+    "note": "SRT cues run 0.2-0.6 s early relative to the actual audio, so scene cuts and animation delays follow measured speech."
   }
 }

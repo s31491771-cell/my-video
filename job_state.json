@@ -100,6 +100,23 @@
         "src/index.ts",
         "package.json"
       ]
+    },
+    {
+      "step": "voiceover_timing_sync_measured",
+      "files": [
+        "src/timing.ts",
+        "src/scenes/Scene01",
+        "src/scenes/Scene02",
+        "src/scenes/Scene03",
+        "src/scenes/Scene04",
+        "src/scenes/Scene05",
+        "src/scenes/Scene06",
+        "src/scenes/Scene07",
+        "src/scenes/Scene08",
+        "src/scenes/Scene09",
+        "src/scenes/Scene10"
+      ],
+      "details": "Measured 35 speech segments from the original voiceover; retimed all 10 scene boundaries, animation delays and 19 SFX cues. Frames sum to 1484 (49.467 s)."
     }
   ],
   "scenes": [
@@ -144,7 +161,7 @@
       "status": "written"
     }
   ],
-  "next_step": "Push the repository to GitHub and run the 'Render Bengali Explainer' workflow; download the render-N artifact, then review QC and preview stills.",
+  "next_step": "Push the timing-synced commit to GitHub, run the 'Render Bengali Explainer' workflow again, download render-N, and verify audio/visual sync plus QC.",
   "render": null,
-  "updated_at": "2026-11-16T01:10:00+05:30"
+  "updated_at": "2026-11-16T02:05:00+05:30"
 }

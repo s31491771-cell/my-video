@@ -4,15 +4,20 @@ import {FlowArrow} from "../components/FlowArrow";
 import {Body, Chip, Kicker, Stage, Title, useEnter} from "../components/Type";
 import {COLORS} from "../theme";
 
+/**
+ * Voiceover: "রাকিব বেতন আসার" 18.80 s, "১০ মিনিটের মধ্যে" 19.52 s,
+ * "২০% আলাদা করে বিনিয়োগে পাঠায়" 21.88 s.
+ * Scene starts at 18.600 s (frame 558).
+ */
 export const Scene04PayFirst: React.FC = () => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const header = useEnter(0);
-  const card = useEnter(12);
-  const right = useEnter(30);
+  const header = useEnter(5);
+  const card = useEnter(6);
+  const right = useEnter(99);
 
   const split = spring({
-    frame: frame - 22,
+    frame: frame - 98,
     fps,
     config: {damping: 200, mass: 0.9},
     durationInFrames: 34,
@@ -77,6 +82,7 @@ export const Scene04PayFirst: React.FC = () => {
                   marginTop: 14,
                   fontSize: 28,
                   color: COLORS.muted,
+                  opacity: split,
                 }}
               >
                 <span>বিনিয়োগ ৬,০০০ টাকা</span>
@@ -85,7 +91,9 @@ export const Scene04PayFirst: React.FC = () => {
             </div>
           </div>
 
-          <FlowArrow width={140} color={COLORS.green} delay={34} />
+          <div style={{...right, opacity: right.opacity}}>
+            <FlowArrow width={140} color={COLORS.green} delay={100} />
+          </div>
 
           <div style={{...right, display: "flex", flexDirection: "column", gap: 22, maxWidth: 520}}>
             <Chip color={COLORS.green} size={32}>
@@ -93,9 +101,6 @@ export const Scene04PayFirst: React.FC = () => {
             </Chip>
             <Body size={34} weight={600} color={COLORS.navy}>
               ২০% আলাদা করে বিনিয়োগে পাঠায়
-            </Body>
-            <Body size={28} color={COLORS.muted}>
-              তারপর বাকি টাকা দিয়ে খরচ করে
             </Body>
           </div>
         </div>

@@ -2,13 +2,20 @@ import React from "react";
 import {AbsoluteFill} from "remotion";
 import {Character} from "../components/Character";
 import {Panel} from "../components/Backdrop";
-import {Body, Chip, Kicker, Stage, Title, useEnter} from "../components/Type";
+import {Chip, Kicker, Stage, Title, useEnter} from "../components/Type";
 import {COLORS} from "../theme";
 
+/**
+ * Voiceover: "দুই বন্ধু, রাকিব আর সুমন" 0.16-2.46 s,
+ * then "দুজনের বেতন ৩০ হাজার টাকা" 2.94-5.14 s.
+ * Names arrive with the first line; salary chips arrive on 2.94 s (frame 88).
+ */
 export const Scene01Friends: React.FC = () => {
   const header = useEnter(0);
-  const left = useEnter(12);
-  const right = useEnter(20);
+  const left = useEnter(2);
+  const right = useEnter(8);
+  const salaryLeft = useEnter(86);
+  const salaryRight = useEnter(90);
 
   return (
     <AbsoluteFill>
@@ -39,10 +46,9 @@ export const Scene01Friends: React.FC = () => {
                   gap: 28,
                 }}
               >
-                <Character name="রাকিব" color={COLORS.green} delay={16} mood="happy" scale={0.92} />
-                <div style={{display: "flex", flexDirection: "column", gap: 18, alignItems: "flex-start"}}>
+                <Character name="রাকিব" color={COLORS.green} delay={2} mood="happy" scale={0.92} />
+                <div style={{...salaryLeft, display: "flex", flexDirection: "column", gap: 18, alignItems: "flex-start"}}>
                   <Chip color={COLORS.green}>বেতন ৩০,০০০ টাকা</Chip>
-                  <Body size={30}>টাকা জমানোর অভ্যাস আছে</Body>
                 </div>
               </div>
             </Panel>
@@ -58,16 +64,9 @@ export const Scene01Friends: React.FC = () => {
                   gap: 28,
                 }}
               >
-                <Character
-                  name="সুমন"
-                  color={COLORS.coral}
-                  delay={24}
-                  mood="happy"
-                  scale={0.92}
-                />
-                <div style={{display: "flex", flexDirection: "column", gap: 18, alignItems: "flex-start"}}>
+                <Character name="সুমন" color={COLORS.coral} delay={8} mood="happy" scale={0.92} />
+                <div style={{...salaryRight, display: "flex", flexDirection: "column", gap: 18, alignItems: "flex-start"}}>
                   <Chip color={COLORS.coral}>বেতন ৩০,০০০ টাকা</Chip>
-                  <Body size={30}>আগে খরচ, পরে জমা</Body>
                 </div>
               </div>
             </Panel>

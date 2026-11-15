@@ -1,13 +1,17 @@
 import React from "react";
 import {AbsoluteFill, interpolate, useCurrentFrame} from "remotion";
-import {Body, Stage, Title, useEnter} from "../components/Type";
+import {Stage, Title, useEnter} from "../components/Type";
 import {COLORS} from "../theme";
 
+/**
+ * Voiceover: "১০ বছর বদলে যাবে" 44.26-45.50 s.
+ * Scene starts at 44.033 s (frame 1321), ends 46.000 s.
+ */
 export const Scene09TenYears: React.FC = () => {
   const frame = useCurrentFrame();
-  const a = useEnter(0, 34);
-  const b = useEnter(8, 44);
-  const line = interpolate(frame, [18, 34], [0, 1], {
+  const a = useEnter(2, 28);
+  const b = useEnter(7, 36);
+  const line = interpolate(frame, [7, 21], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
@@ -32,14 +36,19 @@ export const Scene09TenYears: React.FC = () => {
             ১০ বছর
           </Title>
         </div>
-        <div style={{height: 10, width: `${line * 62}%`, background: COLORS.gold, borderRadius: 999, margin: "0 auto"}} />
+        <div
+          style={{
+            height: 10,
+            width: `${line * 62}%`,
+            background: COLORS.gold,
+            borderRadius: 999,
+            margin: "0 auto",
+          }}
+        />
         <div style={{...b, textAlign: "center", marginTop: 10}}>
           <Title size={78} align="center">
             ১০ বছর <span style={{color: COLORS.gold}}>বদলে যাবে</span>
           </Title>
-          <Body size={32} color={COLORS.muted} style={{marginTop: 10}}>
-            একবারের সেটিং, দীর্ঘমেয়াদি ফল
-          </Body>
         </div>
       </Stage>
     </AbsoluteFill>

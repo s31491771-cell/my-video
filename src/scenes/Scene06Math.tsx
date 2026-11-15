@@ -1,6 +1,6 @@
 import React from "react";
 import {AbsoluteFill, spring, useCurrentFrame, useVideoConfig} from "remotion";
-import {Body, Kicker, Stage, Title, useEnter} from "../components/Type";
+import {Kicker, Stage, Title, useEnter} from "../components/Type";
 import {COLORS} from "../theme";
 
 const bn = (value: number) =>
@@ -35,25 +35,30 @@ const Mini: React.FC<{label: string; value: string; color: string; delay: number
   );
 };
 
+/**
+ * Voiceover: "মাসে ৬,০০০ টাকা" 31.40 s, "১২% রিটার্নে" 32.78 s,
+ * "১০ বছরে ১৪ লাখ" 34.06 s.
+ * Scene starts at 30.933 s (frame 928).
+ */
 export const Scene06Math: React.FC = () => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const header = useEnter(0);
+  const header = useEnter(14);
   const result = spring({
-    frame: frame - 40,
+    frame: frame - 96,
     fps,
     config: {damping: 16, stiffness: 100},
   });
   const count = spring({
-    frame: frame - 42,
+    frame: frame - 98,
     fps,
     config: {damping: 200, mass: 1},
-    durationInFrames: 46,
+    durationInFrames: 40,
   });
 
   return (
     <AbsoluteFill>
-      <Stage>
+      <Stage justify="space-between">
         <div style={header}>
           <Kicker color={COLORS.blue}>হিসাবটা দেখুন</Kicker>
           <Title size={76} style={{marginTop: 14}}>
@@ -62,11 +67,11 @@ export const Scene06Math: React.FC = () => {
         </div>
 
         <div style={{display: "flex", alignItems: "center", justifyContent: "center", gap: 22}}>
-          <Mini label="প্রতি মাসে" value="৳ ৬,০০০" color={COLORS.navy} delay={10} />
+          <Mini label="প্রতি মাসে" value="৳ ৬,০০০" color={COLORS.navy} delay={14} />
           <div style={{fontSize: 52, fontWeight: 800, color: COLORS.blue}}>×</div>
-          <Mini label="বার্ষিক রিটার্ন" value="১২%" color={COLORS.blue} delay={18} />
+          <Mini label="বার্ষিক রিটার্ন" value="১২%" color={COLORS.blue} delay={55} />
           <div style={{fontSize: 52, fontWeight: 800, color: COLORS.blue}}>×</div>
-          <Mini label="সময়" value="১০ বছর" color={COLORS.navy} delay={26} />
+          <Mini label="সময়" value="১০ বছর" color={COLORS.navy} delay={94} />
         </div>
 
         <div
@@ -88,22 +93,11 @@ export const Scene06Math: React.FC = () => {
               ৳ {bn(1400000 * count)}
             </div>
           </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-end",
-              gap: 10,
-            }}
-          >
+          <div style={{display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 10}}>
             <div style={{fontSize: 28, color: "rgba(255,255,255,0.72)"}}>মোট বিনিয়োগ</div>
             <div style={{fontSize: 44, fontWeight: 700, color: COLORS.white}}>৭,২০,০০০ টাকা</div>
           </div>
         </div>
-
-        <Body size={30} color={COLORS.muted} style={{textAlign: "center"}}>
-          একই ৬,০০০ টাকা — শুধু আগে আলাদা করার অভ্যাস
-        </Body>
       </Stage>
     </AbsoluteFill>
   );

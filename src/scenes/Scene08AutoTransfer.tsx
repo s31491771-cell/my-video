@@ -4,9 +4,16 @@ import {PhoneCard} from "../components/PhoneCard";
 import {Body, Chip, Kicker, Stage, Title, useEnter} from "../components/Type";
 import {COLORS} from "../theme";
 
+/**
+ * Voiceover: "আজ রাতেই ব্যাংক অ্যাপে অটো ট্রান্সফার সেট করুন" 40.12 s,
+ * "১০ মিনিট লাগবে" 42.94 s.
+ * Scene starts at 39.833 s (frame 1195), ends 44.033 s.
+ */
 export const Scene08AutoTransfer: React.FC = () => {
-  const left = useEnter(0);
+  const left = useEnter(6);
   const phone = useEnter(10, 70);
+  const tenMinutes = useEnter(92);
+  const once = useEnter(100);
 
   return (
     <AbsoluteFill>
@@ -21,17 +28,21 @@ export const Scene08AutoTransfer: React.FC = () => {
               বেতন আসার দিনই ৬,০০০ টাকা আলাদা হয়ে যাবে
             </Body>
             <div style={{display: "flex", gap: 18, marginTop: 8}}>
-              <Chip color={COLORS.green} size={30}>
-                ১০ মিনিট লাগবে
-              </Chip>
-              <Chip color={COLORS.navy} size={30}>
-                একবারই সেট করতে হবে
-              </Chip>
+              <div style={tenMinutes}>
+                <Chip color={COLORS.green} size={30}>
+                  ১০ মিনিট লাগবে
+                </Chip>
+              </div>
+              <div style={once}>
+                <Chip color={COLORS.navy} size={30}>
+                  একবারই সেট করতে হবে
+                </Chip>
+              </div>
             </div>
           </div>
 
           <div style={phone}>
-            <PhoneCard delay={14} />
+            <PhoneCard delay={10} toggleDelay={26} />
           </div>
         </div>
       </Stage>
