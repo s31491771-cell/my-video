@@ -1,75 +1,64 @@
-# Bengali Finance Explainer — Pay Yourself First
+# Bengali Finance Explainer — Sample 60 Seconds (Pay Yourself First)
 
-Remotion project for an 8:52 Bengali 2D explainer built from the supplied
-voiceover and 195-cue SRT. Frame: 1920×1080 (16:9), 30 fps, H.264 MP4 with AAC
-audio. No subtitles are burned in; the SRT is used purely as timing reference.
+Documentary-style Remotion sample for the first **59.30 seconds** of the Bengali
+"Pay Yourself First" explainer. This stage renders `Sample60` only (11 scenes,
+cues 1–22) instead of the full 8:52 video.
 
-## Requirements
+- Frame: **1920×1080 (16:9)**, **30 fps**, H.264 MP4 + AAC
+- Duration: **1779 frames = 59.30 s** (ends at SRT cue 23 start to avoid a mid-sentence cut)
+- Subtitles: **none burned in** (SRT is timing reference only)
+- Visuals: real character photos (background removed), cinematic camera moves,
+  film grain/vignette, Dhaka skyline motifs, cue-locked Bengali typography
+- Audio: trimmed voiceover (`voiceover-sample.wav`) + quiet code-generated score
+  bed (`score-sample.wav`, mixed ~0.12) + 33 SFX cues from the bundled SFX library
 
-- Node.js 20+
-- FFmpeg/FFprobe
-- A Chromium build (Remotion downloads its own headless shell)
-- ~1.5 GB free disk for `node_modules` and the browser
+## Assets
 
-The Android/Termux host used to author this project cannot render it: there is no
-Chromium and not enough free space. Render on GitHub Actions or a desktop.
+| Asset | Path |
+|---|---|
+| Original voiceover (untouched) | `public/audio/voiceover.wav` |
+| Sample voiceover (59.30 s) | `public/audio/voiceover-sample.wav` |
+| Sample score bed | `public/audio/score-sample.wav` |
+| SRT timing reference | `assets/subtitles-new.srt` |
+| Character cutout: Rakib | `public/images/rakib.png` |
+| Character cutout: Suman | `public/images/suman.png` |
+| Font | `public/fonts/NotoSansBengali.ttf` |
 
-## Render
+Character cutouts were derived from the supplied Download images
+`1794464679908.png` (Rakib) and `1794464682742.png` (Suman) using
+`scripts/cutout_characters.py`. Original images were not modified.
 
-```bash
-npm install
-npx remotion render PayYourselfFirst out/final-video.mp4 --concurrency=4
+## Project structure (sample)
+
+```text
+src/sample/plan.ts      11-scene timeline, cue mapping, camera moves (1779 frames)
+src/sample/film.tsx     Documentary primitives (camera, grain, vignette, reveals, portraits)
+src/sample/scenes.tsx   P01–P11 scenes, audio mix (voice + score + SFX), Sample60 composition
+src/Root.tsx            Registers Sample60 (and keeps legacy PayYourselfFirst)
+scripts/cutout_characters.py  Reproducible background removal for the two photos
+scripts/generate_score.py     Reproducible 59.3 s documentary score bed
+scripts/qc.py                 QC for out/sample-60s.mp4 (59.30 s ± 0.35 s)
 ```
 
-Equivalent: `npm run render`.
-
-## Render on GitHub Actions
+## Render (GitHub Actions)
 
 Repository: `s31491771-cell/my-video`, branch `main`.
 
 1. Push the project.
 2. Open **Actions → Render Bengali Explainer → Run workflow**, branch `main`.
-3. The job installs Node 20, type-checks, renders six preview stills, renders
-   `out/final-video.mp4`, runs `scripts/qc.py`, builds
-   `bengali-finance-video-delivery.zip`, and uploads everything as `render-N`.
-   Tick `make_release` to attach the MP4 and ZIP to a GitHub Release.
+3. The workflow verifies assets, renders preview stills, renders
+   `out/sample-60s.mp4` (`Sample60`), runs QC, builds the delivery ZIP, and
+   uploads artifacts.
 
-## What is in the composition
-
-| Piece | Detail |
-|---|---|
-| Composition ID | `PayYourselfFirst` |
-| Duration | 15,959 frames = 531.967 s (source audio 531.96 s) |
-| Audio | `public/audio/voiceover.wav`, original and unmodified |
-| SFX | 164 cues, separate `<Audio>` elements placed by frame at gain 0.09–0.17 |
-| Subtitles | none burned in; 195 SRT cues used only for timing |
-| Font | Noto Sans Bengali variable TTF, bundled locally |
-| Scenes | 75 vector scenes across 16 template types |
-| Characters | rakib + suman flat vector avatars (swap with real art later) |
-
-Scene timings live in `src/story.ts`; SFX constants in `src/timing.ts`. Every
-animation delay is computed with `cueFrame(scene, cueId)`, so each line, number
-and card lands on the syllable of the matching SRT cue. The SRT was verified
-against measured speech: median offset +0.02 s, 188/195 cues within ±0.25 s.
-
-## Rebuilding the timeline from the SRT
+## Render (desktop, if Chromium available)
 
 ```bash
-python3 scripts/build_story.py
+npm install
+npx remotion render Sample60 out/sample-60s.mp4 --concurrency=4
 ```
 
-Writes `src/cues.ts`, `src/story.ts`, `src/timing.ts` and `scene-plan.json`.
+## QC
 
-## Reproducing the SFX library
-
-```bash
-python3 -I scripts/generate_sfx.py public/audio/sfx
-```
-
-Deterministic, numpy only, no third-party audio.
-
-## QC after rendering
-
-Check: 1920×1080, 30 fps, H.264/yuv420p, AAC audio, 531.96 s ± 0.6 s, no black
-frames at cuts, Bengali glyphs render correctly, SFX audible but clearly under
-the voice, no burned-in subtitles. Results are written to `QC_REPORT.md`.
+`scripts/qc.py` checks: 1920×1080, 30 fps, H.264, 59.30 s ± 0.35 s, audible
+non-clipping audio, no long black frames. Perceptual checks (legibility, cutouts,
+SFX/score balance) require reviewing preview stills and listening.

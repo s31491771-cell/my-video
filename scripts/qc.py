@@ -16,11 +16,11 @@ import re
 import subprocess
 import sys
 
-VIDEO = sys.argv[1] if len(sys.argv) > 1 else "out/final-video.mp4"
+VIDEO = sys.argv[1] if len(sys.argv) > 1 else "out/sample-60s.mp4"
 REPORT = sys.argv[2] if len(sys.argv) > 2 else "QC_REPORT.md"
 
-EXPECTED_DURATION = 531.96
-DURATION_TOLERANCE = 0.6
+EXPECTED_DURATION = 59.30
+DURATION_TOLERANCE = 0.35
 WIDTH = 1920
 HEIGHT = 1080
 FPS = 30.0
@@ -120,7 +120,7 @@ def main() -> int:
 
         duration = float(info.get("format", {}).get("duration", 0) or 0)
         check(
-            "Duration matches voiceover (531.96 s)",
+            f"Duration matches sample voiceover ({EXPECTED_DURATION:.2f} s)",
             abs(duration - EXPECTED_DURATION) <= DURATION_TOLERANCE,
             f"{duration:.2f} s (expected {EXPECTED_DURATION:.2f} ± {DURATION_TOLERANCE})",
         )
@@ -190,9 +190,9 @@ def main() -> int:
             critical=False,
         )
         check(
-            "SFX audible but below voice (manual listen)",
+            "SFX/score audible but below voice (manual listen)",
             True,
-            "164 planned cues; listen to the opening, one transition and one SFX-heavy scene",
+            "33 SFX cues + quiet score bed (mixed ~0.12); listen for balance",
             critical=False,
         )
 
@@ -204,7 +204,7 @@ def write_report() -> int:
     failed_soft = [c for c in checks if not c[3] and not c[1]]
 
     lines = [
-        "# QC Report — Bengali Finance Explainer",
+        "# QC Report — Bengali Finance Explainer (Sample60)",
         "",
         f"- File: `{VIDEO}`",
         f"- Generated: {__import__('datetime').datetime.now().astimezone().isoformat(timespec='seconds')}",
@@ -222,8 +222,8 @@ def write_report() -> int:
         "## Notes",
         "",
         "- Automated checks cover container, streams, duration, level and black frames.",
-        "- Perceptual quality (legibility, glyph shaping, SFX balance) needs the preview stills",
-        "  and a listening pass; those rows are marked WARN/PASS with a manual-review note.",
+        "- Perceptual quality (legibility, Bengali glyph shaping, character cutouts, SFX/score balance)",
+        "  needs the preview stills and a listening pass; those rows are marked WARN/PASS with a manual-review note.",
         "",
     ]
     if failed_soft:

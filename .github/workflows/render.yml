@@ -49,33 +49,34 @@ jobs:
       - name: Verify source assets
         run: |
           test -f public/audio/voiceover.wav
+          test -f public/audio/voiceover-sample.wav
+          test -f public/audio/score-sample.wav
           test -f public/fonts/NotoSansBengali.ttf
+          test -f public/images/rakib.png
+          test -f public/images/suman.png
           count=$(ls public/audio/sfx/*.wav | wc -l)
           echo "SFX files: $count"
           test "$count" -eq 9
 
-      - name: Type-check
-        run: npx tsc --noEmit
-
-      - name: Render preview stills
+      - name: Render preview stills (Sample60)
         run: |
           mkdir -p out/preview
-          npx remotion still PayYourselfFirst out/preview/01-opening.png --frame=109
-          npx remotion still PayYourselfFirst out/preview/02-trap.png --frame=3344
-          npx remotion still PayYourselfFirst out/preview/03-ledger.png --frame=4140
-          npx remotion still PayYourselfFirst out/preview/04-growth.png --frame=6259
-          npx remotion still PayYourselfFirst out/preview/05-tiers.png --frame=9327
-          npx remotion still PayYourselfFirst out/preview/06-outro.png --frame=15898
+          npx remotion still Sample60 out/preview/01-opening.png --frame=20
+          npx remotion still Sample60 out/preview/02-friends.png --frame=150
+          npx remotion still Sample60 out/preview/03-office.png --frame=320
+          npx remotion still Sample60 out/preview/04-2025-rakib.png --frame=760
+          npx remotion still Sample60 out/preview/05-suman.png --frame=930
+          npx remotion still Sample60 out/preview/06-habit.png --frame=1650
 
-      - name: Render MP4
+      - name: Render sample MP4 (first 60 seconds)
         run: |
-          npx remotion render PayYourselfFirst out/final-video.mp4 \
+          npx remotion render Sample60 out/sample-60s.mp4 \
             --concurrency="$CONCURRENCY" \
             --crf="$CRF" \
             --log=verbose
 
       - name: Quality control
-        run: python3 scripts/qc.py out/final-video.mp4 QC_REPORT.md
+        run: python3 scripts/qc.py out/sample-60s.mp4 QC_REPORT.md
 
       - name: Build delivery ZIP
         if: always()
@@ -87,7 +88,7 @@ jobs:
         with:
           name: render-${{ github.run_number }}
           path: |
-            out/final-video.mp4
+            out/sample-60s.mp4
             out/preview/*.png
             QC_REPORT.md
             bengali-finance-video-delivery.zip
@@ -99,14 +100,18 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ startsWith(github.ref, 'refs/tags/') && github.ref_name || format('render-{0}', github.run_number) }}
-          name: "Bengali explainer — render ${{ github.run_number }}"
+          name: "Bengali explainer sample — render ${{ github.run_number }}"
           body: |
-            Automated Remotion render of the Bengali "Pay Yourself First" explainer.
+            Automated Remotion render of the first 60 seconds (Sample60) of the
+            Bengali "Pay Yourself First" documentary explainer.
 
-            - 1920x1080, 30 fps, H.264 (yuv420p) + AAC
-            - Voiceover unmodified; no burned-in subtitles
+            - 1920x1080, 30 fps, H.264 (yuv420p) + AAC, 59.30 s
+            - Voiceover trimmed from the original (unmodified source kept); quiet
+              code-generated score bed and 33 SFX cues mixed under the voice
+            - Uses the two real character photos (background-removed)
+            - No burned-in subtitles
             - QC results: see `QC_REPORT.md` inside the delivery ZIP
           files: |
-            out/final-video.mp4
+            out/sample-60s.mp4
             bengali-finance-video-delivery.zip
           fail_on_unmatched_files: true

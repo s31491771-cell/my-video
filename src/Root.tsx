@@ -2,9 +2,11 @@ import React from "react";
 import {Audio, Composition, Sequence, staticFile} from "remotion";
 import {PayYourselfFirst} from "./Video";
 import {DURATION_IN_FRAMES, FPS, HEIGHT, SFX_CUES, WIDTH} from "./timing";
+import {Sample60} from "./sample/scenes";
+import {SAMPLE_FRAMES, SAMPLE_SECONDS} from "./sample/plan";
 
 /**
- * Master mix:
+ * Full 8:52 master mix:
  *  - original voiceover, untouched (primary track, never re-timed or re-levelled)
  *  - planned SFX as separate <Audio> elements at their exact frames
  */
@@ -29,12 +31,23 @@ const MasterMix: React.FC = () => (
 );
 
 export const RemotionRoot: React.FC = () => (
-  <Composition
-    id="PayYourselfFirst"
-    component={MasterMix}
-    durationInFrames={DURATION_IN_FRAMES}
-    fps={FPS}
-    width={WIDTH}
-    height={HEIGHT}
-  />
+  <>
+    <Composition
+      id="PayYourselfFirst"
+      component={MasterMix}
+      durationInFrames={DURATION_IN_FRAMES}
+      fps={FPS}
+      width={WIDTH}
+      height={HEIGHT}
+    />
+    <Composition
+      id="Sample60"
+      component={Sample60}
+      durationInFrames={SAMPLE_FRAMES}
+      fps={FPS}
+      width={WIDTH}
+      height={HEIGHT}
+      defaultProps={{}}
+    />
+  </>
 );
