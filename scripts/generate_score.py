@@ -1,31 +1,38 @@
 #!/usr/bin/env python3
-"""Synthesize the quiet, bright editorial score bed for the 59.3 s sample.
+"""Synthesize the quiet, bright editorial score bed.
+
+Two arcs are supported:
+
+* default — the approved 59.3 s sample (`score-sample.wav`)
+* `--full` — the complete 8:52 narration (`score-full.wav`)
 
 No samples, no third-party audio: warm felt-piano style plucks over a soft
-sustained pad, a gentle bass pulse and a brushed shaker. The bed stays well
-under the narration (mixed at ~0.12), so it should feel like paper-and-ink
-background music rather than a cinematic drone.
+sustained pad, a gentle bass pulse and a brushed shaker. The bed is mixed at
+~0.12 under the narration, so it should feel like paper-and-ink background
+music rather than a cinematic drone.
 
 Output: 48 kHz, 16-bit mono WAV, peak -6 dBFS.
 
 Usage:
     python3 scripts/generate_score.py public/audio/score-sample.wav
+    python3 scripts/generate_score.py public/audio/score-full.wav --full
 """
 from __future__ import annotations
 
-import sys
+import argparse
 import wave
 
 import numpy as np
 
 SR = 48000
-DURATION = 59.3
+SAMPLE_DURATION = 59.3
+FULL_DURATION = 531.96
 BPM = 96.0
 BEAT = 60.0 / BPM
 rng = np.random.default_rng(7)
 
 # (start, end, root midi, chord intervals) — bright F-major family.
-SECTIONS = [
+SAMPLE_SECTIONS = [
     (0.0, 7.6, 53, [0, 4, 7, 12]),      # F  — 2015, Mirpur
     (7.6, 16.9, 48, [0, 4, 7, 11]),     # Cmaj7 — same office
     (16.9, 27.2, 50, [0, 3, 7, 10]),    # Dm7 — 2025 reveal
@@ -33,6 +40,29 @@ SECTIONS = [
     (35.4, 44.5, 53, [0, 4, 7, 11]),    # Fmaj7 — the question
     (44.5, 52.2, 48, [0, 4, 7, 9]),     # C6 — answer
     (52.2, 59.3, 53, [0, 4, 7, 12]),    # F  — habit / close
+]
+
+# The full film follows the twelve chapter arcs. Roots keep moving around the
+# F-major family (F, C, Dm, Bb) so 8:52 never sits on one drone, while the
+# bright plucked pattern and restrained dynamics stay consistent.
+FULL_SECTIONS = [
+    (0.0, 52.1, 53, [0, 4, 7, 12]),      # 01 start — F
+    (52.1, 82.9, 48, [0, 4, 7, 11]),     # 02 question — Cmaj7
+    (82.9, 121.8, 46, [0, 4, 7, 9]),     # 03 real secret — Bb6
+    (121.8, 135.2, 50, [0, 3, 7, 10]),   # quote — Dm7
+    (135.2, 185.1, 46, [0, 4, 7, 9]),    # 04 Suman's month — Bb6
+    (185.1, 226.7, 53, [0, 4, 7, 11]),   # 05 Rakib's rule — Fmaj7
+    (226.7, 252.7, 48, [0, 4, 7, 9]),    # sequence — C6
+    (252.7, 269.3, 53, [0, 4, 7, 12]),   # Pay Yourself First — F
+    (269.3, 301.5, 46, [0, 4, 7, 9]),    # 06 20/80 — Bb6
+    (301.5, 350.0, 48, [0, 4, 7, 11]),   # 07 tiers — Cmaj7
+    (350.0, 379.6, 53, [0, 4, 7, 11]),   # 08 ten-year math — Fmaj7
+    (379.6, 414.8, 50, [0, 3, 7, 10]),   # 09 the trap — Dm7
+    (414.8, 441.4, 46, [0, 4, 7, 9]),    # 10 automation — Bb6
+    (441.4, 458.6, 53, [0, 4, 7, 11]),   # system vs willpower — Fmaj7
+    (458.6, 488.4, 48, [0, 4, 7, 11]),   # 11 start today — Cmaj7
+    (488.4, 519.4, 53, [0, 4, 7, 12]),   # CTA — F
+    (519.4, 531.96, 53, [0, 4, 7, 12]),  # close — F
 ]
 
 # One-bar arpeggio pattern (indices into the chord tones), with accents.
@@ -65,19 +95,19 @@ def pad(freq: float, length: int, amp: float, phase: float) -> np.ndarray:
     return amp * breath * tone
 
 
-def section_at(time: float) -> tuple[int, list[int]]:
-    for start, end, root, intervals in SECTIONS:
+def section_at(time: float, sections: list[tuple[float, float, int, list[int]]]) -> tuple[int, list[int]]:
+    for start, end, root, intervals in sections:
         if start <= time < end:
             return root, intervals
-    return SECTIONS[-1][2], SECTIONS[-1][3]
+    return sections[-1][2], sections[-1][3]
 
 
-def build() -> np.ndarray:
-    n = int(SR * DURATION)
+def build(duration: float, sections: list[tuple[float, float, int, list[int]]]) -> np.ndarray:
+    n = int(SR * duration)
     out = np.zeros(n, dtype=np.float64)
 
     # Warm pad + bass, section by section.
-    for start, end, root, intervals in SECTIONS:
+    for start, end, root, intervals in sections:
         a = int(start * SR)
         b = min(n, int(end * SR))
         length = b - a
@@ -94,10 +124,10 @@ def build() -> np.ndarray:
         out[a:b] += block
 
     # Plucked arpeggio on every beat.
-    total_beats = int(DURATION / BEAT)
+    total_beats = int(duration / BEAT)
     for beat in range(total_beats):
         time = beat * BEAT
-        root, intervals = section_at(time)
+        root, intervals = section_at(time, sections)
         tone_index, accent = PATTERN[beat % len(PATTERN)]
         interval = intervals[tone_index % len(intervals)]
         octave = 12 if tone_index >= len(intervals) else 0
@@ -110,7 +140,7 @@ def build() -> np.ndarray:
         out[a : a + length] += note
 
     # Final sustained F-major chord, ringing into the last frame.
-    final_start = DURATION - 3.4
+    final_start = duration - 3.4
     a = int(final_start * SR)
     length = n - a
     if length > 0:
@@ -150,8 +180,17 @@ def build() -> np.ndarray:
 
 
 def main() -> int:
-    target = sys.argv[1] if len(sys.argv) > 1 else "public/audio/score-sample.wav"
-    samples = (build() * 32767).astype("<i2")
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("target", nargs="?", default=None)
+    parser.add_argument("--full", action="store_true", help="build the 8:52 full-video score")
+    args = parser.parse_args()
+
+    full = args.full
+    target = args.target or ("public/audio/score-full.wav" if full else "public/audio/score-sample.wav")
+    duration = FULL_DURATION if full else SAMPLE_DURATION
+    sections = FULL_SECTIONS if full else SAMPLE_SECTIONS
+
+    samples = (build(duration, sections) * 32767).astype("<i2")
     with wave.open(target, "wb") as handle:
         handle.setnchannels(1)
         handle.setsampwidth(2)
@@ -162,4 +201,4 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    raise SystemExit(main())

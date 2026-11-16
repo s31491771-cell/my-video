@@ -11,6 +11,7 @@ when a critical check fails.
 """
 from __future__ import annotations
 
+import argparse
 import json
 import os
 import re
@@ -18,19 +19,32 @@ import shutil
 import subprocess
 import sys
 
-VIDEO = sys.argv[1] if len(sys.argv) > 1 else "out/sample-60s.mp4"
-REPORT = sys.argv[2] if len(sys.argv) > 2 else "QC_REPORT.md"
+parser = argparse.ArgumentParser(description="Automated QC for the Bengali explainer render.")
+parser.add_argument("video", nargs="?", default="out/sample-60s.mp4")
+parser.add_argument("report", nargs="?", default="QC_REPORT.md")
+parser.add_argument("--expected", type=float, default=59.30, help="expected duration in seconds")
+parser.add_argument("--title", default="Bengali Finance Explainer (Sample60)", help="report title")
+parser.add_argument("--samples", type=int, default=0, help="number of brightness samples (0 = auto)")
+args = parser.parse_args()
+
+VIDEO = args.video
+REPORT = args.report
 JSON_REPORT = os.path.join(os.path.dirname(REPORT) or ".", "qc.json")
 
-EXPECTED_DURATION = 59.30
-DURATION_TOLERANCE = 0.35
+EXPECTED_DURATION = args.expected
+DURATION_TOLERANCE = max(0.35, EXPECTED_DURATION * 0.001)
 WIDTH = 1920
 HEIGHT = 1080
 FPS = 30.0
 CODEC = "h264"
 
-# Frames sampled for the per-scene brightness scan (scene midpoints).
-VISUAL_SAMPLES = [2.0, 6.0, 10.0, 14.0, 20.0, 25.0, 27.6, 32.0, 38.0, 47.0, 53.0, 57.5]
+# Frames sampled for the per-scene brightness scan.
+SAMPLE_LIST = [2.0, 6.0, 10.0, 14.0, 20.0, 25.0, 27.6, 32.0, 38.0, 47.0, 53.0, 57.5]
+if args.samples > 0 or EXPECTED_DURATION > 100:
+    count = args.samples or 24
+    VISUAL_SAMPLES = [round(EXPECTED_DURATION * (index + 0.5) / count, 2) for index in range(count)]
+else:
+    VISUAL_SAMPLES = SAMPLE_LIST
 
 checks: list[tuple[str, bool, str, bool]] = []
 diagnostics: dict[str, object] = {}
@@ -193,9 +207,9 @@ def main() -> int:
 
     duration = float(info.get("format", {}).get("duration", 0) or 0)
     check(
-        f"Duration matches sample voiceover ({EXPECTED_DURATION:.2f} s)",
+        f"Duration matches narration ({EXPECTED_DURATION:.2f} s)",
         abs(duration - EXPECTED_DURATION) <= DURATION_TOLERANCE,
-        f"{duration:.2f} s (expected {EXPECTED_DURATION:.2f} ± {DURATION_TOLERANCE})",
+        f"{duration:.2f} s (expected {EXPECTED_DURATION:.2f} ± {DURATION_TOLERANCE:.2f})",
     )
 
     # Audible voice: mean level well above silence but below clipping.
@@ -295,7 +309,7 @@ def main() -> int:
     check(
         "SFX/score audible but below voice (manual listen)",
         True,
-        "33 SFX cues + quiet score bed (mixed ~0.12); listen for balance",
+        "planned SFX cues + quiet score bed (mixed ~0.12); listen for balance",
         critical=False,
     )
 
@@ -307,7 +321,7 @@ def write_report() -> int:
     failed_soft = [c for c in checks if not c[3] and not c[1]]
 
     lines = [
-        "# QC Report — Bengali Finance Explainer (Sample60)",
+        f"# QC Report — {args.title}",
         "",
         f"- File: `{VIDEO}`",
         f"- Generated: {__import__('datetime').datetime.now().astimezone().isoformat(timespec='seconds')}",

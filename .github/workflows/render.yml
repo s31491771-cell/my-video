@@ -43,8 +43,16 @@ jobs:
         with:
           node-version: 20
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
       - name: Install dependencies
         run: npm install --no-audit --no-fund
+
+      - name: Install Python audio dependency
+        run: python3 -m pip install --quiet numpy pillow
 
       - name: Ensure ffmpeg is available
         run: |
@@ -55,11 +63,17 @@ jobs:
           ffmpeg -version | head -1
           ffprobe -version | head -1
 
+      - name: Generate the 8:52 score bed
+        run: |
+          python3 scripts/generate_score.py public/audio/score-full.wav --full
+          test -f public/audio/score-full.wav
+
       - name: Verify source assets
         run: |
           test -f public/audio/voiceover.wav
           test -f public/audio/voiceover-sample.wav
           test -f public/audio/score-sample.wav
+          test -f public/audio/score-full.wav
           test -f public/fonts/NotoSansBengali.ttf
           test -f public/images/rakib.png
           test -f public/images/suman.png
@@ -67,30 +81,55 @@ jobs:
           echo "SFX files: $count"
           test "$count" -eq 9
 
-      - name: Render preview stills (Sample60)
+      - name: Audit Bengali text fit (75 scenes)
+        run: python3 scripts/audit_text_fit.py
+
+      - name: Render preview stills (full film)
         run: |
           mkdir -p out/preview
-          npx remotion still Sample60 out/preview/01-opening.png --frame=40
-          npx remotion still Sample60 out/preview/02-friends.png --frame=160
-          npx remotion still Sample60 out/preview/03-office.png --frame=320
-          npx remotion still Sample60 out/preview/04-same-life.png --frame=430
-          npx remotion still Sample60 out/preview/05-2025.png --frame=640
-          npx remotion still Sample60 out/preview/06-rakib.png --frame=760
-          npx remotion still Sample60 out/preview/07-suman-beat.png --frame=822
-          npx remotion still Sample60 out/preview/08-suman.png --frame=960
-          npx remotion still Sample60 out/preview/09-question.png --frame=1200
-          npx remotion still Sample60 out/preview/10-answer.png --frame=1440
-          npx remotion still Sample60 out/preview/11-habit.png --frame=1700
+          npx remotion still FullVideo out/preview/01-opening.png --frame=110
+          npx remotion still FullVideo out/preview/02-office.png --frame=300
+          npx remotion still FullVideo out/preview/03-2025.png --frame=700
+          npx remotion still FullVideo out/preview/04-compare.png --frame=930
+          npx remotion still FullVideo out/preview/05-tonight.png --frame=1600
+          npx remotion still FullVideo out/preview/06-95-percent.png --frame=1880
+          npx remotion still FullVideo out/preview/07-why.png --frame=2320
+          npx remotion still FullVideo out/preview/08-engine.png --frame=2600
+          npx remotion still FullVideo out/preview/09-quote.png --frame=3700
+          npx remotion still FullVideo out/preview/10-ledger-start.png --frame=4200
+          npx remotion still FullVideo out/preview/11-ledger-mid.png --frame=4700
+          npx remotion still FullVideo out/preview/12-zero.png --frame=5500
+          npx remotion still FullVideo out/preview/13-rakib-rule.png --frame=6200
+          npx remotion still FullVideo out/preview/14-sequence.png --frame=7200
+          npx remotion still FullVideo out/preview/15-20-percent.png --frame=7620
+          npx remotion still FullVideo out/preview/16-one-line.png --frame=8300
+          npx remotion still FullVideo out/preview/17-tier-1.png --frame=9500
+          npx remotion still FullVideo out/preview/18-tier-2.png --frame=10100
+          npx remotion still FullVideo out/preview/19-growth.png --frame=10750
+          npx remotion still FullVideo out/preview/20-trap.png --frame=11500
+          npx remotion still FullVideo out/preview/21-automation.png --frame=12200
+          npx remotion still FullVideo out/preview/22-phone.png --frame=13000
+          npx remotion still FullVideo out/preview/23-system.png --frame=13600
+          npx remotion still FullVideo out/preview/24-cta.png --frame=14700
+          npx remotion still FullVideo out/preview/25-next-question.png --frame=15200
+          npx remotion still FullVideo out/preview/26-outro.png --frame=15750
+          npx remotion still FullVideo out/preview/27-rule.png --frame=7933
+          npx remotion still FullVideo out/preview/28-wait.png --frame=13863
+          npx remotion still FullVideo out/preview/29-outro-end.png --frame=15937
 
-      - name: Render sample MP4 (first 60 seconds)
+      - name: Render full MP4 (8:52)
         run: |
-          npx remotion render Sample60 out/sample-60s.mp4 \
+          npx remotion render FullVideo out/full-video.mp4 \
             --concurrency="$CONCURRENCY" \
             --crf="$CRF" \
             --log=verbose
 
       - name: Quality control
-        run: python3 scripts/qc.py out/sample-60s.mp4 QC_REPORT.md
+        run: |
+          python3 scripts/qc.py out/full-video.mp4 QC_REPORT.md \
+            --expected 531.96 \
+            --title "Bengali Finance Explainer — Full 8:52" \
+            --samples 24
 
       - name: Build delivery ZIP
         if: always()
@@ -102,9 +141,10 @@ jobs:
         with:
           name: render-${{ github.run_number }}
           path: |
-            out/sample-60s.mp4
+            out/full-video.mp4
             out/preview/*.png
             QC_REPORT.md
+            qc.json
             bengali-finance-video-delivery.zip
           if-no-files-found: warn
           retention-days: 14
@@ -114,19 +154,19 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ startsWith(github.ref, 'refs/tags/') && github.ref_name || format('render-{0}', github.run_number) }}
-          name: "Bengali explainer sample — render ${{ github.run_number }}"
+          name: "Bengali explainer — full 8:52 render ${{ github.run_number }}"
           body: |
-            Automated Remotion render of the first 60 seconds (Sample60) of the
-            Bengali "Pay Yourself First" documentary explainer.
+            Automated Remotion render of the complete Bengali "Pay Yourself First"
+            documentary explainer.
 
-            - 1920x1080, 30 fps, H.264 (yuv420p) + AAC, 59.30 s
-            - Voiceover trimmed from the original (unmodified source kept); quiet
-              code-generated score bed and 33 SFX cues mixed under the voice
+            - 1920x1080, 30 fps, H.264 (yuv420p) + AAC, 531.96 s (8:52)
+            - 75 scenes cut on 195 SRT cues; no burned-in subtitles
+            - Original voiceover untouched; code-generated score bed and 165 planned
+              SFX cues mixed quietly under the voice
             - Uses the two real character photos (background-removed)
-            - No burned-in subtitles
             - QC results: see `QC_REPORT.md` inside the delivery ZIP
           files: |
-            out/sample-60s.mp4
+            out/full-video.mp4
             bengali-finance-video-delivery.zip
           fail_on_unmatched_files: true
 

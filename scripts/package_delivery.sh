@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-# Build the delivery ZIP for the Sample60 (first 60 seconds) render.
-# Runs even when QC failed, so a failed render can still be inspected.
+# Build the delivery ZIP for the full 8:52 render (falls back to the Sample60
+# clip when only the sample exists). Runs even when QC failed, so a failed
+# render can still be inspected.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -12,16 +13,20 @@ DELIVERY="$STAGE/delivery"
 
 mkdir -p "$DELIVERY/source" "$DELIVERY/assets/user-images" "$DELIVERY/scripts"
 
-# Rendered sample (may be missing when the render step failed)
-if [ -f out/sample-60s.mp4 ]; then
+# Rendered film (may be missing when the render step failed)
+if [ -f out/full-video.mp4 ]; then
+  cp out/full-video.mp4 "$DELIVERY/bengali-finance-video-8m52.mp4"
+elif [ -f out/sample-60s.mp4 ]; then
   cp out/sample-60s.mp4 "$DELIVERY/sample-60s.mp4"
 else
-  echo "warning: out/sample-60s.mp4 missing — packaging sources only"
+  echo "warning: no rendered MP4 — packaging sources only"
 fi
 
 # Remotion source project (includes full-video code and Sample60)
 cp package.json tsconfig.json remotion.config.ts job_state.json "$DELIVERY/source/"
 cp -r src public "$DELIVERY/source/"
+# The 51 MB generated score is reproducible and should not bloat the ZIP.
+rm -f "$DELIVERY/source/public/audio/score-full.wav"
 
 # Original/derived assets
 cp assets/voiceover-new.wav "$DELIVERY/assets/original-voiceover-8m52.wav"
@@ -37,7 +42,7 @@ if [ -n "$(ls -A assets/user-images 2>/dev/null)" ]; then
 fi
 
 # Scripts and reports
-cp scripts/generate_sfx.py scripts/generate_score.py scripts/cutout_characters.py scripts/build_story.py scripts/qc.py scripts/package_delivery.sh "$DELIVERY/scripts/"
+cp scripts/generate_sfx.py scripts/generate_score.py scripts/cutout_characters.py scripts/build_story.py scripts/qc.py scripts/audit_text_fit.py scripts/package_delivery.sh "$DELIVERY/scripts/"
 cp scene-plan.json manifest.json "$DELIVERY/"
 cp README.md README_BN.md "$DELIVERY/"
 [ -f QC_REPORT.md ] && cp QC_REPORT.md "$DELIVERY/"

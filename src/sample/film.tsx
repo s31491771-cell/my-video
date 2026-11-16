@@ -33,7 +33,7 @@ export const C = {
   sun: "#F2C14E",
 } as const;
 
-type Palette = {
+export type Palette = {
   bg: string;
   tint: string;
   accent: string;
@@ -83,7 +83,7 @@ export const paletteFor = (scene: SampleScene): Palette => MOOD[scene.mood];
 /* Paper backdrop                                                      */
 /* ------------------------------------------------------------------ */
 
-const PaperGrain: React.FC = () => (
+export const PaperGrain: React.FC = () => (
   <AbsoluteFill
     style={{
       backgroundImage:
@@ -126,7 +126,7 @@ const Spark: React.FC<{x: number; y: number; size: number; color: string; opacit
   </svg>
 );
 
-const Decor: React.FC<{palette: Palette; variant?: "left" | "right" | "top" | "quiet"}> = ({
+export const Decor: React.FC<{palette: Palette; variant?: "left" | "right" | "top" | "quiet"}> = ({
   palette,
   variant = "right",
 }) => {
