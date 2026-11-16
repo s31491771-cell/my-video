@@ -116,7 +116,6 @@ const P02: React.FC = () => {
     <FilmFrame scene={scene} decor="quiet">
       <ChapterTag scene={scene} color={p.accent} />
       <Folio color={p.accent} />
-      <Watermark color={p.accent} />
 
       <div style={{position: "absolute", left: 130, top: 176, ...sampleFont}}>
         <Kicker color={p.accent} delay={cueFrame(scene, 3) - 4}>
@@ -212,7 +211,6 @@ const P03: React.FC = () => {
     <FilmFrame scene={scene} decor="left">
       <ChapterTag scene={scene} color={p.accent} />
       <Folio color={p.accent} />
-      <Watermark color={p.accent} />
 
       <div style={{position: "absolute", left: 130, top: 206, width: 690, ...sampleFont}}>
         <Kicker color={p.accent} delay={cueFrame(scene, 5) - 4}>
@@ -438,7 +436,6 @@ const P06: React.FC = () => {
     <FilmFrame scene={scene} decor="right">
       <ChapterTag scene={scene} color={p.accent} />
       <Folio color={p.accent} />
-      <Watermark color={p.accent} />
 
       <div style={{position: "absolute", left: 140, top: 236, width: 820, ...sampleFont}}>
         <Kicker color={C.green} delay={cueFrame(scene, 11) - 4}>
