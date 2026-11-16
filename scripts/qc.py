@@ -5,7 +5,7 @@ Usage:
     python3 scripts/qc.py out/final-video.mp4 QC_REPORT.md
 
 Checks the MP4 against the manifest contract (1920x1080, 30 fps, H.264,
-AAC, ~49.44 s, audible voice, no long black stretches) and writes a report.
+AAC, ~531.96 s, audible voice, no long black stretches) and writes a report.
 Exits non-zero when a critical check fails.
 """
 from __future__ import annotations
@@ -19,8 +19,8 @@ import sys
 VIDEO = sys.argv[1] if len(sys.argv) > 1 else "out/final-video.mp4"
 REPORT = sys.argv[2] if len(sys.argv) > 2 else "QC_REPORT.md"
 
-EXPECTED_DURATION = 49.44
-DURATION_TOLERANCE = 0.35
+EXPECTED_DURATION = 531.96
+DURATION_TOLERANCE = 0.6
 WIDTH = 1920
 HEIGHT = 1080
 FPS = 30.0
@@ -120,7 +120,7 @@ def main() -> int:
 
         duration = float(info.get("format", {}).get("duration", 0) or 0)
         check(
-            "Duration matches voiceover (49.44 s)",
+            "Duration matches voiceover (531.96 s)",
             abs(duration - EXPECTED_DURATION) <= DURATION_TOLERANCE,
             f"{duration:.2f} s (expected {EXPECTED_DURATION:.2f} ± {DURATION_TOLERANCE})",
         )
@@ -192,7 +192,7 @@ def main() -> int:
         check(
             "SFX audible but below voice (manual listen)",
             True,
-            "19 planned cues; listen to the opening, one transition and one SFX-heavy scene",
+            "164 planned cues; listen to the opening, one transition and one SFX-heavy scene",
             critical=False,
         )
 

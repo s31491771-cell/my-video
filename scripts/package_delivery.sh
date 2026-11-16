@@ -24,8 +24,8 @@ cp package.json tsconfig.json remotion.config.ts job_state.json "$DELIVERY/sourc
 cp -r src public "$DELIVERY/source/"
 
 # Original assets (never modified)
-cp assets/original-voiceover.wav "$DELIVERY/assets/"
-cp assets/original-subtitles.srt "$DELIVERY/assets/"
+cp assets/voiceover-new.wav "$DELIVERY/assets/original-voiceover-8m52.wav"
+cp assets/subtitles-new.srt "$DELIVERY/assets/original-subtitles-195-cues.srt"
 cp -r assets/sfx "$DELIVERY/assets/sfx"
 cp assets/OFL.txt "$DELIVERY/assets/OFL.txt"
 if [ -n "$(ls -A assets/user-images 2>/dev/null)" ]; then
@@ -33,7 +33,7 @@ if [ -n "$(ls -A assets/user-images 2>/dev/null)" ]; then
 fi
 
 # Scripts and reports
-cp scripts/generate_sfx.py "$DELIVERY/scripts/"
+cp scripts/generate_sfx.py scripts/build_story.py scripts/qc.py scripts/package_delivery.sh "$DELIVERY/scripts/"
 cp scene-plan.json manifest.json "$DELIVERY/"
 cp README.md README_BN.md "$DELIVERY/"
 [ -f QC_REPORT.md ] && cp QC_REPORT.md "$DELIVERY/"

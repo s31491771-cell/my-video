@@ -2,10 +2,14 @@ import React from "react";
 import {interpolate, spring, useCurrentFrame, useVideoConfig} from "remotion";
 import {COLORS, FONT_FAMILY} from "../theme";
 
-type Props = {delay?: number; toggleDelay?: number};
+type Props = {delay?: number; toggleDelay?: number; amount?: string};
 
 /** Bank-app mockup with an auto-transfer toggle switching itself on. */
-export const PhoneCard: React.FC<Props> = ({delay = 0, toggleDelay = 22}) => {
+export const PhoneCard: React.FC<Props> = ({
+  delay = 0,
+  toggleDelay = 22,
+  amount = "৬,০০০",
+}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const enter = spring({
@@ -63,7 +67,7 @@ export const PhoneCard: React.FC<Props> = ({delay = 0, toggleDelay = 22}) => {
           }}
         >
           <div style={{fontSize: 24, color: COLORS.muted}}>পরিমাণ</div>
-          <div style={{fontSize: 46, fontWeight: 800, color: COLORS.navy}}>৳ ৬,০০০</div>
+          <div style={{fontSize: 46, fontWeight: 800, color: COLORS.navy}}>৳ {amount}</div>
           <div style={{fontSize: 24, color: COLORS.muted}}>প্রতি মাসে</div>
         </div>
         <div

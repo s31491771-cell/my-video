@@ -7,27 +7,29 @@
     "aspect_ratio": 1,
     "aspect_ratio_label": "16:9 (1920x1080)",
     "start_command_received": true,
-    "start_command_at": "2026-11-16T00:52:00+05:30"
+    "start_command_at": "2026-11-16T12:20:00+05:30"
   },
   "assets": {
     "voiceover": {
-      "original_path": "/data/user/0/com.termux/files/home/.antigem/uploads/31a9bb9c168444ca/Generated Audio November 14, 2026 - 12_45PM.wav",
+      "original_path": "/data/user/0/com.termux/files/home/.antigem/uploads/caaebf28f7ca4943/Generated Audio November 16, 2026 - 11_30AM.wav",
       "project_copy": "public/audio/voiceover.wav",
-      "duration_seconds": 49.44,
+      "archive_copy": "assets/voiceover-new.wav",
+      "duration_seconds": 531.96,
       "sample_rate": 24000,
       "channels": 1,
-      "peak_dbfs": -0.4,
+      "peak_dbfs": -0.1,
+      "mean_dbfs": -17.6,
       "modified": false
     },
     "srt": {
-      "original_path": "/data/user/0/com.termux/files/home/.antigem/uploads/efdfe4d083104fdb/bengali_financial_voiceover_subtitles.srt",
-      "project_copy": "assets/original-subtitles.srt",
-      "cue_count": 19,
+      "original_path": "/data/user/0/com.termux/files/home/.antigem/uploads/f0f42bd5a1164bb0/pay_yourself_first_voiceover_bn.srt",
+      "project_copy": "assets/subtitles-new.srt",
+      "cue_count": 195,
       "validation": "ok",
       "burned_in": false
     },
     "images": [],
-    "images_note": "Zero images delivered: the two attached JPGs could not be read by the current model and were not stored. User proceeded with graphics-only visuals."
+    "images_note": "Two JPGs were attached but could not be read by this model and never reached the workspace. Vector characters were built instead; drop real art into public/images/ to swap them."
   },
   "completed_steps": [
     {
@@ -37,13 +39,11 @@
       ]
     },
     {
-      "step": "gate_passed_ratio_16_9",
-      "files": []
-    },
-    {
-      "step": "scene_plan",
+      "step": "scene_plan_from_srt",
       "files": [
-        "scene-plan.json"
+        "scene-plan.json",
+        "src/cues.ts",
+        "src/story.ts"
       ]
     },
     {
@@ -70,8 +70,19 @@
       ]
     },
     {
-      "step": "syntax_check_esbuild",
-      "files": []
+      "step": "seventy_five_scenes_timed_from_srt",
+      "files": [
+        "src/story.ts",
+        "src/components/StoryTemplates.tsx"
+      ],
+      "details": "75 scenes over 15959 frames (531.97 s), 195 cues mapped, all animation delays derived from cueFrame()."
+    },
+    {
+      "step": "sfx_plan",
+      "files": [
+        "src/timing.ts"
+      ],
+      "details": "165 SFX cues, each inside its scene, gains 0.09-0.17."
     },
     {
       "step": "manifest_written",
@@ -91,32 +102,6 @@
         "scripts/qc.py",
         "scripts/package_delivery.sh"
       ]
-    },
-    {
-      "step": "font_loading_fixed_loadFont_staticFile",
-      "files": [
-        "src/fonts.ts",
-        "src/theme.ts",
-        "src/index.ts",
-        "package.json"
-      ]
-    },
-    {
-      "step": "voiceover_timing_sync_measured",
-      "files": [
-        "src/timing.ts",
-        "src/scenes/Scene01",
-        "src/scenes/Scene02",
-        "src/scenes/Scene03",
-        "src/scenes/Scene04",
-        "src/scenes/Scene05",
-        "src/scenes/Scene06",
-        "src/scenes/Scene07",
-        "src/scenes/Scene08",
-        "src/scenes/Scene09",
-        "src/scenes/Scene10"
-      ],
-      "details": "Measured 35 speech segments from the original voiceover; retimed all 10 scene boundaries, animation delays and 19 SFX cues. Frames sum to 1484 (49.467 s)."
     }
   ],
   "scenes": [
@@ -159,9 +144,269 @@
     {
       "id": "S10",
       "status": "written"
+    },
+    {
+      "id": "S11",
+      "status": "written"
+    },
+    {
+      "id": "S12",
+      "status": "written"
+    },
+    {
+      "id": "S13",
+      "status": "written"
+    },
+    {
+      "id": "S14",
+      "status": "written"
+    },
+    {
+      "id": "S15",
+      "status": "written"
+    },
+    {
+      "id": "S16",
+      "status": "written"
+    },
+    {
+      "id": "S17",
+      "status": "written"
+    },
+    {
+      "id": "S18",
+      "status": "written"
+    },
+    {
+      "id": "S19",
+      "status": "written"
+    },
+    {
+      "id": "S20",
+      "status": "written"
+    },
+    {
+      "id": "S21",
+      "status": "written"
+    },
+    {
+      "id": "S22",
+      "status": "written"
+    },
+    {
+      "id": "S23",
+      "status": "written"
+    },
+    {
+      "id": "S24",
+      "status": "written"
+    },
+    {
+      "id": "S25",
+      "status": "written"
+    },
+    {
+      "id": "S26",
+      "status": "written"
+    },
+    {
+      "id": "S27",
+      "status": "written"
+    },
+    {
+      "id": "S28",
+      "status": "written"
+    },
+    {
+      "id": "S29",
+      "status": "written"
+    },
+    {
+      "id": "S30",
+      "status": "written"
+    },
+    {
+      "id": "S31",
+      "status": "written"
+    },
+    {
+      "id": "S32",
+      "status": "written"
+    },
+    {
+      "id": "S33",
+      "status": "written"
+    },
+    {
+      "id": "S34",
+      "status": "written"
+    },
+    {
+      "id": "S35",
+      "status": "written"
+    },
+    {
+      "id": "S36",
+      "status": "written"
+    },
+    {
+      "id": "S37",
+      "status": "written"
+    },
+    {
+      "id": "S38",
+      "status": "written"
+    },
+    {
+      "id": "S39",
+      "status": "written"
+    },
+    {
+      "id": "S40",
+      "status": "written"
+    },
+    {
+      "id": "S41",
+      "status": "written"
+    },
+    {
+      "id": "S42",
+      "status": "written"
+    },
+    {
+      "id": "S43",
+      "status": "written"
+    },
+    {
+      "id": "S44",
+      "status": "written"
+    },
+    {
+      "id": "S45",
+      "status": "written"
+    },
+    {
+      "id": "S46",
+      "status": "written"
+    },
+    {
+      "id": "S47",
+      "status": "written"
+    },
+    {
+      "id": "S48",
+      "status": "written"
+    },
+    {
+      "id": "S49",
+      "status": "written"
+    },
+    {
+      "id": "S50",
+      "status": "written"
+    },
+    {
+      "id": "S51",
+      "status": "written"
+    },
+    {
+      "id": "S52",
+      "status": "written"
+    },
+    {
+      "id": "S53",
+      "status": "written"
+    },
+    {
+      "id": "S54",
+      "status": "written"
+    },
+    {
+      "id": "S55",
+      "status": "written"
+    },
+    {
+      "id": "S56",
+      "status": "written"
+    },
+    {
+      "id": "S57",
+      "status": "written"
+    },
+    {
+      "id": "S58",
+      "status": "written"
+    },
+    {
+      "id": "S59",
+      "status": "written"
+    },
+    {
+      "id": "S60",
+      "status": "written"
+    },
+    {
+      "id": "S61",
+      "status": "written"
+    },
+    {
+      "id": "S62",
+      "status": "written"
+    },
+    {
+      "id": "S63",
+      "status": "written"
+    },
+    {
+      "id": "S64",
+      "status": "written"
+    },
+    {
+      "id": "S65",
+      "status": "written"
+    },
+    {
+      "id": "S66",
+      "status": "written"
+    },
+    {
+      "id": "S67",
+      "status": "written"
+    },
+    {
+      "id": "S68",
+      "status": "written"
+    },
+    {
+      "id": "S69",
+      "status": "written"
+    },
+    {
+      "id": "S70",
+      "status": "written"
+    },
+    {
+      "id": "S71",
+      "status": "written"
+    },
+    {
+      "id": "S72",
+      "status": "written"
+    },
+    {
+      "id": "S73",
+      "status": "written"
+    },
+    {
+      "id": "S74",
+      "status": "written"
+    },
+    {
+      "id": "S75",
+      "status": "written"
     }
   ],
-  "next_step": "Push the timing-synced commit to GitHub, run the 'Render Bengali Explainer' workflow again, download render-N, and verify audio/visual sync plus QC.",
+  "next_step": "Commit and push, run the 'Render Bengali Explainer' workflow on main, then download render-N and verify sync plus QC.",
   "render": null,
-  "updated_at": "2026-11-16T02:05:00+05:30"
+  "updated_at": "2026-11-16T12:32:40+05:30"
 }
