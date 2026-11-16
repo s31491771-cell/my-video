@@ -42,10 +42,11 @@ if [ -n "$(ls -A assets/user-images 2>/dev/null)" ]; then
 fi
 
 # Scripts and reports
-cp scripts/generate_sfx.py scripts/generate_score.py scripts/cutout_characters.py scripts/build_story.py scripts/qc.py scripts/audit_text_fit.py scripts/package_delivery.sh "$DELIVERY/scripts/"
+cp scripts/generate_sfx.py scripts/generate_score.py scripts/cutout_characters.py scripts/build_story.py scripts/qc.py scripts/audit_text_fit.py scripts/audit_sync.py scripts/audit_visual_beats.py scripts/package_delivery.sh "$DELIVERY/scripts/"
 cp scene-plan.json manifest.json "$DELIVERY/"
 cp README.md README_BN.md "$DELIVERY/"
 [ -f QC_REPORT.md ] && cp QC_REPORT.md "$DELIVERY/"
+[ -f VISUAL_BEATS.md ] && cp VISUAL_BEATS.md "$DELIVERY/"
 
 # Preview stills are useful evidence of what was inspected
 if [ -d out/preview ]; then

@@ -164,6 +164,33 @@ export const cueOf = (scene: StoryScene, index: number): number =>
 
 export const lastCue = (scene: StoryScene): number => cueOf(scene, scene.cueIds.length - 1);
 
+/**
+ * Frame at which a named visual element should appear. The story generator
+ * stores an explicit `beats` map on every scene (element -> SRT cue id), so a
+ * card is revealed on the exact sentence that speaks it rather than on a
+ * positional guess. Falls back to the old cue index when no beat exists.
+ */
+export const beatOf = (scene: StoryScene, key: string, fallbackIndex = 0): number => {
+  const beats = (scene.data as {beats?: Record<string, number>} | undefined)?.beats;
+  const cueId = beats?.[key];
+  if (typeof cueId === "number" && cueId > 0) return cueFrame(scene, cueId);
+  return cueOf(scene, fallbackIndex);
+};
+
+export const lastBeat = (scene: StoryScene, key: string): number => beatOf(scene, key, scene.cueIds.length - 1);
+
+/**
+ * Frame for a beat that may be missing from the story data. Used for list
+ * items (tiers, chips) that should fall back to the moment their parent
+ * element appears.
+ */
+export const beatOr = (scene: StoryScene, key: string, fallbackFrame: number): number => {
+  const beats = (scene.data as {beats?: Record<string, number>} | undefined)?.beats;
+  const cueId = beats?.[key];
+  if (typeof cueId === "number" && cueId > 0) return cueFrame(scene, cueId);
+  return fallbackFrame;
+};
+
 export const headlineSize = (
   text: string,
   width: number,
@@ -176,6 +203,56 @@ export const headlineSize = (
 };
 
 export const stripTaka = (value: string): string => value.replace(/^৳\s*/, "");
+
+/* ------------------------------------------------------------------ */
+/* Text measurement — reserve the space of a line before it is spoken   */
+/* ------------------------------------------------------------------ */
+
+const lineCache = new Map<string, number>();
+
+/**
+ * Number of lines a Bengali string needs at a given width, measured with the
+ * real font in the browser. Templates use it to reserve the height of a slot
+ * so that a line which is spoken later does not push the layout around when
+ * it finally appears.
+ */
+export const measureLines = (text: string, size: number, width: number, weight = 800): number => {
+  const clean = text.trim();
+  if (!clean) return 0;
+  const key = `${clean}|${size}|${width}|${weight}`;
+  const cached = lineCache.get(key);
+  if (cached !== undefined) return cached;
+  let lines = 1;
+  try {
+    const context = document.createElement("canvas").getContext("2d");
+    if (context) {
+      context.font = `${weight} ${size}px "Noto Sans Bengali", sans-serif`;
+      let current = "";
+      for (const word of clean.split(/\s+/)) {
+        const candidate = current ? `${current} ${word}` : word;
+        if (context.measureText(candidate).width <= width) {
+          current = candidate;
+        } else {
+          lines += 1;
+          current = word;
+        }
+      }
+    }
+  } catch {
+    // Measurement is a layout nicety; fall back to a single line.
+  }
+  lineCache.set(key, lines);
+  return lines;
+};
+
+/** Height (px) a text block occupies, used as the reserved slot height. */
+export const textBlockHeight = (
+  text: string,
+  size: number,
+  width: number,
+  weight = 800,
+  lineHeight = 1.3,
+): number => measureLines(text, size, width, weight) * size * lineHeight;
 
 export const Taka: React.FC<{value: string; size?: number; color?: string}> = ({
   value,

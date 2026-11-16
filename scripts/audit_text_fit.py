@@ -111,6 +111,9 @@ for scene in scenes:
         size = headline_size(headline, 1000, 72, 44, 2)
         check(scene, "headline", headline, size, 1000, 2)
         check(scene, "sub", d.get("sub", ""), 31, 940, 2)
+        check(scene, "foot", d.get("foot", ""), 29, 940, 2)
+        check(scene, "note", d.get("note", ""), 27, 940, 2)
+        check(scene, "side note", d.get("sideNote", ""), 30, 300, 3)
         big = d.get("big", "")
         if big and not big.startswith("৳"):
             bsize = 44 if len(big) > 20 else 54 if len(big) > 12 else 70
@@ -135,6 +138,7 @@ for scene in scenes:
         check(scene, "question", d.get("question", ""), size, 1450, 2)
         check(scene, "answer", d.get("answer", ""), 38 if len(d.get("answer", "")) > 26 else 46, 1130, 1)
         check(scene, "sub", d.get("sub", ""), 24, 1130, 1)
+        check(scene, "note", d.get("note", ""), 30, 1420, 2)
     elif t == "habit":
         check(scene, "headline", d.get("headline", ""), headline_size(d.get("headline", ""), 960, 70, 44, 2), 960, 2)
         check(scene, "sub", d.get("sub", ""), 34, 960, 2)
@@ -163,6 +167,7 @@ for scene in scenes:
         for tier in d.get("tiers", []):
             check(scene, "tier note", tier["note"], 24, 476, 1)
         check(scene, "sub", d.get("sub", ""), 26, 1300, 1)
+        check(scene, "note", d.get("note", ""), 26, 1300, 1)
     elif t == "growth":
         check(scene, "headline", d.get("headline", ""), headline_size(d.get("headline", ""), 1440, 58, 40, 1), 1440, 1)
         check(scene, "total", d.get("total", "").replace("৳", "").strip(), 62, 650, 1)
@@ -170,6 +175,8 @@ for scene in scenes:
         check(scene, "profit", d.get("profit", ""), 28, 290, 1)
         check(scene, "extra", d.get("extra", ""), 25, 720, 2)
         check(scene, "monthly chip", f"মাসে ৳ {d.get('monthly','')}", 21, 500, 1)
+        for chip in d.get("chips", []) or []:
+            check(scene, "chip", chip, 26, 420, 1)
     elif t == "trap":
         check(scene, "headline", d.get("headline", ""), headline_size(d.get("headline", ""), 1600, 56, 40, 2), 1600, 2)
         for step in d.get("steps", []):
@@ -195,6 +202,10 @@ for scene in scenes:
         check(scene, "sub", d.get("sub", ""), 37, 1180, 2)
         check(scene, "signature", d.get("signature", ""), 30, 900, 1)
     elif t == "quote":
+        quote = str(d.get("quote", "")).lstrip("\u201c\"")
+        check(scene, "quote", quote, 78, 1080, 3)
+        check(scene, "sub", d.get("sub", ""), 31, 1080, 2)
+    elif t == "quote_old":
         check(scene, "quote", d.get("quote", ""), headline_size(d.get("quote", ""), 1080, 78, 48, 1), 1080, 1)
         check(scene, "sub", d.get("sub", ""), 40, 1080, 1)
 

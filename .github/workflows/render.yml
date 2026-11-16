@@ -84,6 +84,9 @@ jobs:
       - name: Audit Bengali text fit (75 scenes)
         run: python3 scripts/audit_text_fit.py
 
+      - name: Audit audio-visual sync (195 cues)
+        run: python3 scripts/audit_sync.py
+
       - name: Render preview stills (full film)
         run: |
           mkdir -p out/preview
@@ -96,23 +99,23 @@ jobs:
           npx remotion still FullVideo out/preview/07-why.png --frame=2320
           npx remotion still FullVideo out/preview/08-engine.png --frame=2600
           npx remotion still FullVideo out/preview/09-quote.png --frame=3700
-          npx remotion still FullVideo out/preview/10-ledger-start.png --frame=4200
+          npx remotion still FullVideo out/preview/10-ledger-start.png --frame=4235
           npx remotion still FullVideo out/preview/11-ledger-mid.png --frame=4700
-          npx remotion still FullVideo out/preview/12-zero.png --frame=5500
-          npx remotion still FullVideo out/preview/13-rakib-rule.png --frame=6200
+          npx remotion still FullVideo out/preview/12-zero.png --frame=5600
+          npx remotion still FullVideo out/preview/13-rakib-rule.png --frame=6000
           npx remotion still FullVideo out/preview/14-sequence.png --frame=7200
-          npx remotion still FullVideo out/preview/15-20-percent.png --frame=7620
+          npx remotion still FullVideo out/preview/15-20-percent.png --frame=7900
           npx remotion still FullVideo out/preview/16-one-line.png --frame=8300
           npx remotion still FullVideo out/preview/17-tier-1.png --frame=9500
           npx remotion still FullVideo out/preview/18-tier-2.png --frame=10100
           npx remotion still FullVideo out/preview/19-growth.png --frame=10750
           npx remotion still FullVideo out/preview/20-trap.png --frame=11500
-          npx remotion still FullVideo out/preview/21-automation.png --frame=12200
+          npx remotion still FullVideo out/preview/21-automation.png --frame=12555
           npx remotion still FullVideo out/preview/22-phone.png --frame=13000
-          npx remotion still FullVideo out/preview/23-system.png --frame=13600
+          npx remotion still FullVideo out/preview/23-system.png --frame=13365
           npx remotion still FullVideo out/preview/24-cta.png --frame=14700
           npx remotion still FullVideo out/preview/25-next-question.png --frame=15200
-          npx remotion still FullVideo out/preview/26-outro.png --frame=15750
+          npx remotion still FullVideo out/preview/26-outro.png --frame=15885
           npx remotion still FullVideo out/preview/27-rule.png --frame=7933
           npx remotion still FullVideo out/preview/28-wait.png --frame=13863
           npx remotion still FullVideo out/preview/29-outro-end.png --frame=15937
@@ -123,6 +126,11 @@ jobs:
             --concurrency="$CONCURRENCY" \
             --crf="$CRF" \
             --log=verbose
+
+      - name: Audit audio-visual beats in the render
+        run: |
+          set -o pipefail
+          python3 scripts/audit_visual_beats.py out/full-video.mp4 | tee VISUAL_BEATS.md
 
       - name: Quality control
         run: |
@@ -144,6 +152,7 @@ jobs:
             out/full-video.mp4
             out/preview/*.png
             QC_REPORT.md
+            VISUAL_BEATS.md
             qc.json
             bengali-finance-video-delivery.zip
           if-no-files-found: warn
@@ -161,7 +170,7 @@ jobs:
 
             - 1920x1080, 30 fps, H.264 (yuv420p) + AAC, 531.96 s (8:52)
             - 75 scenes cut on 195 SRT cues; no burned-in subtitles
-            - Original voiceover untouched; code-generated score bed and 165 planned
+            - Original voiceover untouched; code-generated score bed and beat-matched
               SFX cues mixed quietly under the voice
             - Uses the two real character photos (background-removed)
             - QC results: see `QC_REPORT.md` inside the delivery ZIP
@@ -182,6 +191,7 @@ jobs:
           git checkout --orphan qc-report-${{ github.run_number }}
           git rm -r --cached . --quiet || true
           git add -f QC_REPORT.md
+          if [ -f VISUAL_BEATS.md ]; then git add -f VISUAL_BEATS.md; fi
           if [ -f qc.json ]; then git add -f qc.json; fi
           git commit --quiet -m "QC report — run ${{ github.run_number }} (${{ github.sha }})" || true
           git push --force origin HEAD:qc-reports

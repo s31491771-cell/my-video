@@ -12,7 +12,8 @@ whitespace, cue-locked reveals and hard cuts.
 - Subtitles: **none burned in** — `assets/subtitles-new.srt` is the timing truth
 - Visuals: 75 scenes across 17 bright templates; the two real character photos
   from the Download folder are used as background-removed sticker cutouts
-  (রাকিব / সুমন); every reveal is keyed to the SRT cue that speaks it
+  (রাকিব / সুমন); every on-screen line, number and card is bound to the exact
+  SRT cue that speaks it, so the picture follows the voice sentence by sentence
 - Audio: original voiceover + code-generated 8:52 score bed
   (`score-full.wav`, mixed at 0.12) + 165 planned SFX cues, all well under the
   voice
@@ -46,6 +47,7 @@ src/full/scenes.tsx     17 bright templates, 75-scene timeline, audio mix, FullV
 src/Root.tsx            Registers FullVideo, PayYourselfFirst (alias), Sample60
 scripts/generate_score.py     Reproducible score bed: sample or --full 8:52
 scripts/audit_text_fit.py     75-scene Bengali text-fit audit (0 errors)
+scripts/audit_sync.py         195-cue audio-visual sync audit (0 issues)
 scripts/qc.py                 Configurable QC (duration, title, luma samples)
 scripts/package_delivery.sh   Full-video delivery ZIP with sample fallback
 ```
@@ -59,7 +61,9 @@ Either push a tag matching `render-*` (for example `render-full-1`) or open
 
 1. installs Node, Python, ffmpeg/ffprobe and numpy/pillow;
 2. generates `public/audio/score-full.wav` (531.96 s, peak −6 dBFS);
-3. verifies assets and runs the 75-scene Bengali text-fit audit;
+3. verifies assets, then runs the Bengali text-fit audit and the 195-cue
+   audio-visual sync audit (every cue must have its own visual beat, no number
+   may be spoken without being on screen);
 4. renders 29 preview stills, then `out/full-video.mp4` (`FullVideo`);
 5. runs QC (`--expected 531.96 --samples 24`), builds the delivery ZIP,
    uploads artifacts and creates a release when triggered by a tag.

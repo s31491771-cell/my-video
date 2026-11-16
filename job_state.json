@@ -71,7 +71,12 @@
     "committed_full_renderer_and_pushed_main",
     "rendered_full_8m52_video_run_12",
     "qc_passed_full_duration_bright_paper_no_black",
-    "published_release_render_full_1"
+    "published_release_render_full_1",
+    "rebound_every_scene_element_to_the_cue_that_speaks_it",
+    "added_195_cue_audio_visual_sync_audit",
+    "reserved_text_slots_so_late_lines_never_shift_the_layout",
+    "fixed_numbers_said_but_never_shown_incl_20_lakh_vs_20_million",
+    "added_render_level_visual_beat_audit_flagging_36_frozen_cues_in_the_previous_render"
   ],
   "full": {
     "composition_id": "FullVideo",
@@ -114,7 +119,8 @@
     "No local Chromium/render; GitHub Actions tag push (render-*) or workflow_dispatch renders the full video.",
     "GitHub-hosted ubuntu runners do not ship ffmpeg/ffprobe; the workflow installs them before QC.",
     "The 51 MB score-full.wav is generated in CI and excluded from git and the delivery source copy.",
-    "QC verdict is mirrored to the public qc-reports branch (QC_REPORT.md + qc.json)."
+    "QC verdict is mirrored to the public qc-reports branch (QC_REPORT.md + qc.json).",
+    "scripts/audit_sync.py fails the build if any cue has no visual beat, a missing spoken number, or a late reveal."
   ],
   "render": {
     "last_successful_run": 12,
@@ -136,6 +142,12 @@
       "full-video.mp4": "103.6 MB",
       "bengali-finance-video-delivery.zip": "184.2 MB"
     },
-    "next": "user review of the full film and a listening pass on SFX/score balance"
+    "next": "tag render-full-2 and render the re-synced 8:52 film"
+  },
+  "scripts": {
+    "audit_text_fit.py": "75-scene Bengali text-fit audit",
+    "audit_sync.py": "195-cue story-level audio-visual sync audit (beat -> cue)",
+    "audit_visual_beats.py": "rendered-film check: every cue must have a visible change",
+    "qc.py": "container/level/luma QC"
   }
 }

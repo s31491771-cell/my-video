@@ -1,126 +1,3193 @@
 {
-  "composition_id": "Sample60",
+  "project": "bengali-finance-video",
+  "composition_id": "PayYourselfFirst",
+  "aspect_ratio": "16:9",
+  "resolution": "1920x1080",
   "fps": 30,
-  "duration_seconds": 59.3,
-  "duration_in_frames": 1779,
+  "total_frames": 15959,
+  "voiceover_duration_seconds": 531.96,
   "subtitles": "none",
-  "visual_style": "bright cream paper, navy ink, flat-vector editorial illustration, white cards, charts, phone mockup, sticker character cutouts, hard cuts",
+  "sfx_enabled": true,
+  "timing_source": "SRT cue times (assets/subtitles-new.srt); measured speech offset median +0.02 s",
   "scenes": [
     {
-      "id": "P01",
-      "kind": "opening",
-      "start": 0.0,
-      "end": 3.38,
-      "cue_ids": [1, 2],
-      "mood": "warm",
-      "chapter": "০১ ২০১৫ · ঢাকার মিরপুর",
-      "text": "২০১৫ সাল। ঢাকার মিরপুরে দুই বন্ধু—"
+      "scene_id": "S01",
+      "type": "opening",
+      "start_seconds": 0.0,
+      "end_seconds": 7.27,
+      "start_frame": 0,
+      "duration_in_frames": 218,
+      "srt_cue_ids": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "narration": "২০১৫ সাল। / ঢাকার মিরপুরে দুই বন্ধু— / রাকিব আর সুমন। / দুজনের বয়স ২৫।",
+      "visual_data": {
+        "year": "২০১৫",
+        "city": "ঢাকার মিরপুর",
+        "names": [
+          "রাকিব",
+          "সুমন"
+        ],
+        "age": "২৫ বছর",
+        "beats": {
+          "year": 1,
+          "city": 2,
+          "names": 3,
+          "age": 4
+        }
+      },
+      "accent": "#398CE5",
+      "sfx": [
+        {
+          "sound": "whoosh",
+          "at_seconds": 0.02,
+          "gain": 0.17
+        },
+        {
+          "sound": "tick",
+          "at_seconds": 1.78,
+          "gain": 0.1
+        },
+        {
+          "sound": "tick",
+          "at_seconds": 3.63,
+          "gain": 0.1
+        },
+        {
+          "sound": "tick",
+          "at_seconds": 5.41,
+          "gain": 0.1
+        }
+      ]
     },
     {
-      "id": "P02",
-      "kind": "friends",
-      "start": 3.38,
-      "end": 7.14,
-      "cue_ids": [3, 4],
-      "mood": "warm",
-      "chapter": "০১ দুই বন্ধু",
-      "text": "রাকিব আর সুমন। দুজনের বয়স ২৫।",
-      "characters": ["rakib", "suman"]
+      "scene_id": "S02",
+      "type": "statement",
+      "start_seconds": 7.27,
+      "end_seconds": 12.6,
+      "start_frame": 218,
+      "duration_in_frames": 160,
+      "srt_cue_ids": [
+        5,
+        6
+      ],
+      "narration": "দুজনেই একই অফিসে চাকরি করে। / দুজনের বেতন মাসে ৩০,০০০ টাকা।",
+      "visual_data": {
+        "kicker": "একই অফিস",
+        "headline": "দুজনের বেতন মাসে ৩০,০০০ টাকা।",
+        "sub": "দুজনেই একই অফিসে চাকরি করে।",
+        "big": "৳ ৩০,০০০",
+        "bigLabel": "মাসিক বেতন",
+        "character": "both",
+        "beats": {
+          "kicker": 5,
+          "sub": 5,
+          "character": 5,
+          "headline": 6,
+          "big": 6,
+          "side": 6
+        }
+      },
+      "accent": "#398CE5",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 7.29,
+          "gain": 0.1
+        },
+        {
+          "sound": "ding",
+          "at_seconds": 9.8,
+          "gain": 0.17
+        }
+      ]
     },
     {
-      "id": "P03",
-      "kind": "office",
-      "start": 7.14,
-      "end": 12.47,
-      "cue_ids": [5, 6],
-      "mood": "cool",
-      "chapter": "০২ একই শুরু",
-      "text": "দুজনেই একই অফিসে চাকরি করে। দুজনের বেতন মাসে ৩০,০০০ টাকা।",
-      "visual": "salary ৩০,০০০"
+      "scene_id": "S03",
+      "type": "statement",
+      "start_seconds": 12.6,
+      "end_seconds": 16.79,
+      "start_frame": 378,
+      "duration_in_frames": 126,
+      "srt_cue_ids": [
+        7,
+        8
+      ],
+      "narration": "একই শহর, একই বেতন, / একই জীবনযাত্রা।",
+      "visual_data": {
+        "kicker": "একই শুরু",
+        "headline": "একই শহর, একই বেতন,",
+        "foot": "একই জীবনযাত্রা।",
+        "beats": {
+          "kicker": 7,
+          "headline": 7,
+          "foot": 8
+        }
+      },
+      "accent": "#FFC247",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 12.62,
+          "gain": 0.1
+        }
+      ]
     },
     {
-      "id": "P04",
-      "kind": "sameLife",
-      "start": 12.47,
-      "end": 16.66,
-      "cue_ids": [7, 8],
-      "mood": "cool",
-      "chapter": "০২ একই জীবন",
-      "text": "একই শহর, একই বেতন, একই জীবনযাত্রা।"
+      "scene_id": "S04",
+      "type": "statement",
+      "start_seconds": 16.79,
+      "end_seconds": 27.11,
+      "start_frame": 504,
+      "duration_in_frames": 309,
+      "srt_cue_ids": [
+        9,
+        10,
+        11
+      ],
+      "narration": "কিন্তু আজ ২০২৫ সালে, / এই দুই বন্ধুর আর্থিক অবস্থা আকাশ-পাতাল তফাত। / রাকিবের ব্যাংক অ্যাকাউন্টে আজ ১৪ লাখ টাকা।",
+      "visual_data": {
+        "kicker": "২০২৫ সাল",
+        "headline": "এই দুই বন্ধুর আর্থিক অবস্থা আকাশ-পাতাল তফাত",
+        "sub": "রাকিবের ব্যাংক অ্যাকাউন্টে আজ",
+        "big": "৳ ১৪,০০,০০০",
+        "bigLabel": "আজ অ্যাকাউন্টে",
+        "character": "rakib",
+        "beats": {
+          "kicker": 9,
+          "headline": 10,
+          "sub": 11,
+          "big": 11,
+          "character": 11,
+          "side": 11
+        }
+      },
+      "accent": "#19B77A",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 16.81,
+          "gain": 0.1
+        },
+        {
+          "sound": "ding",
+          "at_seconds": 19.63,
+          "gain": 0.17
+        }
+      ]
     },
     {
-      "id": "P05",
-      "kind": "year2025",
-      "start": 16.66,
-      "end": 23.59,
-      "cue_ids": [9, 10],
-      "mood": "dark",
-      "chapter": "০৩ দশ বছর পর",
-      "text": "কিন্তু আজ ২০২৫ সালে, এই দুই বন্ধুর আর্থিক অবস্থা আকাশ-পাতাল তফাত।"
+      "scene_id": "S05",
+      "type": "compare",
+      "start_seconds": 27.11,
+      "end_seconds": 35.27,
+      "start_frame": 813,
+      "duration_in_frames": 245,
+      "srt_cue_ids": [
+        12,
+        13,
+        14
+      ],
+      "narration": "আর সুমন? / সুমনের অ্যাকাউন্টে আছে মাত্র ৮০,০০০ টাকা। / আর মাথার ওপর ৩ লাখ টাকার ক্রেডিট কার্ডের ঋণ।",
+      "visual_data": {
+        "kicker": "প্রশ্ন",
+        "headline": "আর সুমন?",
+        "left": {
+          "name": "রাকিব",
+          "value": "৳ ১৪,০০,০০০",
+          "note": "১০ বছরের সঞ্চয়",
+          "color": "#19B77A",
+          "mood": "happy"
+        },
+        "right": {
+          "name": "সুমন",
+          "value": "৳ ৮০,০০০",
+          "note": "অ্যাকাউন্টে আছে",
+          "color": "#F16B75",
+          "mood": "worried"
+        },
+        "chip": "+ ৩ লাখ টাকার ঋণ",
+        "beats": {
+          "kicker": 12,
+          "headline": 12,
+          "left": 12,
+          "right": 13,
+          "chip": 14
+        }
+      },
+      "accent": "#F16B75",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 27.13,
+          "gain": 0.1
+        },
+        {
+          "sound": "swipe",
+          "at_seconds": 28.44,
+          "gain": 0.15
+        },
+        {
+          "sound": "ding",
+          "at_seconds": 31.31,
+          "gain": 0.17
+        }
+      ]
     },
     {
-      "id": "P06",
-      "kind": "rakib",
-      "start": 23.59,
-      "end": 26.98,
-      "cue_ids": [11],
-      "mood": "dark",
-      "chapter": "০৩ রাকিব",
-      "text": "রাকিবের ব্যাংক অ্যাকাউন্টে আজ ১৪ লাখ টাকা।",
-      "visual": "৳ ১৪,০০,০০০",
-      "character": "rakib"
+      "scene_id": "S06",
+      "type": "question",
+      "start_seconds": 35.27,
+      "end_seconds": 40.78,
+      "start_frame": 1058,
+      "duration_in_frames": 165,
+      "srt_cue_ids": [
+        15,
+        16
+      ],
+      "narration": "এখন প্রশ্ন হলো, দুজনের আয় যদি সমান ছিল, / খরচ যদি প্রায় একই ছিল,",
+      "visual_data": {
+        "kicker": "এখন প্রশ্ন",
+        "question": "খরচ যদি প্রায় একই ছিল — তাহলে পার্থক্য কোথায়?",
+        "note": "দুজনের আয় যদি সমান ছিল,",
+        "beats": {
+          "kicker": 15,
+          "question": 15,
+          "note": 16
+        }
+      },
+      "accent": "#FFC247",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 35.29,
+          "gain": 0.1
+        }
+      ]
     },
     {
-      "id": "P07",
-      "kind": "sumanBeat",
-      "start": 26.98,
-      "end": 28.19,
-      "cue_ids": [12],
-      "mood": "dark",
-      "chapter": "০৩ প্রশ্ন",
-      "text": "আর সুমন?"
+      "scene_id": "S07",
+      "type": "question",
+      "start_seconds": 40.78,
+      "end_seconds": 46.79,
+      "start_frame": 1223,
+      "duration_in_frames": 181,
+      "srt_cue_ids": [
+        17,
+        18
+      ],
+      "narration": "তাহলে এই ১৩ লাখ টাকার পার্থক্যটা কোথা থেকে এলো? / উত্তরটা কোনো বিনিয়োগ টিপস না।",
+      "visual_data": {
+        "kicker": "খুঁজে দেখুন",
+        "question": "তাহলে এই ১৩ লাখ টাকার পার্থক্যটা কোথা থেকে এলো?",
+        "answer": "উত্তরটা কোনো বিনিয়োগ টিপস নয়",
+        "beats": {
+          "kicker": 17,
+          "question": 17,
+          "answer": 18
+        }
+      },
+      "accent": "#F16B75",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 40.8,
+          "gain": 0.1
+        },
+        {
+          "sound": "pop",
+          "at_seconds": 44.54,
+          "gain": 0.1
+        }
+      ]
     },
     {
-      "id": "P08",
-      "kind": "suman",
-      "start": 28.19,
-      "end": 35.14,
-      "cue_ids": [13, 14],
-      "mood": "dark",
-      "chapter": "০৩ সুমন",
-      "text": "সুমনের অ্যাকাউন্টে আছে মাত্র ৮০,০০০ টাকা। আর মাথার ওপর ৩ লাখ টাকার ক্রেডিট কার্ডের ঋণ।",
-      "visual": "৳ ৮০,০০০ এবং ঋণ ৳ ৩,০০,০০০",
-      "character": "suman"
+      "scene_id": "S08",
+      "type": "question",
+      "start_seconds": 46.79,
+      "end_seconds": 52.09,
+      "start_frame": 1404,
+      "duration_in_frames": 159,
+      "srt_cue_ids": [
+        19,
+        20
+      ],
+      "narration": "কোনো শেয়ার বাজারের গোপন সূত্র না। / উত্তরটা হলো একটি মাত্র অভ্যাস।",
+      "visual_data": {
+        "kicker": "সত্যি কথা",
+        "question": "কোনো শেয়ার বাজারের গোপন সূত্র না।",
+        "answer": "উত্তরটা হলো একটি মাত্র অভ্যাস",
+        "beats": {
+          "kicker": 19,
+          "question": 19,
+          "answer": 20
+        }
+      },
+      "accent": "#19B77A",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 46.81,
+          "gain": 0.1
+        },
+        {
+          "sound": "pop",
+          "at_seconds": 49.54,
+          "gain": 0.1
+        }
+      ]
     },
     {
-      "id": "P09",
-      "kind": "question",
-      "start": 35.14,
-      "end": 44.29,
-      "cue_ids": [15, 16, 17],
-      "mood": "dark",
-      "chapter": "০৪ প্রশ্ন",
-      "text": "এখন প্রশ্ন হলো, দুজনের আয় যদি সমান ছিল, খরচ যদি প্রায় একই ছিল, তাহলে এই ১৩ লাখ টাকার পার্থক্যটা কোথা থেকে এলো?"
+      "scene_id": "S09",
+      "type": "statement",
+      "start_seconds": 52.09,
+      "end_seconds": 59.18,
+      "start_frame": 1563,
+      "duration_in_frames": 212,
+      "srt_cue_ids": [
+        21,
+        22
+      ],
+      "narration": "এমন একটি অভ্যাস, যেটা আপনি আজ রাতে / এই ভিডিও শেষ হওয়ার ১০ মিনিটের মধ্যে শুরু করতে পারবেন।",
+      "visual_data": {
+        "kicker": "সমাধান",
+        "headline": "এমন একটি অভ্যাস, যেটা আপনি আজ রাতেই",
+        "sub": "এই ভিডিও শেষ হওয়ার ১০ মিনিটের মধ্যে শুরু করতে পারবেন।",
+        "beats": {
+          "kicker": 21,
+          "headline": 21,
+          "sub": 22
+        }
+      },
+      "accent": "#398CE5",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 52.11,
+          "gain": 0.1
+        }
+      ]
     },
     {
-      "id": "P10",
-      "kind": "answers",
-      "start": 44.29,
-      "end": 51.96,
-      "cue_ids": [18, 19, 20],
-      "mood": "green",
-      "chapter": "০৫ উত্তর",
-      "text": "উত্তরটা কোনো বিনিয়োগ টিপস না। কোনো শেয়ার বাজারের গোপন সূত্র না। উত্তরটা হলো একটি মাত্র অভ্যাস।"
+      "scene_id": "S10",
+      "type": "habit",
+      "start_seconds": 59.18,
+      "end_seconds": 66.21,
+      "start_frame": 1775,
+      "duration_in_frames": 211,
+      "srt_cue_ids": [
+        23,
+        24,
+        25
+      ],
+      "narration": "কিন্তু একটা সমস্যা। / এই অভ্যাসটা ৯৫% মানুষ জানে। / হ্যাঁ, আপনিও সম্ভবত জানেন।",
+      "visual_data": {
+        "kicker": "কিন্তু একটা সমস্যা",
+        "percent": 95,
+        "headline": "৯৫% মানুষ এই অভ্যাসটা জানে।",
+        "sub": "হ্যাঁ, আপনিও সম্ভবত জানেন।",
+        "cta": "জানা ≠ করা",
+        "beats": {
+          "kicker": 23,
+          "percent": 24,
+          "headline": 24,
+          "sub": 25,
+          "cta": 25
+        }
+      },
+      "accent": "#F16B75",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 59.2,
+          "gain": 0.1
+        },
+        {
+          "sound": "tick",
+          "at_seconds": 60.79,
+          "gain": 0.1
+        },
+        {
+          "sound": "ding",
+          "at_seconds": 64.35,
+          "gain": 0.17
+        }
+      ]
     },
     {
-      "id": "P11",
-      "kind": "habit",
-      "start": 51.96,
-      "end": 59.3,
-      "cue_ids": [21, 22],
-      "mood": "green",
-      "chapter": "০৫ আজ রাতেই",
-      "text": "এমন একটি অভ্যাস, যেটা আপনি আজ রাতে এই ভিডিও শেষ হওয়ার ১০ মিনিটের মধ্যে শুরু করতে পারবেন।"
+      "scene_id": "S11",
+      "type": "statement",
+      "start_seconds": 66.21,
+      "end_seconds": 76.62,
+      "start_frame": 1986,
+      "duration_in_frames": 313,
+      "srt_cue_ids": [
+        26,
+        27,
+        28,
+        29
+      ],
+      "narration": "তবুও করেন না। / কেন করেন না, সেটা বুঝলেই / আপনার ১০ বছরের আর্থিক জীবন পুরোপুরি বদলে যাবে। / আর সেটাই আজকের ভিডিওর আসল রহস্য।",
+      "visual_data": {
+        "kicker": "তবুও করেন না",
+        "headline": "কেন করেন না, সেটা বুঝলেই",
+        "sub": "আপনার ১০ বছরের আর্থিক জীবন বদলে যাবে।",
+        "foot": "আর সেটাই আজকের ভিডিওর আসল রহস্য।",
+        "tone": "dark",
+        "beats": {
+          "kicker": 26,
+          "headline": 27,
+          "sub": 28,
+          "foot": 29
+        }
+      },
+      "accent": "#F16B75",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 66.23,
+          "gain": 0.1
+        },
+        {
+          "sound": "ding",
+          "at_seconds": 67.78,
+          "gain": 0.17
+        }
+      ]
+    },
+    {
+      "scene_id": "S12",
+      "type": "statement",
+      "start_seconds": 76.62,
+      "end_seconds": 86.47,
+      "start_frame": 2299,
+      "duration_in_frames": 295,
+      "srt_cue_ids": [
+        30,
+        31,
+        32,
+        33
+      ],
+      "narration": "আমি জানি, আপনি এখন মনে মনে ভাবছেন, / নিশ্চয়ই এসআইপি (SIP), মিউচুয়াল ফান্ড বা শেয়ার বাজারের কথা বলবে। / তাই না? না। / আজ কোনো বিনিয়োগের কথা বলব না।",
+      "visual_data": {
+        "kicker": "আজকের রহস্য",
+        "headline": "নিশ্চয়ই এসআইপি (SIP), মিউচুয়াল ফান্ড বা শেয়ার বাজারের কথা বলবে।",
+        "sub": "আজ কোনো বিনিয়োগের কথাই বলব না।",
+        "foot": "তাই না? না।",
+        "beats": {
+          "kicker": 30,
+          "headline": 31,
+          "foot": 32,
+          "sub": 33
+        }
+      },
+      "accent": "#F16B75",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 76.64,
+          "gain": 0.1
+        },
+        {
+          "sound": "ding",
+          "at_seconds": 79.34,
+          "gain": 0.17
+        }
+      ]
+    },
+    {
+      "scene_id": "S13",
+      "type": "engine",
+      "start_seconds": 86.47,
+      "end_seconds": 90.62,
+      "start_frame": 2594,
+      "duration_in_frames": 125,
+      "srt_cue_ids": [
+        34,
+        35
+      ],
+      "narration": "কারণ বিনিয়োগ হলো গাড়ির ইঞ্জিন। / ইঞ্জিন যত শক্তিশালীই হোক,",
+      "visual_data": {
+        "kicker": "আসল কথা",
+        "headline": "কারণ বিনিয়োগ হলো গাড়ির ইঞ্জিন।",
+        "sub": "ইঞ্জিন যত শক্তিশালীই হোক,",
+        "leftTitle": "ইঞ্জিন",
+        "leftValue": "বিনিয়োগ",
+        "rightTitle": "তেল",
+        "rightValue": "না থাকলে গাড়ি নড়ে না",
+        "beats": {
+          "kicker": 34,
+          "headline": 34,
+          "left": 34,
+          "sub": 35,
+          "right": 35
+        }
+      },
+      "accent": "#398CE5",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 86.49,
+          "gain": 0.1
+        },
+        {
+          "sound": "swipe",
+          "at_seconds": 89.09,
+          "gain": 0.15
+        }
+      ]
+    },
+    {
+      "scene_id": "S14",
+      "type": "engine",
+      "start_seconds": 90.62,
+      "end_seconds": 95.85,
+      "start_frame": 2719,
+      "duration_in_frames": 157,
+      "srt_cue_ids": [
+        36,
+        37
+      ],
+      "narration": "ফেরারির ইঞ্জিন হোক আর ল্যাম্বরগিনির, / তেল না থাকলে গাড়ি এক ইঞ্চিও নড়বে না।",
+      "visual_data": {
+        "kicker": "তুলনা",
+        "headline": "ফেরারির ইঞ্জিন হোক আর ল্যাম্বরগিনির,",
+        "sub": "তেল না থাকলে গাড়ি এক ইঞ্চিও নড়বে না।",
+        "leftTitle": "ফেরারি",
+        "leftValue": "শক্তিশালী ইঞ্জিন",
+        "rightTitle": "ল্যাম্বরগিনি",
+        "rightValue": "তবু তেল লাগবে",
+        "beats": {
+          "kicker": 36,
+          "headline": 36,
+          "left": 36,
+          "sub": 37,
+          "right": 37
+        }
+      },
+      "accent": "#FFC247",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 90.64,
+          "gain": 0.1
+        },
+        {
+          "sound": "swipe",
+          "at_seconds": 93.01,
+          "gain": 0.15
+        }
+      ]
+    },
+    {
+      "scene_id": "S15",
+      "type": "statement",
+      "start_seconds": 95.85,
+      "end_seconds": 105.08,
+      "start_frame": 2876,
+      "duration_in_frames": 276,
+      "srt_cue_ids": [
+        38,
+        39,
+        40,
+        41
+      ],
+      "narration": "আজকের অভ্যাসটা হলো সেই তেল ভরার অভ্যাস। / এই অভ্যাসটা না থাকলে, / আপনি যতই ভালো শেয়ার কিনুন, যতই সোনা জমান, / যতই রিয়েল এস্টেটে টাকা ঢালুন—",
+      "visual_data": {
+        "kicker": "আজকের অভ্যাস",
+        "headline": "আজকের অভ্যাসটা হলো সেই তেল ভরার অভ্যাস।",
+        "sub": "আপনি যতই ভালো শেয়ার কিনুন, যতই সোনা জমান,",
+        "foot": "এই অভ্যাসটা না থাকলে,",
+        "big": "তেল ছাড়া ইঞ্জিন নয়",
+        "bigLabel": "গাড়ি চলবে না",
+        "tone": "dark",
+        "beats": {
+          "kicker": 38,
+          "headline": 38,
+          "foot": 39,
+          "sub": 40,
+          "big": 41
+        }
+      },
+      "accent": "#19B77A",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 95.87,
+          "gain": 0.1
+        }
+      ]
+    },
+    {
+      "scene_id": "S16",
+      "type": "statement",
+      "start_seconds": 105.08,
+      "end_seconds": 107.93,
+      "start_frame": 3152,
+      "duration_in_frames": 86,
+      "srt_cue_ids": [
+        42
+      ],
+      "narration": "১০ বছর পর সুমনের মতোই থাকবেন।",
+      "visual_data": {
+        "kicker": "১০ বছর পর",
+        "headline": "এই অভ্যাস ছাড়া আপনি সুমনের মতোই থাকবেন",
+        "character": "suman",
+        "tone": "dark",
+        "beats": {
+          "kicker": 42,
+          "headline": 42,
+          "character": 42
+        }
+      },
+      "accent": "#F16B75",
+      "sfx": [
+        {
+          "sound": "whoosh",
+          "at_seconds": 105.1,
+          "gain": 0.17
+        }
+      ]
+    },
+    {
+      "scene_id": "S17",
+      "type": "trap",
+      "start_seconds": 107.93,
+      "end_seconds": 115.04,
+      "start_frame": 3238,
+      "duration_in_frames": 213,
+      "srt_cue_ids": [
+        43,
+        44
+      ],
+      "narration": "৮০,০০০ টাকা আর ৩ লাখ ঋণ। / আর এই অভ্যাসটা শুরু করার আগে আপনাকে একটা কঠিন সত্যি মেনে নিতে হবে।",
+      "visual_data": {
+        "kicker": "কঠিন সত্য",
+        "headline": "৮০,০০০ টাকা আর ৩ লাখ ঋণ।",
+        "steps": [
+          "৮০,০০০ টাকা সঞ্চয়",
+          "৩ লাখ টাকা ঋণ",
+          "১০ বছর পরও একই অবস্থা"
+        ],
+        "mode": "brain",
+        "sub": "আর এই অভ্যাসটা শুরু করার আগে একটা কঠিন সত্যি মেনে নিতে হবে।",
+        "beats": {
+          "kicker": 43,
+          "headline": 43,
+          "step0": 43,
+          "step1": 43,
+          "step2": 44,
+          "sub": 44
+        }
+      },
+      "accent": "#F16B75",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 107.95,
+          "gain": 0.1
+        },
+        {
+          "sound": "click",
+          "at_seconds": 110.97,
+          "gain": 0.09
+        }
+      ]
+    },
+    {
+      "scene_id": "S18",
+      "type": "statement",
+      "start_seconds": 115.04,
+      "end_seconds": 121.81,
+      "start_frame": 3451,
+      "duration_in_frames": 203,
+      "srt_cue_ids": [
+        45,
+        46
+      ],
+      "narration": "সত্যিটা হলো, আপনি এখন যেভাবে টাকা ম্যানেজ করছেন, সেটা ভুল। / আমি জানি কথাটা শুনতে খারাপ লাগছে।",
+      "visual_data": {
+        "kicker": "সত্যি কথা",
+        "headline": "সত্যিটা হলো, আপনি এখন যেভাবে টাকা ম্যানেজ করছেন — সেটা ভুল।",
+        "sub": "আমি জানি, কথাটা শুনতে খারাপ লাগছে।",
+        "tone": "dark",
+        "beats": {
+          "kicker": 45,
+          "headline": 45,
+          "sub": 46
+        }
+      },
+      "accent": "#F16B75",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 115.06,
+          "gain": 0.1
+        }
+      ]
+    },
+    {
+      "scene_id": "S19",
+      "type": "quote",
+      "start_seconds": 121.81,
+      "end_seconds": 127.69,
+      "start_frame": 3654,
+      "duration_in_frames": 177,
+      "srt_cue_ids": [
+        47,
+        48,
+        49
+      ],
+      "narration": "আপনি হয়তো ভাবছেন, / “আমি তো ঠিকই চালাচ্ছি। / মাস শেষে টাকাও তো থাকে।”",
+      "visual_data": {
+        "kicker": "আপনি হয়তো ভাবছেন",
+        "quote": "“আমি তো ঠিকই চালাচ্ছি।",
+        "sub": "মাস শেষে টাকাও তো থাকে।”",
+        "beats": {
+          "kicker": 47,
+          "quote": 48,
+          "sub": 49
+        }
+      },
+      "accent": "#FFC247",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 121.83,
+          "gain": 0.1
+        },
+        {
+          "sound": "ding",
+          "at_seconds": 125.03,
+          "gain": 0.17
+        }
+      ]
+    },
+    {
+      "scene_id": "S20",
+      "type": "statement",
+      "start_seconds": 127.69,
+      "end_seconds": 135.17,
+      "start_frame": 3831,
+      "duration_in_frames": 224,
+      "srt_cue_ids": [
+        50,
+        51,
+        52
+      ],
+      "narration": "কিন্তু পরের ৬০ সেকেন্ডে আমি আপনাকে প্রমাণ করে দেখাব / আপনার টাকা কোথায় যাচ্ছে। / আর আপনি নিজেই অবাক হয়ে যাবেন।",
+      "visual_data": {
+        "kicker": "পরের ৬০ সেকেন্ড",
+        "headline": "আমি আপনাকে প্রমাণ করে দেখাব",
+        "sub": "আপনার টাকা কোথায় যাচ্ছে।",
+        "foot": "আর আপনি নিজেই অবাক হয়ে যাবেন।",
+        "beats": {
+          "kicker": 50,
+          "headline": 50,
+          "sub": 51,
+          "foot": 52
+        }
+      },
+      "accent": "#398CE5",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 127.71,
+          "gain": 0.1
+        }
+      ]
+    },
+    {
+      "scene_id": "S21",
+      "type": "ledger",
+      "start_seconds": 135.17,
+      "end_seconds": 138.99,
+      "start_frame": 4055,
+      "duration_in_frames": 115,
+      "srt_cue_ids": [
+        53
+      ],
+      "narration": "চলুন, সুমনের একটা মাসের পুরো হিসাব দেখি।",
+      "visual_data": {
+        "kicker": "সুমনের মাস",
+        "headline": "চলুন, সুমনের একটা মাসের পুরো হিসাব দেখি।",
+        "rows": [],
+        "remainingLabel": "হাতে থাকল",
+        "salaryLabel": "বেতন এলো",
+        "beats": {
+          "kicker": 53,
+          "headline": 53,
+          "book": 53
+        }
+      },
+      "accent": "#F16B75",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 135.19,
+          "gain": 0.1
+        }
+      ]
+    },
+    {
+      "scene_id": "S22",
+      "type": "ledger",
+      "start_seconds": 138.99,
+      "end_seconds": 147.49,
+      "start_frame": 4170,
+      "duration_in_frames": 255,
+      "srt_cue_ids": [
+        54,
+        55,
+        56
+      ],
+      "narration": "মাসের ১ তারিখ। / বেতন এলো ৩০,০০০ টাকা। / সুমন খুশি। মাসের শুরু, পকেটে টাকা।",
+      "visual_data": {
+        "kicker": "মাসের ১ তারিখ",
+        "headline": "বেতন এলো ৩০,০০০ টাকা।",
+        "rows": [],
+        "remainingLabel": "পকেতে টাকা",
+        "salaryLabel": "বেতন এলো",
+        "salary": "৳ ৩০,০০০",
+        "remaining": "৳ ৩০,০০০",
+        "beats": {
+          "kicker": 54,
+          "headline": 55,
+          "salary": 55,
+          "remainingLabel": 56,
+          "remaining": 56
+        }
+      },
+      "accent": "#19B77A",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 139.01,
+          "gain": 0.1
+        },
+        {
+          "sound": "coin",
+          "at_seconds": 143.76,
+          "gain": 0.16
+        }
+      ]
+    },
+    {
+      "scene_id": "S23",
+      "type": "ledger",
+      "start_seconds": 147.49,
+      "end_seconds": 152.76,
+      "start_frame": 4425,
+      "duration_in_frames": 158,
+      "srt_cue_ids": [
+        57,
+        58,
+        59
+      ],
+      "narration": "এবার কী করল সুমন? / ভাড়া দিল ৮,০০০। / খাবার ৬,০০০।",
+      "visual_data": {
+        "kicker": "খরচ শুরু",
+        "headline": "এবার কী করল সুমন?",
+        "rows": [
+          {
+            "label": "ভাড়া",
+            "value": "৮,০০০"
+          },
+          {
+            "label": "খাবার",
+            "value": "৬,০০০"
+          }
+        ],
+        "remainingLabel": "এখনো হাতে",
+        "salaryLabel": "বেতন এলো",
+        "salary": "৳ ৩০,০০০",
+        "remaining": "৳ ১৬,০০০",
+        "beats": {
+          "kicker": 57,
+          "headline": 57,
+          "salary": 57,
+          "row0": 58,
+          "row1": 59,
+          "remaining": 59
+        }
+      },
+      "accent": "#F16B75",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 147.51,
+          "gain": 0.1
+        },
+        {
+          "sound": "click",
+          "at_seconds": 149.3,
+          "gain": 0.09
+        },
+        {
+          "sound": "click",
+          "at_seconds": 151.18,
+          "gain": 0.09
+        }
+      ]
+    },
+    {
+      "scene_id": "S24",
+      "type": "ledger",
+      "start_seconds": 152.76,
+      "end_seconds": 160.89,
+      "start_frame": 4583,
+      "duration_in_frames": 244,
+      "srt_cue_ids": [
+        60,
+        61,
+        62
+      ],
+      "narration": "যাতায়াত ৩,০০০। / মোবাইল আর ইন্টারনেট বিল ১,০০০। / বন্ধুদের সাথে আড্ডা আর রেস্টুরেন্ট ৩,০০০।",
+      "visual_data": {
+        "kicker": "খরচ চলছে",
+        "headline": "যাতায়াত ৩,০০০।",
+        "rows": [
+          {
+            "label": "মোবাইল + ইন্টারনেট",
+            "value": "১,০০০"
+          },
+          {
+            "label": "আড্ডা + রেস্টুরেন্ট",
+            "value": "৩,০০০"
+          }
+        ],
+        "remainingLabel": "বাকি আছে",
+        "salaryLabel": "বেতন এলো",
+        "salary": "৳ ৩০,০০০",
+        "remaining": "৳ ৯,০০০",
+        "beats": {
+          "kicker": 60,
+          "headline": 60,
+          "salary": 60,
+          "row0": 61,
+          "row1": 62,
+          "remaining": 62
+        }
+      },
+      "accent": "#F16B75",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 152.78,
+          "gain": 0.1
+        },
+        {
+          "sound": "click",
+          "at_seconds": 154.77,
+          "gain": 0.09
+        },
+        {
+          "sound": "click",
+          "at_seconds": 157.6,
+          "gain": 0.09
+        }
+      ]
+    },
+    {
+      "scene_id": "S25",
+      "type": "ledger",
+      "start_seconds": 160.89,
+      "end_seconds": 169.48,
+      "start_frame": 4827,
+      "duration_in_frames": 257,
+      "srt_cue_ids": [
+        63,
+        64,
+        65,
+        66
+      ],
+      "narration": "নতুন জামাকাপড় ২,০০০। / অনলাইনে অর্ডার ২,০০০। / মাসের ২৫ তারিখ। / হাতে থাকল ৫,০০০ টাকা।",
+      "visual_data": {
+        "kicker": "আরও খরচ",
+        "headline": "নতুন জামাকাপড় ২,০০০।",
+        "rows": [
+          {
+            "label": "অনলাইন অর্ডার",
+            "value": "২,০০০"
+          }
+        ],
+        "remainingLabel": "মাসের ২৫ তারিখে",
+        "salaryLabel": "বেতন এলো",
+        "salary": "৳ ৩০,০০০",
+        "remaining": "৳ ৫,০০০",
+        "beats": {
+          "kicker": 63,
+          "headline": 63,
+          "salary": 63,
+          "row0": 64,
+          "remainingLabel": 65,
+          "remaining": 66
+        }
+      },
+      "accent": "#F16B75",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 160.91,
+          "gain": 0.1
+        },
+        {
+          "sound": "click",
+          "at_seconds": 163.61,
+          "gain": 0.09
+        },
+        {
+          "sound": "coin",
+          "at_seconds": 167.69,
+          "gain": 0.16
+        }
+      ]
+    },
+    {
+      "scene_id": "S26",
+      "type": "ledger",
+      "start_seconds": 169.48,
+      "end_seconds": 173.0,
+      "start_frame": 5084,
+      "duration_in_frames": 106,
+      "srt_cue_ids": [
+        67
+      ],
+      "narration": "সুমন ভাবল, “ঠিক আছে, এই ৫,০০০ টাকা জমিয়ে রাখি।”",
+      "visual_data": {
+        "kicker": "শেষ ভরসা",
+        "headline": "সুমন ভাবল — এই ৫,০০০ টাকা জমিয়ে রাখি।",
+        "rows": [],
+        "remainingLabel": "হাতে আছে",
+        "salaryLabel": "বেতন এলো",
+        "salary": "৳ ৫,০০০",
+        "remaining": "৳ ৫,০০০",
+        "beats": {
+          "kicker": 67,
+          "headline": 67,
+          "salary": 67,
+          "remaining": 67,
+          "book": 67
+        }
+      },
+      "accent": "#FFC247",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 169.5,
+          "gain": 0.1
+        }
+      ]
+    },
+    {
+      "scene_id": "S27",
+      "type": "trap",
+      "start_seconds": 173.0,
+      "end_seconds": 179.14,
+      "start_frame": 5190,
+      "duration_in_frames": 184,
+      "srt_cue_ids": [
+        68,
+        69
+      ],
+      "narration": "কিন্তু... / মাসের ২৭ তারিখে হঠাৎ ফোনটা হাত থেকে পড়ে স্ক্রিন ভেঙে গেল।",
+      "visual_data": {
+        "kicker": "কিন্তু...",
+        "headline": "মাসের ২৭ তারিখে হঠাৎ ফোনটা হাত থেকে পড়ে স্ক্রিন ভেঙে গেল।",
+        "steps": [
+          "ফোন পড়ে গেল",
+          "স্ক্রিন ভেঙে গেল",
+          "পরিকল্পনা ছিল না"
+        ],
+        "mode": "brain",
+        "beats": {
+          "kicker": 68,
+          "headline": 69,
+          "step0": 69,
+          "step1": 69,
+          "step2": 69
+        }
+      },
+      "accent": "#F16B75",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 173.02,
+          "gain": 0.1
+        },
+        {
+          "sound": "click",
+          "at_seconds": 175.02,
+          "gain": 0.09
+        }
+      ]
+    },
+    {
+      "scene_id": "S28",
+      "type": "ledger",
+      "start_seconds": 179.14,
+      "end_seconds": 185.14,
+      "start_frame": 5374,
+      "duration_in_frames": 180,
+      "srt_cue_ids": [
+        70,
+        71
+      ],
+      "narration": "রিপেয়ারে গেল ৩,০০০ টাকা। / বাকি ২,০০০ দিয়ে মাসের শেষে বন্ধুর জন্মদিনের পার্টিতে গেল।",
+      "visual_data": {
+        "kicker": "শেষ ফল",
+        "headline": "রিপেয়ারে গেল ৩,০০০ টাকা।",
+        "rows": [
+          {
+            "label": "জন্মদিনের পার্টি",
+            "value": "২,০০০"
+          }
+        ],
+        "remainingLabel": "মাস শেষে",
+        "salaryLabel": "বেতন এলো",
+        "salary": "৳ ৩০,০০০",
+        "remaining": "৳ ০",
+        "beats": {
+          "kicker": 70,
+          "headline": 70,
+          "salary": 70,
+          "row0": 71,
+          "remaining": 71
+        }
+      },
+      "accent": "#F16B75",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 179.16,
+          "gain": 0.1
+        },
+        {
+          "sound": "click",
+          "at_seconds": 181.53,
+          "gain": 0.09
+        }
+      ]
+    },
+    {
+      "scene_id": "S29",
+      "type": "statement",
+      "start_seconds": 185.14,
+      "end_seconds": 193.69,
+      "start_frame": 5554,
+      "duration_in_frames": 257,
+      "srt_cue_ids": [
+        72,
+        73,
+        74,
+        75
+      ],
+      "narration": "শূন্য। / প্রতি মাসে শূন্য। / ১২ মাসে শূন্য। / ১০ বছরে শূন্য।",
+      "visual_data": {
+        "kicker": "শূন্য",
+        "headline": "প্রতি মাসে শূন্য।",
+        "sub": "১০ বছরে শূন্য।",
+        "foot": "১২ মাসে শূন্য।",
+        "sideNote": "১০ বছরে শূন্য",
+        "tone": "dark",
+        "beats": {
+          "kicker": 72,
+          "headline": 73,
+          "foot": 74,
+          "sub": 75,
+          "side": 75
+        }
+      },
+      "accent": "#F16B75",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 185.16,
+          "gain": 0.1
+        },
+        {
+          "sound": "ding",
+          "at_seconds": 186.88,
+          "gain": 0.17
+        }
+      ]
+    },
+    {
+      "scene_id": "S30",
+      "type": "compare",
+      "start_seconds": 193.69,
+      "end_seconds": 199.35,
+      "start_frame": 5811,
+      "duration_in_frames": 169,
+      "srt_cue_ids": [
+        76,
+        77
+      ],
+      "narration": "এখন রাকিবের দিকে তাকান। / রাকিবের আয়ও ৩০,০০০, খরচও প্রায় একই।",
+      "visual_data": {
+        "kicker": "১০ বছর পর",
+        "headline": "এখন রাকিবের দিকে তাকান।",
+        "left": {
+          "name": "রাকিব",
+          "value": "৳ ১৪,০০,০০০",
+          "note": "আয় ৳ ৩০,০০০, খরচ প্রায় একই",
+          "color": "#19B77A",
+          "mood": "happy"
+        },
+        "right": {
+          "name": "সুমন",
+          "value": "৳ ০",
+          "note": "১০ বছরে সঞ্চয়",
+          "color": "#F16B75",
+          "mood": "worried"
+        },
+        "chip": "পার্থক্য কোথায়?",
+        "beats": {
+          "kicker": 76,
+          "headline": 76,
+          "left": 76,
+          "right": 77,
+          "chip": 77
+        }
+      },
+      "accent": "#19B77A",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 193.71,
+          "gain": 0.1
+        },
+        {
+          "sound": "ding",
+          "at_seconds": 195.86,
+          "gain": 0.17
+        }
+      ]
+    },
+    {
+      "scene_id": "S31",
+      "type": "statement",
+      "start_seconds": 199.35,
+      "end_seconds": 204.94,
+      "start_frame": 5980,
+      "duration_in_frames": 168,
+      "srt_cue_ids": [
+        78,
+        79
+      ],
+      "narration": "কিন্তু রাকিব মাসের ১ তারিখে বেতন আসার / মাত্র ১০ মিনিটের মধ্যে একটা কাজ করে।",
+      "visual_data": {
+        "kicker": "রাকিবের নিয়ম",
+        "headline": "মাসের ১ তারিখে বেতন আসার",
+        "sub": "মাত্র ১০ মিনিটের মধ্যে একটা কাজ করে।",
+        "character": "rakib",
+        "beats": {
+          "kicker": 78,
+          "headline": 78,
+          "sub": 79,
+          "character": 79
+        }
+      },
+      "accent": "#19B77A",
+      "sfx": [
+        {
+          "sound": "whoosh",
+          "at_seconds": 199.37,
+          "gain": 0.17
+        }
+      ]
+    },
+    {
+      "scene_id": "S32",
+      "type": "growth",
+      "start_seconds": 204.94,
+      "end_seconds": 212.36,
+      "start_frame": 6148,
+      "duration_in_frames": 223,
+      "srt_cue_ids": [
+        80,
+        81
+      ],
+      "narration": "আর এই ১০ মিনিটের কাজটাই ১০ বছরে তাকে ১৪ লাখ টাকা এনে দিয়েছে। / কিন্তু কী সেই ১০ মিনিটের কাজ?",
+      "visual_data": {
+        "kicker": "১০ মিনিটের কাজ",
+        "headline": "আর এই ১০ মিনিটের কাজটাই ১০ বছরে তাকে ১৪ লাখ টাকা এনে দিয়েছে।",
+        "total": "১৪,০০,০০০",
+        "extra": "কিন্তু কী সেই ১০ মিনিটের কাজ?",
+        "beats": {
+          "kicker": 80,
+          "headline": 80,
+          "total": 80,
+          "extra": 81
+        }
+      },
+      "accent": "#19B77A",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 204.96,
+          "gain": 0.1
+        }
+      ]
+    },
+    {
+      "scene_id": "S33",
+      "type": "question",
+      "start_seconds": 212.36,
+      "end_seconds": 220.22,
+      "start_frame": 6371,
+      "duration_in_frames": 236,
+      "srt_cue_ids": [
+        82,
+        83,
+        84
+      ],
+      "narration": "সেটা বলার আগে আপনাকে একটা জিনিস বুঝতে হবে— / কেন সুমনের মতো মানুষ প্রতি মাসে শূন্য হয়ে যায়, / অথচ তার আয় তো কম না?",
+      "visual_data": {
+        "kicker": "আগে বুঝুন",
+        "question": "কেন সুমনের মতো মানুষ প্রতি মাসে শূন্য হয়ে যায়,",
+        "answer": "অথচ তার আয় তো কম না?",
+        "beats": {
+          "kicker": 82,
+          "question": 83,
+          "answer": 84
+        }
+      },
+      "accent": "#F16B75",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 212.38,
+          "gain": 0.1
+        },
+        {
+          "sound": "tick",
+          "at_seconds": 215.13,
+          "gain": 0.1
+        },
+        {
+          "sound": "pop",
+          "at_seconds": 218.01,
+          "gain": 0.1
+        }
+      ]
+    },
+    {
+      "scene_id": "S34",
+      "type": "question",
+      "start_seconds": 220.22,
+      "end_seconds": 226.72,
+      "start_frame": 6607,
+      "duration_in_frames": 195,
+      "srt_cue_ids": [
+        85,
+        86,
+        87
+      ],
+      "narration": "সমস্যাটা কোথায়? / সমস্যাটা সুমনের আয়ে না। / সমস্যাটা সুমনের বেতনেও না।",
+      "visual_data": {
+        "kicker": "সমস্যা কোথায়?",
+        "question": "সমস্যাটা সুমনের আয়ে না।",
+        "answer": "সমস্যাটা সুমনের বেতনেও না।",
+        "beats": {
+          "kicker": 85,
+          "question": 86,
+          "answer": 87
+        }
+      },
+      "accent": "#FFC247",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 220.24,
+          "gain": 0.1
+        },
+        {
+          "sound": "tick",
+          "at_seconds": 222.19,
+          "gain": 0.1
+        },
+        {
+          "sound": "pop",
+          "at_seconds": 224.41,
+          "gain": 0.1
+        }
+      ]
+    },
+    {
+      "scene_id": "S35",
+      "type": "sequence",
+      "start_seconds": 226.72,
+      "end_seconds": 232.23,
+      "start_frame": 6802,
+      "duration_in_frames": 165,
+      "srt_cue_ids": [
+        88,
+        89
+      ],
+      "narration": "সমস্যাটা হলো সুমনের সিকোয়েন্সে। / মানে টাকা খরচের ক্রমে।",
+      "visual_data": {
+        "kicker": "সিকোয়েন্স",
+        "headline": "সমস্যাটা হলো সুমনের সিকোয়েন্সে।",
+        "steps": [],
+        "outcome": "মানে টাকা খরচের ক্রমে।",
+        "character": "suman",
+        "beats": {
+          "kicker": 88,
+          "headline": 88,
+          "outcome": 89
+        }
+      },
+      "accent": "#FFC247",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 226.74,
+          "gain": 0.1
+        },
+        {
+          "sound": "coin",
+          "at_seconds": 229.88,
+          "gain": 0.16
+        }
+      ]
+    },
+    {
+      "scene_id": "S36",
+      "type": "sequence",
+      "start_seconds": 232.23,
+      "end_seconds": 239.69,
+      "start_frame": 6967,
+      "duration_in_frames": 224,
+      "srt_cue_ids": [
+        90,
+        91,
+        92
+      ],
+      "narration": "সুমন কী করে? / সুমন প্রথমে আয় করে, তারপর খরচ করে, / তারপর যা থাকে জমায়।",
+      "visual_data": {
+        "kicker": "সুমন কী করে?",
+        "headline": "সুমন প্রথমে আয় করে, তারপর খরচ করে,",
+        "steps": [
+          "আয়",
+          "খরচ",
+          "যা থাকে জমা"
+        ],
+        "character": "suman",
+        "beats": {
+          "kicker": 90,
+          "headline": 91,
+          "step0": 91,
+          "step1": 91,
+          "step2": 92
+        }
+      },
+      "accent": "#F16B75",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 232.25,
+          "gain": 0.1
+        },
+        {
+          "sound": "pop",
+          "at_seconds": 233.87,
+          "gain": 0.1
+        },
+        {
+          "sound": "pop",
+          "at_seconds": 237.19,
+          "gain": 0.1
+        }
+      ]
+    },
+    {
+      "scene_id": "S37",
+      "type": "sequence",
+      "start_seconds": 239.69,
+      "end_seconds": 248.06,
+      "start_frame": 7191,
+      "duration_in_frames": 251,
+      "srt_cue_ids": [
+        93,
+        94,
+        95,
+        96
+      ],
+      "narration": "আর রাকিব কী করে? / রাকিব প্রথমে আয় করে, / তারপর নিজেকে আগে টাকা দেয়। / তারপর বাকি টাকা দিয়ে খরচ করে।",
+      "visual_data": {
+        "kicker": "রাকিব কী করে?",
+        "headline": "রাকিব প্রথমে আয় করে,",
+        "steps": [
+          "আয়",
+          "নিজেকে আগে",
+          "বাকি দিয়ে খরচ"
+        ],
+        "character": "rakib",
+        "beats": {
+          "kicker": 93,
+          "headline": 94,
+          "step0": 94,
+          "step1": 95,
+          "step2": 96
+        }
+      },
+      "accent": "#19B77A",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 239.71,
+          "gain": 0.1
+        },
+        {
+          "sound": "pop",
+          "at_seconds": 241.57,
+          "gain": 0.1
+        },
+        {
+          "sound": "pop",
+          "at_seconds": 243.25,
+          "gain": 0.1
+        },
+        {
+          "sound": "pop",
+          "at_seconds": 245.71,
+          "gain": 0.1
+        }
+      ]
+    },
+    {
+      "scene_id": "S38",
+      "type": "statement",
+      "start_seconds": 248.06,
+      "end_seconds": 255.87,
+      "start_frame": 7442,
+      "duration_in_frames": 234,
+      "srt_cue_ids": [
+        97,
+        98,
+        99
+      ],
+      "narration": "এটাই সেই একটা অভ্যাস। / ইংরেজিতে বলে ‘Pay Yourself First’। / বাংলায় বলি— নিজেকে আগে টাকা দিন।",
+      "visual_data": {
+        "kicker": "এটাই অভ্যাস",
+        "headline": "ইংরেজিতে বলে ‘Pay Yourself First’।",
+        "sub": "বাংলায় বলি — নিজেকে আগে টাকা দিন।",
+        "big": "PYF",
+        "bigLabel": "একটি লাইন, ১০ বছরের ফল",
+        "tone": "dark",
+        "beats": {
+          "kicker": 97,
+          "headline": 98,
+          "big": 98,
+          "side": 98,
+          "sub": 99
+        }
+      },
+      "accent": "#FFC247",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 248.08,
+          "gain": 0.1
+        },
+        {
+          "sound": "ding",
+          "at_seconds": 250.0,
+          "gain": 0.17
+        }
+      ]
+    },
+    {
+      "scene_id": "S39",
+      "type": "statement",
+      "start_seconds": 255.87,
+      "end_seconds": 259.6,
+      "start_frame": 7676,
+      "duration_in_frames": 112,
+      "srt_cue_ids": [
+        100,
+        101
+      ],
+      "narration": "মানে কী? / মানে হলো, বেতন আসার সাথে সাথে",
+      "visual_data": {
+        "kicker": "মানে কী?",
+        "headline": "মানে হলো, বেতন আসার সাথে সাথে",
+        "beats": {
+          "kicker": 100,
+          "headline": 101
+        }
+      },
+      "accent": "#19B77A",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 255.89,
+          "gain": 0.1
+        },
+        {
+          "sound": "ding",
+          "at_seconds": 257.28,
+          "gain": 0.17
+        }
+      ]
+    },
+    {
+      "scene_id": "S40",
+      "type": "rule",
+      "start_seconds": 259.6,
+      "end_seconds": 269.26,
+      "start_frame": 7788,
+      "duration_in_frames": 290,
+      "srt_cue_ids": [
+        102,
+        103,
+        104
+      ],
+      "narration": "কোনো খরচ করার আগে, / আপনার আয়ের অন্তত ২০ শতাংশ আলাদা করে একটা বিনিয়োগ অ্যাকাউন্টে পাঠিয়ে দিন। / তারপর বাকি ৮০ শতাংশ দিয়ে মাস চালান।",
+      "visual_data": {
+        "kicker": "২০/৮০ নিয়ম",
+        "headline": "আপনার আয়ের অন্তত ২০ শতাংশ আলাদা করে বিনিয়োগ অ্যাকাউন্টে পাঠিয়ে দিন।",
+        "percent": 20,
+        "leftLabel": "বিনিয়োগ",
+        "rightLabel": "মাসের খরচ",
+        "sub": "তারপর বাকি ৮০ শতাংশ দিয়ে মাস চালান।",
+        "beats": {
+          "kicker": 102,
+          "headline": 103,
+          "bar": 103,
+          "sub": 104
+        }
+      },
+      "accent": "#19B77A",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 259.62,
+          "gain": 0.1
+        },
+        {
+          "sound": "swipe",
+          "at_seconds": 261.11,
+          "gain": 0.15
+        }
+      ]
+    },
+    {
+      "scene_id": "S41",
+      "type": "compare",
+      "start_seconds": 269.26,
+      "end_seconds": 277.97,
+      "start_frame": 8078,
+      "duration_in_frames": 261,
+      "srt_cue_ids": [
+        105,
+        106,
+        107
+      ],
+      "narration": "পার্থক্যটা বুঝছেন? / সুমন ভাবে— খরচের পর যা থাকবে, জমাব। / রাকিব ভাবে— জমানোর পর যা থাকবে, খরচ করব।",
+      "visual_data": {
+        "kicker": "পার্থক্যটা বুঝছেন?",
+        "headline": "সুমন ভাবে — খরচের পর যা থাকবে, জমাব।",
+        "left": {
+          "name": "সুমন",
+          "value": "খরচ → জমানো",
+          "note": "খরচের পরে যা থাকে",
+          "color": "#19B77A",
+          "mood": "happy"
+        },
+        "right": {
+          "name": "রাকিব",
+          "value": "জমানো → খরচ",
+          "note": "জমানোর পরে যা থাকে",
+          "color": "#F16B75",
+          "mood": "worried"
+        },
+        "beats": {
+          "kicker": 105,
+          "headline": 106,
+          "left": 106,
+          "right": 107
+        }
+      },
+      "accent": "#FFC247",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 269.28,
+          "gain": 0.1
+        },
+        {
+          "sound": "swipe",
+          "at_seconds": 274.2,
+          "gain": 0.15
+        }
+      ]
+    },
+    {
+      "scene_id": "S42",
+      "type": "statement",
+      "start_seconds": 277.97,
+      "end_seconds": 284.67,
+      "start_frame": 8339,
+      "duration_in_frames": 201,
+      "srt_cue_ids": [
+        108,
+        109
+      ],
+      "narration": "এই এক লাইনের পার্থক্য। / কিন্তু এই এক লাইন ১০ বছরে ১৩ লাখ টাকার পার্থক্য তৈরি করে।",
+      "visual_data": {
+        "kicker": "এক লাইন",
+        "headline": "এই এক লাইনের পার্থক্য।",
+        "sub": "এই এক লাইন ১০ বছরে ১৩ লাখ টাকার পার্থক্য তৈরি করে।",
+        "big": "১৩ লাখ",
+        "bigLabel": "পার্থক্য",
+        "beats": {
+          "kicker": 108,
+          "headline": 108,
+          "sub": 109,
+          "big": 109,
+          "side": 109
+        }
+      },
+      "accent": "#19B77A",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 277.99,
+          "gain": 0.1
+        }
+      ]
+    },
+    {
+      "scene_id": "S43",
+      "type": "question",
+      "start_seconds": 284.67,
+      "end_seconds": 296.03,
+      "start_frame": 8540,
+      "duration_in_frames": 341,
+      "srt_cue_ids": [
+        110,
+        111,
+        112,
+        113
+      ],
+      "narration": "কিন্তু এখানেই একটা বড় প্রশ্ন উঠছে। / আপনি হয়তো এখন ভাবছেন, / “ভাই, আমার তো ৩০,০০০-এর মধ্যে ২৫,০০০ খরচ হয়েই যায়। / ২০ শতাংশ আলাদা করলে তো মাস চালাতে পারব না।”",
+      "visual_data": {
+        "kicker": "বড় প্রশ্ন",
+        "question": "“ভাই, আমার তো ৩০,০০০-এর মধ্যে ২৫,০০০ খরচ হয়েই যায়।",
+        "answer": "২০ শতাংশ আলাদা করলে তো মাস চালাতে পারব না।”",
+        "note": "আপনি হয়তো এখন ভাবছেন,",
+        "beats": {
+          "kicker": 110,
+          "note": 111,
+          "question": 112,
+          "answer": 113
+        }
+      },
+      "accent": "#F16B75",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 284.69,
+          "gain": 0.1
+        },
+        {
+          "sound": "tick",
+          "at_seconds": 288.87,
+          "gain": 0.1
+        },
+        {
+          "sound": "pop",
+          "at_seconds": 292.93,
+          "gain": 0.1
+        }
+      ]
+    },
+    {
+      "scene_id": "S44",
+      "type": "question",
+      "start_seconds": 296.03,
+      "end_seconds": 301.53,
+      "start_frame": 8881,
+      "duration_in_frames": 165,
+      "srt_cue_ids": [
+        114,
+        115
+      ],
+      "narration": "এই প্রশ্নটা একদম সঠিক। / আর এই প্রশ্নের উত্তরেই লুকিয়ে আছে আসল ট্রিকটা।",
+      "visual_data": {
+        "kicker": "স্বীকার করুন",
+        "question": "এই প্রশ্নটা একদম সঠিক।",
+        "answer": "আর এই প্রশ্নের উত্তরেই লুকিয়ে আছে আসল ট্রিকটা।",
+        "beats": {
+          "kicker": 114,
+          "question": 114,
+          "answer": 115
+        }
+      },
+      "accent": "#FFC247",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 296.05,
+          "gain": 0.1
+        },
+        {
+          "sound": "pop",
+          "at_seconds": 297.45,
+          "gain": 0.1
+        }
+      ]
+    },
+    {
+      "scene_id": "S45",
+      "type": "statement",
+      "start_seconds": 301.53,
+      "end_seconds": 308.11,
+      "start_frame": 9046,
+      "duration_in_frames": 197,
+      "srt_cue_ids": [
+        116,
+        117,
+        118
+      ],
+      "narration": "আমি আপনাকে মিথ্যা বলব না। / ২০ শতাংশ দিয়ে শুরু করা কঠিন। / বিশেষ করে যদি আপনার আয় কম হয়।",
+      "visual_data": {
+        "kicker": "মিথ্যা বলব না",
+        "headline": "২০ শতাংশ দিয়ে শুরু করা কঠিন।",
+        "sub": "বিশেষ করে যদি আপনার আয় কম হয়।",
+        "big": "২০%",
+        "bigLabel": "দিয়ে শুরু করা কঠিন",
+        "tone": "dark",
+        "beats": {
+          "kicker": 116,
+          "headline": 117,
+          "sub": 118,
+          "big": 118
+        }
+      },
+      "accent": "#F16B75",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 301.55,
+          "gain": 0.1
+        },
+        {
+          "sound": "ding",
+          "at_seconds": 303.12,
+          "gain": 0.17
+        }
+      ]
+    },
+    {
+      "scene_id": "S46",
+      "type": "tiers",
+      "start_seconds": 308.11,
+      "end_seconds": 313.73,
+      "start_frame": 9243,
+      "duration_in_frames": 169,
+      "srt_cue_ids": [
+        119,
+        120
+      ],
+      "narration": "তাই আমি আপনাকে একটা তিন স্তরের ফর্মুলা দিচ্ছি, / যেটা যেকোনো আয়ের মানুষ ব্যবহার করতে পারবে।",
+      "visual_data": {
+        "kicker": "তিন স্তরের ফর্মুলা",
+        "headline": "তাই আমি আপনাকে একটা তিন স্তরের ফর্মুলা দিচ্ছি,",
+        "tiers": [
+          {
+            "title": "স্তর ১",
+            "pct": "১০%",
+            "amount": "৩,০০০",
+            "note": "প্রথম ৩ মাস"
+          },
+          {
+            "title": "স্তর ২",
+            "pct": "১৫%",
+            "amount": "৪,৫০০",
+            "note": "৪–৬ মাস"
+          },
+          {
+            "title": "স্তর ৩",
+            "pct": "২০%",
+            "amount": "৬,০০০",
+            "note": "৭ মাস থেকে"
+          }
+        ],
+        "active": -1,
+        "sub": "যেকোনো আয়ের মানুষ ব্যবহার করতে পারবে।",
+        "beats": {
+          "kicker": 119,
+          "headline": 119,
+          "tier0": 119,
+          "tier1": 120,
+          "tier2": 120,
+          "sub": 120
+        }
+      },
+      "accent": "#FFC247",
+      "sfx": [
+        {
+          "sound": "whoosh",
+          "at_seconds": 308.13,
+          "gain": 0.17
+        }
+      ]
+    },
+    {
+      "scene_id": "S47",
+      "type": "tiers",
+      "start_seconds": 313.73,
+      "end_seconds": 320.82,
+      "start_frame": 9412,
+      "duration_in_frames": 213,
+      "srt_cue_ids": [
+        121,
+        122,
+        123
+      ],
+      "narration": "স্তর ১: প্রথম তিন মাস। / মাত্র ১০ শতাংশ দিয়ে শুরু করুন। / হ্যাঁ, মাত্র ৩,০০০ টাকা।",
+      "visual_data": {
+        "kicker": "স্তর ১",
+        "headline": "স্তর ১: প্রথম তিন মাস।",
+        "tiers": [
+          {
+            "title": "স্তর ১",
+            "pct": "১০%",
+            "amount": "৩,০০০",
+            "note": "প্রথম ৩ মাস"
+          },
+          {
+            "title": "স্তর ২",
+            "pct": "১৫%",
+            "amount": "৪,৫০০",
+            "note": "৪–৬ মাস"
+          },
+          {
+            "title": "স্তর ৩",
+            "pct": "২০%",
+            "amount": "৬,০০০",
+            "note": "৭ মাস থেকে"
+          }
+        ],
+        "active": 0,
+        "sub": "মাত্র ১০ শতাংশ দিয়ে শুরু করুন।",
+        "note": "হ্যাঁ, মাত্র ৩,০০০ টাকা।",
+        "beats": {
+          "kicker": 121,
+          "headline": 121,
+          "tier0": 121,
+          "tier1": 121,
+          "tier2": 121,
+          "sub": 122,
+          "note": 123
+        }
+      },
+      "accent": "#19B77A",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 313.75,
+          "gain": 0.1
+        }
+      ]
+    },
+    {
+      "scene_id": "S48",
+      "type": "statement",
+      "start_seconds": 320.82,
+      "end_seconds": 327.18,
+      "start_frame": 9625,
+      "duration_in_frames": 190,
+      "srt_cue_ids": [
+        124,
+        125
+      ],
+      "narration": "দিনে ১০০ টাকা। / এক কাপ চা আর একটা সিগারেট কম খেলেই এই টাকা বেরিয়ে আসবে।",
+      "visual_data": {
+        "kicker": "স্তর ১ থেকে",
+        "headline": "দিনে ১০০ টাকা।",
+        "sub": "এক কাপ চা আর একটা সিগারেট কম খেলেই এই টাকা বেরিয়ে আসবে।",
+        "big": "১০০",
+        "bigLabel": "টাকা / দিন",
+        "beats": {
+          "kicker": 124,
+          "headline": 124,
+          "big": 124,
+          "sub": 125
+        }
+      },
+      "accent": "#FFC247",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 320.84,
+          "gain": 0.1
+        }
+      ]
+    },
+    {
+      "scene_id": "S49",
+      "type": "phone",
+      "start_seconds": 327.18,
+      "end_seconds": 332.36,
+      "start_frame": 9815,
+      "duration_in_frames": 156,
+      "srt_cue_ids": [
+        126
+      ],
+      "narration": "এই ৩,০০০ টাকা বেতন আসার দিনই একটা আলাদা অ্যাকাউন্টে পাঠিয়ে দিন।",
+      "visual_data": {
+        "kicker": "স্তর ১ → ২",
+        "headline": "এই ৩,০০০ টাকা বেতন আসার দিনই একটা আলাদা অ্যাকাউন্টে পাঠিয়ে দিন।",
+        "amount": "৩,০০০",
+        "income": "২৭,০০০",
+        "steps": [
+          "বেতন আসার দিনই",
+          "৩,০০০ আলাদা অ্যাকাউন্টে",
+          "বাকি ২৭,০০০ দিয়ে খরচ"
+        ],
+        "beats": {
+          "kicker": 126,
+          "headline": 126,
+          "step0": 126,
+          "step1": 126,
+          "step2": 126,
+          "phone": 126
+        }
+      },
+      "accent": "#19B77A",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 327.2,
+          "gain": 0.1
+        }
+      ]
+    },
+    {
+      "scene_id": "S50",
+      "type": "tiers",
+      "start_seconds": 332.36,
+      "end_seconds": 342.17,
+      "start_frame": 9971,
+      "duration_in_frames": 294,
+      "srt_cue_ids": [
+        127,
+        128,
+        129
+      ],
+      "narration": "স্তর ২: ৪ থেকে ৬ মাস। / ১৫ শতাংশে উঠুন। / যখন ১০% দিয়ে মাস চালানো অভ্যাস হয়ে যাবে, তখন আরও ৫ শতাংশ বাড়ান।",
+      "visual_data": {
+        "kicker": "স্তর ২",
+        "headline": "স্তর ২: ৪ থেকে ৬ মাস।",
+        "tiers": [
+          {
+            "title": "স্তর ১",
+            "pct": "১০%",
+            "amount": "৩,০০০",
+            "note": "প্রথম ৩ মাস"
+          },
+          {
+            "title": "স্তর ২",
+            "pct": "১৫%",
+            "amount": "৪,৫০০",
+            "note": "৪–৬ মাস"
+          },
+          {
+            "title": "স্তর ৩",
+            "pct": "২০%",
+            "amount": "৬,০০০",
+            "note": "৭ মাস থেকে"
+          }
+        ],
+        "active": 1,
+        "sub": "১৫ শতাংশে উঠুন।",
+        "note": "১০% অভ্যাস হয়ে গেলে আরও ৫ শতাংশ বাড়ান।",
+        "beats": {
+          "kicker": 127,
+          "headline": 127,
+          "tier1": 127,
+          "sub": 128,
+          "note": 129
+        }
+      },
+      "accent": "#FFC247",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 332.38,
+          "gain": 0.1
+        }
+      ]
+    },
+    {
+      "scene_id": "S51",
+      "type": "tiers",
+      "start_seconds": 342.17,
+      "end_seconds": 350.04,
+      "start_frame": 10265,
+      "duration_in_frames": 236,
+      "srt_cue_ids": [
+        130,
+        131,
+        132
+      ],
+      "narration": "দেখবেন আপনার জীবনযাত্রায় কোনো পরিবর্তন আসেনি, / কিন্তু ব্যাংকে টাকা জমছে। / স্তর ৩: ৭ মাস থেকে—",
+      "visual_data": {
+        "kicker": "লাভ কী?",
+        "headline": "দেখবেন আপনার জীবনযাত্রায় কোনো পরিবর্তন আসেনি,",
+        "tiers": [
+          {
+            "title": "স্তর ১",
+            "pct": "১০%",
+            "amount": "৩,০০০",
+            "note": "প্রথম ৩ মাস"
+          },
+          {
+            "title": "স্তর ২",
+            "pct": "১৫%",
+            "amount": "৪,৫০০",
+            "note": "৪–৬ মাস"
+          },
+          {
+            "title": "স্তর ৩",
+            "pct": "২০%",
+            "amount": "৬,০০০",
+            "note": "৭ মাস থেকে"
+          }
+        ],
+        "active": 2,
+        "sub": "কিন্তু ব্যাংকে টাকা জমছে।",
+        "note": "স্তর ৩: ৭ মাস থেকে—",
+        "beats": {
+          "kicker": 130,
+          "headline": 130,
+          "sub": 131,
+          "tier2": 132,
+          "note": 132
+        }
+      },
+      "accent": "#19B77A",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 342.19,
+          "gain": 0.1
+        }
+      ]
+    },
+    {
+      "scene_id": "S52",
+      "type": "statement",
+      "start_seconds": 350.04,
+      "end_seconds": 357.27,
+      "start_frame": 10501,
+      "duration_in_frames": 217,
+      "srt_cue_ids": [
+        133,
+        134
+      ],
+      "narration": "২০ শতাংশ বা তার বেশি। / এখন এই ৬,০০০ টাকা যদি প্রতি মাসে ১২ শতাংশ রিটার্নে বিনিয়োগ করেন,",
+      "visual_data": {
+        "kicker": "স্তর ৩",
+        "headline": "২০ শতাংশ বা তার বেশি।",
+        "sub": "৬,০০০ টাকা প্রতি মাসে ১২% রিটার্নে",
+        "big": "২০%",
+        "bigLabel": "মাসিক বিনিয়োগ",
+        "beats": {
+          "kicker": 133,
+          "headline": 133,
+          "big": 133,
+          "sub": 134
+        }
+      },
+      "accent": "#19B77A",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 350.06,
+          "gain": 0.1
+        }
+      ]
+    },
+    {
+      "scene_id": "S53",
+      "type": "growth",
+      "start_seconds": 357.27,
+      "end_seconds": 364.54,
+      "start_frame": 10718,
+      "duration_in_frames": 218,
+      "srt_cue_ids": [
+        135,
+        136
+      ],
+      "narration": "তাহলে ১০ বছর পর আপনার অ্যাকাউন্টে থাকবে প্রায় ১৪ লাখ টাকা। / এর মধ্যে আপনার নিজের টাকা মাত্র ৭ লাখ ২০ হাজার।",
+      "visual_data": {
+        "kicker": "১০ বছরের হিসাব",
+        "headline": "তাহলে ১০ বছর পর আপনার অ্যাকাউন্টে থাকবে প্রায় ১৪ লাখ টাকা।",
+        "monthly": "৬,০০০",
+        "rate": "১২%",
+        "total": "১৪,০০,০০০",
+        "own": "৭,২০,০০০",
+        "beats": {
+          "kicker": 135,
+          "headline": 135,
+          "total": 135,
+          "chips": 135,
+          "own": 136
+        }
+      },
+      "accent": "#19B77A",
+      "sfx": [
+        {
+          "sound": "coin",
+          "at_seconds": 357.29,
+          "gain": 0.16
+        }
+      ]
+    },
+    {
+      "scene_id": "S54",
+      "type": "growth",
+      "start_seconds": 364.54,
+      "end_seconds": 368.74,
+      "start_frame": 10936,
+      "duration_in_frames": 126,
+      "srt_cue_ids": [
+        137,
+        138
+      ],
+      "narration": "বাকি ৬ লাখ ৮০ হাজার টাকা হলো শুধু লাভ— / কম্পাউন্ডিংয়ের জাদু।",
+      "visual_data": {
+        "kicker": "কম্পাউন্ডিং",
+        "headline": "বাকি ৬ লাখ ৮০ হাজার টাকা হলো শুধু লাভ—",
+        "profit": "৬,৮০,০০০",
+        "extra": "কম্পাউন্ডিংয়ের জাদু।",
+        "beats": {
+          "kicker": 137,
+          "headline": 137,
+          "profit": 137,
+          "extra": 138
+        }
+      },
+      "accent": "#FFC247",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 364.56,
+          "gain": 0.1
+        },
+        {
+          "sound": "coin",
+          "at_seconds": 367.44,
+          "gain": 0.16
+        }
+      ]
+    },
+    {
+      "scene_id": "S55",
+      "type": "growth",
+      "start_seconds": 368.74,
+      "end_seconds": 379.62,
+      "start_frame": 11062,
+      "duration_in_frames": 327,
+      "srt_cue_ids": [
+        139,
+        140,
+        141,
+        142
+      ],
+      "narration": "আর যদি আয় বাড়ার সাথে সাথে বিনিয়োগও বাড়ান— / তিন বছর পর ৮,০০০, / পাঁচ বছর পর ১০,০০০— / তাহলে ১০ বছরে ২০ লাখ টাকা ছাড়িয়ে যাওয়া একদম সম্ভব।",
+      "visual_data": {
+        "kicker": "আরও ভালো",
+        "headline": "আর যদি আয় বাড়ার সাথে সাথে বিনিয়োগও বাড়ান—",
+        "rate": "১২%",
+        "total": "২০ লাখ",
+        "extra": "১০ বছরে ২০ লাখ ছাড়িয়ে যাওয়া একদম সম্ভব।",
+        "chips": [
+          "তিন বছর পর ৮,০০০,",
+          "পাঁচ বছর পর ১০,০০০—"
+        ],
+        "beats": {
+          "kicker": 139,
+          "headline": 139,
+          "chip0": 140,
+          "chip1": 141,
+          "total": 142,
+          "extra": 142
+        }
+      },
+      "accent": "#398CE5",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 368.76,
+          "gain": 0.1
+        },
+        {
+          "sound": "riser",
+          "at_seconds": 374.95,
+          "gain": 0.15
+        },
+        {
+          "sound": "coin",
+          "at_seconds": 375.3,
+          "gain": 0.16
+        }
+      ]
+    },
+    {
+      "scene_id": "S56",
+      "type": "trap",
+      "start_seconds": 379.62,
+      "end_seconds": 390.05,
+      "start_frame": 11389,
+      "duration_in_frames": 313,
+      "srt_cue_ids": [
+        143,
+        144,
+        145
+      ],
+      "narration": "রাকিব ঠিক এটাই করেছে। / কিন্তু এখানে একটা ফাঁদ আছে। / আর এই ফাঁদে পড়ে ৯০ শতাংশ মানুষ এই অভ্যাসটা তিন মাসের মধ্যে ছেড়ে দেয়।",
+      "visual_data": {
+        "kicker": "ফাঁদ",
+        "headline": "রাকিব ঠিক এটাই করেছে।",
+        "steps": [
+          "১০ মিনিটের কাজ",
+          "কিন্তু একটা ফাঁদ আছে",
+          "৯০% মানুষ তিন মাসেই ছেড়ে দেয়"
+        ],
+        "mode": "brain",
+        "beats": {
+          "kicker": 143,
+          "headline": 143,
+          "step0": 143,
+          "step1": 144,
+          "step2": 145
+        }
+      },
+      "accent": "#F16B75",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 379.64,
+          "gain": 0.1
+        },
+        {
+          "sound": "click",
+          "at_seconds": 382.25,
+          "gain": 0.09
+        },
+        {
+          "sound": "click",
+          "at_seconds": 384.59,
+          "gain": 0.09
+        }
+      ]
+    },
+    {
+      "scene_id": "S57",
+      "type": "trap",
+      "start_seconds": 390.05,
+      "end_seconds": 397.64,
+      "start_frame": 11702,
+      "duration_in_frames": 227,
+      "srt_cue_ids": [
+        146,
+        147,
+        148
+      ],
+      "narration": "আপনিও হয়তো ছেড়ে দেবেন, / যদি এই ফাঁদটা না জানেন। / ফাঁদটা হলো— মানুষ হাতে টাকা দেখলে খরচ করে ফেলে।",
+      "visual_data": {
+        "kicker": "কেন ছেড়ে দেয়?",
+        "headline": "আপনিও হয়তো ছেড়ে দেবেন,",
+        "steps": [
+          "আপনিও হয়তো ছেড়ে দেবেন",
+          "যদি এই ফাঁদটা না জানেন"
+        ],
+        "mode": "brain",
+        "sub": "ফাঁদটা হলো— মানুষ হাতে টাকা দেখলে খরচ করে ফেলে।",
+        "beats": {
+          "kicker": 146,
+          "headline": 146,
+          "step0": 146,
+          "step1": 147,
+          "sub": 148
+        }
+      },
+      "accent": "#F16B75",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 390.07,
+          "gain": 0.1
+        },
+        {
+          "sound": "click",
+          "at_seconds": 391.87,
+          "gain": 0.09
+        }
+      ]
+    },
+    {
+      "scene_id": "S58",
+      "type": "trap",
+      "start_seconds": 397.64,
+      "end_seconds": 407.23,
+      "start_frame": 11929,
+      "duration_in_frames": 288,
+      "srt_cue_ids": [
+        149,
+        150,
+        151,
+        152
+      ],
+      "narration": "এটা আপনার দোষ না, / এটা মানুষের মস্তিষ্কের ডিজাইন। / আপনি ৬,০০০ টাকা আলাদা করলেন, / কিন্তু সেটা যদি আপনার মূল ব্যাংক অ্যাকাউন্টেই পড়ে থাকে,",
+      "visual_data": {
+        "kicker": "মস্তিষ্কের ফাঁদ",
+        "headline": "এটা আপনার দোষ না,",
+        "steps": [
+          "আপনি ৬,০০০ টাকা আলাদা করলেন,",
+          "কিন্তু সেটা মূল ব্যাংক অ্যাকাউন্টেই পড়ে থাকে,"
+        ],
+        "mode": "brain",
+        "sub": "এটা মানুষের মস্তিষ্কের ডিজাইন।",
+        "beats": {
+          "kicker": 149,
+          "headline": 149,
+          "sub": 150,
+          "step0": 151,
+          "step1": 152
+        }
+      },
+      "accent": "#F16B75",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 397.66,
+          "gain": 0.1
+        },
+        {
+          "sound": "click",
+          "at_seconds": 401.92,
+          "gain": 0.09
+        },
+        {
+          "sound": "click",
+          "at_seconds": 404.08,
+          "gain": 0.09
+        }
+      ]
+    },
+    {
+      "scene_id": "S59",
+      "type": "trap",
+      "start_seconds": 407.23,
+      "end_seconds": 417.0,
+      "start_frame": 12217,
+      "duration_in_frames": 293,
+      "srt_cue_ids": [
+        153,
+        154,
+        155,
+        156
+      ],
+      "narration": "তাহলে মাসের ২০ তারিখে যখন অ্যাপ খুলে দেখবেন / অ্যাকাউন্টে টাকা আছে, / তখন মস্তিষ্ক বলবে— “আরে টাকা তো আছেই, / একটা নতুন জুতা কিনে ফেলি।”",
+      "visual_data": {
+        "kicker": "২০ তারিখে",
+        "headline": "তাহলে মাসের ২০ তারিখে যখন অ্যাপ খুলে দেখবেন",
+        "steps": [
+          "অ্যাকাউন্টে টাকা আছে,",
+          "তখন মস্তিষ্ক বলবে — “আরে টাকা তো আছেই,",
+          "একটা নতুন জুতা কিনে ফেলি।”"
+        ],
+        "mode": "brain",
+        "beats": {
+          "kicker": 153,
+          "headline": 153,
+          "step0": 154,
+          "step1": 155,
+          "step2": 156
+        }
+      },
+      "accent": "#F16B75",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 407.25,
+          "gain": 0.1
+        },
+        {
+          "sound": "click",
+          "at_seconds": 410.43,
+          "gain": 0.09
+        },
+        {
+          "sound": "click",
+          "at_seconds": 411.98,
+          "gain": 0.09
+        },
+        {
+          "sound": "click",
+          "at_seconds": 414.94,
+          "gain": 0.09
+        }
+      ]
+    },
+    {
+      "scene_id": "S60",
+      "type": "statement",
+      "start_seconds": 417.0,
+      "end_seconds": 420.76,
+      "start_frame": 12510,
+      "duration_in_frames": 113,
+      "srt_cue_ids": [
+        157
+      ],
+      "narration": "এই ফাঁদ থেকে বাঁচার একটাই উপায়— অটোমেশন।",
+      "visual_data": {
+        "kicker": "সমাধান",
+        "headline": "এই ফাঁদ থেকে বাঁচার একটাই উপায়— অটোমেশন।",
+        "tone": "dark",
+        "beats": {
+          "kicker": 157,
+          "headline": 157,
+          "side": 157
+        }
+      },
+      "accent": "#19B77A",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 417.02,
+          "gain": 0.1
+        }
+      ]
+    },
+    {
+      "scene_id": "S61",
+      "type": "phone",
+      "start_seconds": 420.76,
+      "end_seconds": 427.52,
+      "start_frame": 12623,
+      "duration_in_frames": 203,
+      "srt_cue_ids": [
+        158,
+        159
+      ],
+      "narration": "বেতন আসার দিনই অটোমেটিক ট্রান্সফার সেট করুন। / আপনার ব্যাংক অ্যাপে গিয়ে স্ট্যান্ডিং ইনস্ট্রাকশন দিন।",
+      "visual_data": {
+        "kicker": "স্ট্যান্ডিং ইনস্ট্রাকশন",
+        "headline": "বেতন আসার দিনই অটোমেটিক ট্রান্সফার সেট করুন।",
+        "amount": "৬,০০০",
+        "income": "২৪,০০০",
+        "steps": [
+          "বেতন আসার দিনই",
+          "অটো ট্রান্সফার সেট করুন",
+          "স্ট্যান্ডিং ইনস্ট্রাকশন দিন"
+        ],
+        "beats": {
+          "kicker": 158,
+          "headline": 158,
+          "step0": 158,
+          "step1": 158,
+          "step2": 159,
+          "phone": 158
+        }
+      },
+      "accent": "#398CE5",
+      "sfx": [
+        {
+          "sound": "whoosh",
+          "at_seconds": 420.78,
+          "gain": 0.17
+        }
+      ]
+    },
+    {
+      "scene_id": "S62",
+      "type": "phone",
+      "start_seconds": 427.52,
+      "end_seconds": 433.4,
+      "start_frame": 12826,
+      "duration_in_frames": 176,
+      "srt_cue_ids": [
+        160,
+        161
+      ],
+      "narration": "প্রতি মাসের ১ তারিখে ৬,০০০ টাকা / অটোমেটিক আপনার বিনিয়োগ অ্যাকাউন্টে চলে যাবে।",
+      "visual_data": {
+        "kicker": "টাকা দেখবেনই না",
+        "headline": "প্রতি মাসের ১ তারিখে ৬,০০০ টাকা",
+        "amount": "৬,০০০",
+        "income": "২৪,০০০",
+        "steps": [
+          "১ তারিখে",
+          "৬,০০০ অটো ট্রান্সফার",
+          "বিনিয়োগ অ্যাকাউন্টে চলে যাবে"
+        ],
+        "beats": {
+          "kicker": 160,
+          "headline": 160,
+          "step0": 160,
+          "step1": 160,
+          "step2": 161,
+          "phone": 161
+        }
+      },
+      "accent": "#19B77A",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 427.54,
+          "gain": 0.1
+        },
+        {
+          "sound": "click",
+          "at_seconds": 430.15,
+          "gain": 0.09
+        }
+      ]
+    },
+    {
+      "scene_id": "S63",
+      "type": "phone",
+      "start_seconds": 433.4,
+      "end_seconds": 441.41,
+      "start_frame": 13002,
+      "duration_in_frames": 240,
+      "srt_cue_ids": [
+        162,
+        163,
+        164
+      ],
+      "narration": "আপনি টাকাটা দেখবেনই না। / দেখবেন না মানে খরচের প্রশ্নই আসে না। / আপনার মস্তিষ্ক ভাববে— আমার আয় তো ২৪,০০০ টাকা।",
+      "visual_data": {
+        "kicker": "মস্তিষ্কের হিসাব",
+        "headline": "আপনি টাকাটা দেখবেনই না।",
+        "amount": "৬,০০০",
+        "income": "২৪,০০০",
+        "steps": [
+          "টাকা দেখবেন না",
+          "খরচের প্রশ্নই আসে না",
+          "আয় ২৪,০০০"
+        ],
+        "beats": {
+          "kicker": 162,
+          "headline": 162,
+          "step0": 162,
+          "step1": 163,
+          "step2": 164,
+          "phone": 164
+        }
+      },
+      "accent": "#FFC247",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 433.42,
+          "gain": 0.1
+        },
+        {
+          "sound": "click",
+          "at_seconds": 437.99,
+          "gain": 0.09
+        }
+      ]
+    },
+    {
+      "scene_id": "S64",
+      "type": "statement",
+      "start_seconds": 441.41,
+      "end_seconds": 448.95,
+      "start_frame": 13242,
+      "duration_in_frames": 226,
+      "srt_cue_ids": [
+        165,
+        166
+      ],
+      "narration": "আর সেই ২৪,০০০ দিয়েই আপনি দিব্যি মাস চালাবেন। / এটা কোনো ইচ্ছাশক্তির খেলা না, এটা সিস্টেমের খেলা।",
+      "visual_data": {
+        "kicker": "সিস্টেম vs ইচ্ছাশক্তি",
+        "headline": "এটা কোনো ইচ্ছাশক্তির খেলা না, এটা সিস্টেমের খেলা।",
+        "sub": "আর সেই ২৪,০০০ দিয়েই আপনি দিব্যি মাস চালাবেন।",
+        "big": "সিস্টেম",
+        "bigLabel": "সবচেয়ে শক্তিশালী অভ্যাস",
+        "tone": "dark",
+        "beats": {
+          "kicker": 165,
+          "sub": 165,
+          "headline": 166,
+          "big": 166,
+          "side": 166
+        }
+      },
+      "accent": "#19B77A",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 441.43,
+          "gain": 0.1
+        },
+        {
+          "sound": "ding",
+          "at_seconds": 445.37,
+          "gain": 0.17
+        }
+      ]
+    },
+    {
+      "scene_id": "S65",
+      "type": "habit",
+      "start_seconds": 448.95,
+      "end_seconds": 458.63,
+      "start_frame": 13468,
+      "duration_in_frames": 291,
+      "srt_cue_ids": [
+        167,
+        168,
+        169
+      ],
+      "narration": "ইচ্ছাশক্তি একদিন শেষ হয়, সিস্টেম কখনো শেষ হয় না। / ভিডিওর শুরুতে বলেছিলাম, / ৯৫ শতাংশ মানুষ এই অভ্যাসটা জানে, তবুও করে না।",
+      "visual_data": {
+        "kicker": "শুরুতে বলেছিলাম",
+        "percent": 95,
+        "headline": "৯৫ শতাংশ মানুষ এই অভ্যাসটা জানে, তবুও করে না।",
+        "sub": "ইচ্ছাশক্তি একদিন শেষ হয়, সিস্টেম কখনো শেষ হয় না।",
+        "cta": "ভিডিওর শুরুতে বলেছিলাম—",
+        "beats": {
+          "kicker": 167,
+          "sub": 167,
+          "cta": 168,
+          "percent": 169,
+          "headline": 169
+        }
+      },
+      "accent": "#F16B75",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 448.97,
+          "gain": 0.1
+        },
+        {
+          "sound": "ding",
+          "at_seconds": 453.12,
+          "gain": 0.17
+        },
+        {
+          "sound": "tick",
+          "at_seconds": 454.79,
+          "gain": 0.1
+        }
+      ]
+    },
+    {
+      "scene_id": "S66",
+      "type": "wait",
+      "start_seconds": 458.63,
+      "end_seconds": 465.6,
+      "start_frame": 13759,
+      "duration_in_frames": 209,
+      "srt_cue_ids": [
+        170,
+        171,
+        172
+      ],
+      "narration": "কেন? কারণ তারা অপেক্ষা করে। / “পরের মাস থেকে শুরু করব, বেতন বাড়লে করব, / বছরের শুরু থেকে করব।”",
+      "visual_data": {
+        "kicker": "কেন করে না?",
+        "headline": "কারণ তারা অপেক্ষা করে।",
+        "excuses": [
+          "“পরের মাস থেকে শুরু করব”",
+          "“বেতন বাড়লে করব”",
+          "“বছরের শুরু থেকে করব”"
+        ],
+        "sub": "এই অপেক্ষাই সবচেয়ে বড় ক্ষতি",
+        "beats": {
+          "kicker": 170,
+          "headline": 170,
+          "excuse0": 171,
+          "excuse1": 171,
+          "excuse2": 172,
+          "sub": 172
+        }
+      },
+      "accent": "#F16B75",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 458.65,
+          "gain": 0.1
+        },
+        {
+          "sound": "tick",
+          "at_seconds": 461.15,
+          "gain": 0.1
+        },
+        {
+          "sound": "tick",
+          "at_seconds": 463.87,
+          "gain": 0.1
+        }
+      ]
+    },
+    {
+      "scene_id": "S67",
+      "type": "statement",
+      "start_seconds": 465.6,
+      "end_seconds": 472.79,
+      "start_frame": 13968,
+      "duration_in_frames": 216,
+      "srt_cue_ids": [
+        173,
+        174
+      ],
+      "narration": "আর সেই পরের মাস কখনো আসে না। / তাই আজকের ভিডিওর সবচেয়ে গুরুত্বপূর্ণ কথা শুনুন।",
+      "visual_data": {
+        "kicker": "সেই পরের মাস",
+        "headline": "আর সেই পরের মাস কখনো আসে না।",
+        "sub": "তাই আজকের ভিডিওর সবচেয়ে গুরুত্বপূর্ণ কথা শুনুন।",
+        "beats": {
+          "kicker": 173,
+          "headline": 173,
+          "side": 173,
+          "sub": 174
+        }
+      },
+      "accent": "#F16B75",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 465.62,
+          "gain": 0.1
+        }
+      ]
+    },
+    {
+      "scene_id": "S68",
+      "type": "phone",
+      "start_seconds": 472.79,
+      "end_seconds": 480.7,
+      "start_frame": 14184,
+      "duration_in_frames": 237,
+      "srt_cue_ids": [
+        175,
+        176,
+        177
+      ],
+      "narration": "এই ভিডিও শেষ হওয়ার পর / ফোনটা হাতে নিন, ব্যাংক অ্যাপ খুলুন, / আর মাত্র ১০ শতাংশ অটো-ট্রান্সফার সেট করুন।",
+      "visual_data": {
+        "kicker": "এই ভিডিও শেষ হওয়ার পর",
+        "headline": "ফোনটা হাতে নিন, ব্যাংক অ্যাপ খুলুন,",
+        "amount": "৩,০০০",
+        "income": "২৭,০০০",
+        "steps": [
+          "ফোনটা হাতে নিন",
+          "ব্যাংক অ্যাপ খুলুন",
+          "১০% অটো-ট্রান্সফার সেট করুন"
+        ],
+        "beats": {
+          "kicker": 175,
+          "headline": 176,
+          "step0": 176,
+          "step1": 176,
+          "step2": 177,
+          "phone": 177
+        }
+      },
+      "accent": "#19B77A",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 472.81,
+          "gain": 0.1
+        },
+        {
+          "sound": "ding",
+          "at_seconds": 474.89,
+          "gain": 0.17
+        },
+        {
+          "sound": "click",
+          "at_seconds": 477.18,
+          "gain": 0.09
+        }
+      ]
+    },
+    {
+      "scene_id": "S69",
+      "type": "statement",
+      "start_seconds": 480.7,
+      "end_seconds": 488.36,
+      "start_frame": 14421,
+      "duration_in_frames": 230,
+      "srt_cue_ids": [
+        178,
+        179,
+        180
+      ],
+      "narration": "১০ মিনিট লাগবে। / কিন্তু এই ১০ মিনিট আপনার ১০ বছর বদলে দেবে। / এই ভিডিওটা যদি আপনার চোখ খুলে দিয়ে থাকে,",
+      "visual_data": {
+        "kicker": "১০ মিনিট",
+        "headline": "১০ মিনিট লাগবে।",
+        "sub": "এই ভিডিওটা যদি আপনার চোখ খুলে দিয়ে থাকে,",
+        "foot": "এই ১০ মিনিট আপনার ১০ বছর বদলে দেবে।",
+        "sideNote": "এই ১০ মিনিট আপনার ১০ বছর বদলে দেবে।",
+        "beats": {
+          "kicker": 178,
+          "headline": 178,
+          "side": 178,
+          "foot": 179,
+          "sub": 180
+        }
+      },
+      "accent": "#19B77A",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 480.72,
+          "gain": 0.1
+        }
+      ]
+    },
+    {
+      "scene_id": "S70",
+      "type": "cta",
+      "start_seconds": 488.36,
+      "end_seconds": 496.94,
+      "start_frame": 14651,
+      "duration_in_frames": 257,
+      "srt_cue_ids": [
+        181,
+        182,
+        183
+      ],
+      "narration": "তাহলে লাইক দিন— এটা আমাকে অনেক সাহায্য করে। / আর কমেন্টে লিখুন আপনি কত শতাংশ দিয়ে শুরু করবেন— / ১০, ১৫, নাকি ২০?",
+      "visual_data": {
+        "kicker": "আপনার পালা",
+        "headline": "তাহলে লাইক দিন— এটা আমাকে অনেক সাহায্য করে।",
+        "options": [
+          "১০%",
+          "১৫%",
+          "২০%"
+        ],
+        "next": "আর কমেন্টে লিখুন আপনি কত শতাংশ দিয়ে শুরু করবেন—",
+        "beats": {
+          "kicker": 181,
+          "headline": 181,
+          "next": 182,
+          "options": 183
+        }
+      },
+      "accent": "#F16B75",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 488.38,
+          "gain": 0.1
+        },
+        {
+          "sound": "ding",
+          "at_seconds": 491.5,
+          "gain": 0.17
+        }
+      ]
+    },
+    {
+      "scene_id": "S71",
+      "type": "cta",
+      "start_seconds": 496.94,
+      "end_seconds": 503.21,
+      "start_frame": 14908,
+      "duration_in_frames": 188,
+      "srt_cue_ids": [
+        184,
+        185
+      ],
+      "narration": "আমি প্রত্যেকের কমেন্ট পড়ব। / আর সবশেষে, এই ভিডিওতে শিখলেন টাকা কীভাবে জমাবেন।",
+      "visual_data": {
+        "kicker": "ধন্যবাদ",
+        "headline": "আমি প্রত্যেকের কমেন্ট পড়ব।",
+        "options": [
+          "১০%",
+          "১৫%",
+          "২০%"
+        ],
+        "next": "আর সবশেষে, এই ভিডিওতে শিখলেন টাকা কীভাবে জমাবেন।",
+        "beats": {
+          "kicker": 184,
+          "headline": 184,
+          "options": 184,
+          "next": 185
+        }
+      },
+      "accent": "#FFC247",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 496.96,
+          "gain": 0.1
+        },
+        {
+          "sound": "ding",
+          "at_seconds": 498.99,
+          "gain": 0.17
+        }
+      ]
+    },
+    {
+      "scene_id": "S72",
+      "type": "question",
+      "start_seconds": 503.21,
+      "end_seconds": 510.84,
+      "start_frame": 15096,
+      "duration_in_frames": 229,
+      "srt_cue_ids": [
+        186,
+        187
+      ],
+      "narration": "কিন্তু জমানো টাকাটা কোথায় বিনিয়োগ করলে সবচেয়ে বেশি লাভ হবে? / ব্যাংকে রাখলে, শেয়ার বাজারে, নাকি সোনায়?",
+      "visual_data": {
+        "kicker": "পরের প্রশ্ন",
+        "question": "জমানো টাকাটা কোথায় বিনিয়োগ করলে সবচেয়ে বেশি লাভ হবে?",
+        "answer": "ব্যাংকে রাখলে, শেয়ার বাজারে, নাকি সোনায়?",
+        "beats": {
+          "kicker": 186,
+          "question": 186,
+          "answer": 187
+        }
+      },
+      "accent": "#398CE5",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 503.23,
+          "gain": 0.1
+        },
+        {
+          "sound": "pop",
+          "at_seconds": 507.53,
+          "gain": 0.1
+        }
+      ]
+    },
+    {
+      "scene_id": "S73",
+      "type": "statement",
+      "start_seconds": 510.84,
+      "end_seconds": 522.87,
+      "start_frame": 15325,
+      "duration_in_frames": 361,
+      "srt_cue_ids": [
+        188,
+        189,
+        190,
+        191
+      ],
+      "narration": "পরের ভিডিওতে আমি একটা ক্যালকুলেশন দেখাব, / যেটা দেখলে আপনার মাথা ঘুরে যাবে। / কারণ ব্যাংকে টাকা রাখলে আপনি প্রতি বছর কত টাকা হারাচ্ছেন, / সেটা জানলে আপনি আর একদিনও টাকা ব্যাংকে রাখবেন না।",
+      "visual_data": {
+        "kicker": "পরের ভিডিও",
+        "headline": "পরের ভিডিওতে আমি একটা ক্যালকুলেশন দেখাব,",
+        "sub": "কারণ ব্যাংকে টাকা রাখলে আপনি প্রতি বছর কত টাকা হারাচ্ছেন,",
+        "foot": "যেটা দেখলে আপনার মাথা ঘুরে যাবে।",
+        "note": "সেটা জানলে আপনি আর একদিনও টাকা ব্যাংকে রাখবেন না।",
+        "beats": {
+          "kicker": 188,
+          "headline": 188,
+          "foot": 189,
+          "sub": 190,
+          "note": 191
+        }
+      },
+      "accent": "#398CE5",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 510.86,
+          "gain": 0.1
+        }
+      ]
+    },
+    {
+      "scene_id": "S74",
+      "type": "cta",
+      "start_seconds": 522.87,
+      "end_seconds": 527.9,
+      "start_frame": 15686,
+      "duration_in_frames": 151,
+      "srt_cue_ids": [
+        192,
+        193
+      ],
+      "narration": "তাই সাবস্ক্রাইব করে বেল আইকনটা অন করে রাখুন, / যাতে পরের ভিডিওটা মিস না হয়।",
+      "visual_data": {
+        "kicker": "মিস করবেন না",
+        "headline": "তাই সাবস্ক্রাইব করে বেল আইকনটা অন করে রাখুন,",
+        "options": [
+          "সাবস্ক্রাইব",
+          "বেল আইকন",
+          "পরের ভিডিও"
+        ],
+        "next": "যাতে পরের ভিডিওটা মিস না হয়।",
+        "beats": {
+          "kicker": 192,
+          "headline": 192,
+          "options": 192,
+          "next": 193
+        }
+      },
+      "accent": "#F16B75",
+      "sfx": [
+        {
+          "sound": "pop",
+          "at_seconds": 522.89,
+          "gain": 0.1
+        },
+        {
+          "sound": "ding",
+          "at_seconds": 525.85,
+          "gain": 0.17
+        }
+      ]
+    },
+    {
+      "scene_id": "S75",
+      "type": "outro",
+      "start_seconds": 527.9,
+      "end_seconds": 531.96,
+      "start_frame": 15837,
+      "duration_in_frames": 122,
+      "srt_cue_ids": [
+        194,
+        195
+      ],
+      "narration": "দেখা হচ্ছে পরের ভিডিওতে। / ততক্ষণ— নিজেকে আগে টাকা দিন।",
+      "visual_data": {
+        "headline": "দেখা হচ্ছে পরের ভিডিওতে।",
+        "sub": "ততক্ষণ— নিজেকে আগে টাকা দিন।",
+        "signature": "Pay Yourself First",
+        "beats": {
+          "kicker": 194,
+          "headline": 194,
+          "sub": 195,
+          "signature": 195
+        }
+      },
+      "accent": "#19B77A",
+      "sfx": [
+        {
+          "sound": "whoosh",
+          "at_seconds": 527.92,
+          "gain": 0.17
+        }
+      ]
     }
   ]
 }
