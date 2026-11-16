@@ -67,7 +67,11 @@
     "parameterized_qc_for_531_96s_full_video",
     "added_75_scene_bengali_text_fit_audit",
     "regenerated_full_score_bed_531_96s_peak_minus6db",
-    "verified_timeline_195_cues_75_scenes_15959_frames"
+    "verified_timeline_195_cues_75_scenes_15959_frames",
+    "committed_full_renderer_and_pushed_main",
+    "rendered_full_8m52_video_run_12",
+    "qc_passed_full_duration_bright_paper_no_black",
+    "published_release_render_full_1"
   ],
   "full": {
     "composition_id": "FullVideo",
@@ -113,28 +117,25 @@
     "QC verdict is mirrored to the public qc-reports branch (QC_REPORT.md + qc.json)."
   ],
   "render": {
-    "last_successful_run": 11,
-    "run_url": "https://github.com/s31491771-cell/my-video/actions/runs/43851896119",
-    "release_tag": "render-bright-3",
-    "input": "59.31 s sample, 1920x1080, 30 fps, h264 yuv420p + aac",
+    "last_successful_run": 12,
+    "run_url": "https://github.com/s31491771-cell/my-video/actions/runs/43858073853",
+    "release_tag": "render-full-1",
+    "release_url": "https://github.com/s31491771-cell/my-video/releases/tag/render-full-1",
+    "input": "531.97 s full film, 1920x1080, 30 fps, h264 yuv420p + aac",
     "qc": "PASS (see qc-reports branch)",
     "measured": {
-      "min_mean_luma": 200.2,
-      "scene_cuts_seconds": [
-        3.37,
-        7.13,
-        12.47,
-        16.67,
-        23.6,
-        26.97,
-        28.2,
-        35.13,
-        44.3,
-        51.97
-      ],
-      "audio_mean_db": -20.1,
-      "audio_peak_db": -3.5
+      "duration_seconds": 531.968,
+      "file_size_bytes": 108624577,
+      "min_mean_luma": 198.4,
+      "max_mean_luma": 223.3,
+      "audio_mean_db": -20.6,
+      "audio_peak_db": -2.8,
+      "black_stretches": 0
     },
-    "next": "push main and tag render-full-1 to render the 8:52 film"
+    "assets": {
+      "full-video.mp4": "103.6 MB",
+      "bengali-finance-video-delivery.zip": "184.2 MB"
+    },
+    "next": "user review of the full film and a listening pass on SFX/score balance"
   }
 }
