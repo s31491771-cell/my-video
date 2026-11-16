@@ -51,17 +51,59 @@
     "registered_Sample60_in_root",
     "updated_workflow_qc_manifest_docs_for_sample",
     "restyled_sample60_to_bright_editorial_reference_look",
-    "regenerated_brighter_score_bed"
+    "regenerated_brighter_score_bed",
+    "fixed_qc_runner_missing_ffmpeg",
+    "published_public_qc_report_branch",
+    "fixed_p05_p11_palette_colour_refs",
+    "replaced_unsupported_95_percent_claim"
   ],
   "sample": {
     "composition_id": "Sample60",
     "duration_seconds": 59.3,
     "frames": 1779,
-    "scenes": ["P01", "P02", "P03", "P04", "P05", "P06", "P07", "P08", "P09", "P10", "P11"],
+    "scenes": [
+      "P01",
+      "P02",
+      "P03",
+      "P04",
+      "P05",
+      "P06",
+      "P07",
+      "P08",
+      "P09",
+      "P10",
+      "P11"
+    ],
     "sfx_cues": 33
   },
   "notes": [
     "Full 75-scene composition PayYourselfFirst remains in repo but is not the active render target.",
-    "No local Chromium/render; GitHub Actions workflow_dispatch renders Sample60."
-  ]
+    "No local Chromium/render; GitHub Actions tag push (render-*) or workflow_dispatch renders Sample60.",
+    "GitHub-hosted ubuntu runners do not ship ffmpeg/ffprobe; the workflow installs them before QC.",
+    "QC verdict is mirrored to the public qc-reports branch (QC_REPORT.md + qc.json)."
+  ],
+  "render": {
+    "last_successful_run": 10,
+    "run_url": "https://github.com/s31491771-cell/my-video/actions/runs/43851896119",
+    "release_tag": "render-bright-2",
+    "input": "59.31 s, 1920x1080, 30 fps, h264 yuv420p + aac",
+    "qc": "PASS (see qc-reports branch)",
+    "measured": {
+      "min_mean_luma": 200.2,
+      "scene_cuts_seconds": [
+        3.37,
+        7.13,
+        12.47,
+        16.67,
+        23.6,
+        26.97,
+        28.2,
+        35.13,
+        44.3,
+        51.97
+      ],
+      "audio_mean_db": -20.1,
+      "audio_peak_db": -3.5
+    }
+  }
 }

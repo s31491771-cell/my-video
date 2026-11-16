@@ -411,7 +411,7 @@ const P05: React.FC = () => {
           <div style={{fontSize: 62, fontWeight: 800, color: C.ink, lineHeight: 1.3}}>{d.headline}</div>
         </Reveal>
         <Reveal delay={cueFrame(scene, 10)} y={30} duration={16}>
-          <div style={{fontSize: 64, fontWeight: 800, color: C.accent2, lineHeight: 1.3, marginTop: 18}}>
+          <div style={{fontSize: 64, fontWeight: 800, color: p.accent2, lineHeight: 1.3, marginTop: 18}}>
             {d.headline2}
           </div>
         </Reveal>
@@ -765,7 +765,7 @@ const P11: React.FC = () => {
           <Reveal delay={cueFrame(scene, 22) + 6} y={22} duration={14}>
             <div style={{maxWidth: 664}}>
               <div style={{fontSize: 60, fontWeight: 800, lineHeight: 1.28, color: C.ink}}>{d.title}</div>
-              <div style={{marginTop: 14, fontSize: 32, fontWeight: 700, color: C.accent}}>{d.note}</div>
+              <div style={{marginTop: 14, fontSize: 32, fontWeight: 700, color: p.accent}}>{d.note}</div>
             </div>
           </Reveal>
         </div>
