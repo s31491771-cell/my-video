@@ -46,6 +46,15 @@ jobs:
       - name: Install dependencies
         run: npm install --no-audit --no-fund
 
+      - name: Ensure ffmpeg is available
+        run: |
+          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
+          ffmpeg -version | head -1
+          ffprobe -version | head -1
+
       - name: Verify source assets
         run: |
           test -f public/audio/voiceover.wav
@@ -120,3 +129,19 @@ jobs:
             out/sample-60s.mp4
             bengali-finance-video-delivery.zip
           fail_on_unmatched_files: true
+
+      # The Actions log and artifacts need authentication to read, so mirror the
+      # QC verdict to a public branch. That keeps failures diagnosable without
+      # login: raw.githubusercontent.com/<repo>/qc-reports/QC_REPORT.md
+      - name: Publish QC report to public branch
+        if: always()
+        run: |
+          test -f QC_REPORT.md || { echo "no QC report generated"; exit 0; }
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan qc-report-${{ github.run_number }}
+          git rm -r --cached . --quiet || true
+          git add -f QC_REPORT.md
+          if [ -f qc.json ]; then git add -f qc.json; fi
+          git commit --quiet -m "QC report — run ${{ github.run_number }} (${{ github.sha }})" || true
+          git push --force origin HEAD:qc-reports

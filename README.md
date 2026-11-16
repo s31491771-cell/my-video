@@ -64,6 +64,16 @@ npx remotion render Sample60 out/sample-60s.mp4 --concurrency=4
 ## QC
 
 `scripts/qc.py` checks: 1920×1080, 30 fps, H.264, 59.30 s ± 0.35 s, audible
-non-clipping audio, bright paper luma, no long black frames. Perceptual checks
+non-clipping audio, bright paper luma, no long black frames. It writes
+`QC_REPORT.md` plus a machine-readable `qc.json`. Perceptual checks
 (legibility, cutouts, SFX/score balance) require reviewing preview stills and
 listening.
+
+The workflow installs `ffmpeg`/`ffprobe` if the runner lacks them, and mirrors
+the QC verdict to the `qc-reports` branch so a failure can be read without
+signing in:
+
+```
+https://raw.githubusercontent.com/s31491771-cell/my-video/qc-reports/QC_REPORT.md
+https://raw.githubusercontent.com/s31491771-cell/my-video/qc-reports/qc.json
+```
