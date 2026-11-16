@@ -165,7 +165,7 @@ export const FilmFrame: React.FC<{
   const frame = useCurrentFrame();
   const {durationInFrames} = useVideoConfig();
   const palette = paletteFor(scene);
-  const progress = interpolate(frame, [0, durationInFrames], [0, 1], {
+  const progress = interpolate(frame, [0, Math.max(1, durationInFrames)], [0, 1], {
     easing: EASE,
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
@@ -240,7 +240,7 @@ export const Reveal: React.FC<{
   children: React.ReactNode;
 }> = ({delay = 0, y = 34, blur = 8, duration = 20, style, children}) => {
   const frame = useCurrentFrame();
-  const p = interpolate(frame - delay, [0, duration], [0, 1], {
+  const p = interpolate(frame - delay, [0, Math.max(1, duration)], [0, 1], {
     easing: EASE,
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",

@@ -35,10 +35,16 @@ const P01: React.FC = () => {
   const scene = sceneById("P01");
   const p = paletteFor(scene);
   const frame = useCurrentFrame();
-  const yearScale = interpolate(frame, [cueFrame(scene, 1) - 2, cueFrame(scene, 1) + 30], [1.14, 1], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
+  const yearIn = cueFrame(scene, 1);
+  const yearScale = interpolate(
+    frame,
+    [yearIn - 2, yearIn - 2 + Math.max(1, 32)],
+    [1.14, 1],
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    }
+  );
   return (
     <FilmFrame scene={scene} skyline>
       <ChapterTag scene={scene} color={p.accent} />
@@ -263,7 +269,8 @@ const P05: React.FC = () => {
   const p = paletteFor(scene);
   const d = scene.data as {year: string; kicker: string; headline: string; headline2: string};
   const frame = useCurrentFrame();
-  const divider = interpolate(frame, [cueFrame(scene, 10), cueFrame(scene, 10) + 18], [0, 1], {
+  const dividerIn = cueFrame(scene, 10);
+  const divider = interpolate(frame, [dividerIn, dividerIn + Math.max(1, 18)], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
@@ -488,7 +495,8 @@ const P10: React.FC = () => {
   const p = paletteFor(scene);
   const d = scene.data as {kicker: string; nos: string[]; answer: string; note: string};
   const frame = useCurrentFrame();
-  const pulse = interpolate(frame, [cueFrame(scene, 20), cueFrame(scene, 20) + 20], [0.96, 1], {
+  const answerStart = cueFrame(scene, 20);
+  const pulse = interpolate(frame, [answerStart, answerStart + Math.max(1, 20)], [0.96, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
@@ -726,11 +734,6 @@ export const Sample60: React.FC = () => {
     <AbsoluteFill style={{backgroundColor: "#000"}}>
       {scenes.map((scene, index) => {
         const Comp = SCENE_COMPONENTS[scene.id];
-        const fadeIn = index === 0 ? 1 : interpolate(
-          0,
-          [0, 0],
-          [0, 0]
-        );
         return (
           <Sequence
             key={scene.id}
@@ -756,7 +759,18 @@ const SceneFade: React.FC<{index: number; duration: number; children: React.Reac
   children,
 }) => {
   const frame = useCurrentFrame();
-  const fadeIn = index === 0 ? 1 : interpolate(frame, [0, FADE], [0, 1], {extrapolateLeft: "clamp", extrapolateRight: "clamp"});
-  const fadeOut = interpolate(frame, [duration - FADE, duration], [1, 0], {extrapolateLeft: "clamp", extrapolateRight: "clamp"});
+  const fadeFrames = Math.max(1, FADE);
+  const fadeOutStart = Math.max(0, duration - fadeFrames);
+  const fadeOutEnd = Math.max(fadeOutStart + 1, duration);
+  const fadeIn = index === 0
+    ? 1
+    : interpolate(frame, [0, fadeFrames], [0, 1], {
+        extrapolateLeft: "clamp",
+        extrapolateRight: "clamp",
+      });
+  const fadeOut = interpolate(frame, [fadeOutStart, fadeOutEnd], [1, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
   return <AbsoluteFill style={{opacity: Math.min(fadeIn, fadeOut)}}>{children}</AbsoluteFill>;
 };
