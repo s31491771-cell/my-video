@@ -5,7 +5,7 @@ Usage:
     python3 scripts/qc.py out/final-video.mp4 QC_REPORT.md
 
 Checks the MP4 against the manifest contract (1920x1080, 30 fps, H.264,
-AAC, ~531.96 s, audible voice, no long black stretches) and writes a report.
+AAC, ~59.30 s, audible voice, bright paper frames, no long black stretches) and writes a report.
 Exits non-zero when a critical check fails.
 """
 from __future__ import annotations
@@ -181,6 +181,34 @@ def main() -> int:
             not starts,
             "none" if not starts else f"black at {', '.join(starts)} s",
         )
+
+        # Bright editorial palette: a sampled frame should stay on cream paper.
+        sample = run(
+            [
+                "ffmpeg",
+                "-hide_banner",
+                "-ss",
+                "5",
+                "-i",
+                VIDEO,
+                "-frames:v",
+                "1",
+                "-vf",
+                "signalstats,metadata=print",
+                "-f",
+                "null",
+                "-",
+            ]
+        )
+        yavg = re.search(r"lavfi\.signalstats\.YAVG=([\d.]+)", sample.stderr)
+        if yavg:
+            value = float(yavg.group(1))
+            check(
+                "Bright paper background (mean luma 175-252)",
+                175.0 <= value <= 252.0,
+                f"YAVG {value:.1f}",
+                critical=False,
+            )
 
         # Manual checks that cannot be automated are listed as not-run.
         check(

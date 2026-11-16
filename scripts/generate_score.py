@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
-"""Synthesize the quiet documentary score bed for the 59.3 s sample.
+"""Synthesize the quiet, bright editorial score bed for the 59.3 s sample.
 
-No samples, no third-party audio: slow sine-partial chords, a filtered air
-layer and a soft sub drone. The bed is deliberately sparse so the narration
-stays dominant. Output: 48 kHz, 16-bit mono WAV, peak -6 dBFS.
+No samples, no third-party audio: warm felt-piano style plucks over a soft
+sustained pad, a gentle bass pulse and a brushed shaker. The bed stays well
+under the narration (mixed at ~0.12), so it should feel like paper-and-ink
+background music rather than a cinematic drone.
+
+Output: 48 kHz, 16-bit mono WAV, peak -6 dBFS.
 
 Usage:
     python3 scripts/generate_score.py public/audio/score-sample.wav
@@ -17,79 +20,129 @@ import numpy as np
 
 SR = 48000
 DURATION = 59.3
-rng = np.random.default_rng(21)
+BPM = 96.0
+BEAT = 60.0 / BPM
+rng = np.random.default_rng(7)
 
-# (start, end, root midi, chord intervals in semitones)
+# (start, end, root midi, chord intervals) — bright F-major family.
 SECTIONS = [
-    (0.0, 7.6, 50, [0, 3, 7, 12]),      # Dm — 2015, Mirpur
-    (7.6, 16.9, 46, [0, 4, 7, 12]),     # Bb — same office
-    (16.9, 27.2, 43, [0, 3, 7, 10]),    # Gm — 2025 reveal
-    (27.2, 35.4, 45, [0, 3, 7, 10]),    # A dim — Suman / debt
-    (35.4, 44.5, 50, [0, 3, 7, 10]),    # Dm — the question
-    (44.5, 52.2, 46, [0, 4, 7, 11]),    # Bb maj7 — answer tease
-    (52.2, 59.3, 41, [0, 4, 7, 12]),    # F — habit / close
+    (0.0, 7.6, 53, [0, 4, 7, 12]),      # F  — 2015, Mirpur
+    (7.6, 16.9, 48, [0, 4, 7, 11]),     # Cmaj7 — same office
+    (16.9, 27.2, 50, [0, 3, 7, 10]),    # Dm7 — 2025 reveal
+    (27.2, 35.4, 46, [0, 4, 7, 9]),     # Bb6 — Suman / debt
+    (35.4, 44.5, 53, [0, 4, 7, 11]),    # Fmaj7 — the question
+    (44.5, 52.2, 48, [0, 4, 7, 9]),     # C6 — answer
+    (52.2, 59.3, 53, [0, 4, 7, 12]),    # F  — habit / close
 ]
+
+# One-bar arpeggio pattern (indices into the chord tones), with accents.
+PATTERN = [(0, 1.0), (2, 0.72), (1, 0.82), (3, 0.7), (2, 0.76), (1, 0.66), (0, 0.7), (2, 0.6)]
 
 
 def midi_hz(midi: float) -> float:
     return 440.0 * 2 ** ((midi - 69) / 12)
 
 
-def chord_tone(freq: float, length: int, phase: float) -> np.ndarray:
+def pluck(freq: float, length: int, amp: float) -> np.ndarray:
     t = np.arange(length) / SR
-    # Slightly detuned pair + octave gives movement without vibrato wobble.
-    wave_ = (
-        np.sin(2 * np.pi * freq * t + phase)
-        + 0.55 * np.sin(2 * np.pi * freq * 1.003 * t + phase * 1.7)
-        + 0.28 * np.sin(2 * np.pi * freq * 2.001 * t + phase * 0.4)
+    env = np.exp(-t * 3.1) * (1 - np.exp(-t * 260))
+    tone = (
+        np.sin(2 * np.pi * freq * t)
+        + 0.42 * np.sin(2 * np.pi * freq * 2.004 * t)
+        + 0.16 * np.sin(2 * np.pi * freq * 3.01 * t)
     )
-    # Slow breathing amplitude.
-    breath = 0.72 + 0.28 * np.sin(2 * np.pi * 0.055 * t + phase)
-    return wave_ * breath
+    return amp * env * tone
+
+
+def pad(freq: float, length: int, amp: float, phase: float) -> np.ndarray:
+    t = np.arange(length) / SR
+    breath = 0.75 + 0.25 * np.sin(2 * np.pi * 0.07 * t + phase)
+    tone = (
+        np.sin(2 * np.pi * freq * t + phase)
+        + 0.35 * np.sin(2 * np.pi * freq * 1.002 * t + phase * 1.3)
+        + 0.18 * np.sin(2 * np.pi * freq * 2.001 * t + phase * 0.7)
+    )
+    return amp * breath * tone
+
+
+def section_at(time: float) -> tuple[int, list[int]]:
+    for start, end, root, intervals in SECTIONS:
+        if start <= time < end:
+            return root, intervals
+    return SECTIONS[-1][2], SECTIONS[-1][3]
 
 
 def build() -> np.ndarray:
     n = int(SR * DURATION)
-    t = np.arange(n) / SR
     out = np.zeros(n, dtype=np.float64)
 
+    # Warm pad + bass, section by section.
     for start, end, root, intervals in SECTIONS:
         a = int(start * SR)
         b = min(n, int(end * SR))
         length = b - a
         if length <= 0:
             continue
-        section = np.zeros(length, dtype=np.float64)
+        block = np.zeros(length, dtype=np.float64)
         for index, interval in enumerate(intervals):
-            freq = midi_hz(root + interval)
-            amp = 1.0 if index == 0 else 0.55 / index
-            section += amp * chord_tone(freq, length, phase=index * 1.31)
-        # Sub drone one octave below the root.
-        section += 0.9 * np.sin(2 * np.pi * midi_hz(root - 12) * np.arange(length) / SR)
-        # Section fades avoid clicks at chord changes.
-        fade = int(1.2 * SR)
-        env = np.ones(length)
-        fade = min(fade, length // 2)
+            block += pad(midi_hz(root + interval), length, 0.11 / (1 + index * 0.35), index * 1.7)
+        block += 0.34 * pad(midi_hz(root - 12), length, 0.9, 0.4)
+        fade = min(int(0.8 * SR), length // 2)
         if fade > 0:
-            env[:fade] = np.linspace(0, 1, fade) ** 1.5
-            env[-fade:] = np.linspace(1, 0, fade) ** 1.5
-        out[a:b] += section * env
+            block[:fade] *= np.linspace(0, 1, fade) ** 1.2
+            block[-fade:] *= np.linspace(1, 0, fade) ** 1.2
+        out[a:b] += block
 
-    # Air: filtered noise, very quiet, gives the mix a room.
+    # Plucked arpeggio on every beat.
+    total_beats = int(DURATION / BEAT)
+    for beat in range(total_beats):
+        time = beat * BEAT
+        root, intervals = section_at(time)
+        tone_index, accent = PATTERN[beat % len(PATTERN)]
+        interval = intervals[tone_index % len(intervals)]
+        octave = 12 if tone_index >= len(intervals) else 0
+        freq = midi_hz(root + interval + octave)
+        length = min(n - int(time * SR), int(1.9 * SR))
+        if length <= 0:
+            continue
+        note = pluck(freq, length, 0.17 * accent)
+        a = int(time * SR)
+        out[a : a + length] += note
+
+    # Final sustained F-major chord, ringing into the last frame.
+    final_start = DURATION - 3.4
+    a = int(final_start * SR)
+    length = n - a
+    if length > 0:
+        for index, interval in enumerate([0, 4, 7, 12, 16]):
+            out[a:] += pad(midi_hz(53 + interval), length, 0.1 / (1 + index * 0.4), index * 2.1)
+
+    # Brushed shaker on off-beats, very quiet.
+    for beat in range(total_beats):
+        a = int((beat * BEAT + BEAT * 0.5) * SR)
+        length = int(0.09 * SR)
+        if a + length >= n:
+            continue
+        noise = rng.standard_normal(length)
+        envelope = np.exp(-np.arange(length) / (0.016 * SR))
+        out[a : a + length] += noise * envelope * 0.024
+
+    # Gentle top-end air.
     noise = rng.standard_normal(n)
     spectrum = np.fft.rfft(noise)
     freqs = np.fft.rfftfreq(n, 1 / SR)
-    mask = np.exp(-((freqs - 900.0) ** 2) / (2 * 650.0 ** 2))
+    mask = np.exp(-((freqs - 1400.0) ** 2) / (2 * 900.0 ** 2))
     air = np.fft.irfft(spectrum * mask, n)
     air /= np.max(np.abs(air)) + 1e-12
-    out += 0.05 * air
+    out += 0.018 * air
 
-    # Overall slow swell, gentle fades at both ends.
-    out *= 0.82 + 0.18 * np.sin(2 * np.pi * 0.037 * t)
-    fade_in = int(2.2 * SR)
-    fade_out = int(3.0 * SR)
-    out[:fade_in] *= np.linspace(0, 1, fade_in) ** 1.4
-    out[-fade_out:] *= np.linspace(1, 0, fade_out) ** 1.6
+    # Slow dynamic breathing + safe fades.
+    t = np.arange(n) / SR
+    out *= 0.9 + 0.1 * np.sin(2 * np.pi * 0.05 * t)
+    fade_in = int(1.8 * SR)
+    fade_out = int(2.6 * SR)
+    out[:fade_in] *= np.linspace(0, 1, fade_in) ** 1.3
+    out[-fade_out:] *= np.linspace(1, 0, fade_out) ** 1.5
 
     peak = np.max(np.abs(out))
     out = out / peak * (10 ** (-6 / 20))

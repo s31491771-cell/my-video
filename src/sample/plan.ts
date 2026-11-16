@@ -63,7 +63,7 @@ const DEFINITIONS: SceneDef[] = [
     chapter: "০১",
     chapterLabel: "দুই বন্ধু",
     camera: {from: [1.03, 0, 8], to: [1.10, -16, -10]},
-    data: {names: ["রাকিব", "সুমন"], age: "২৫ বছর", line: "একই বয়স, একই স্বপ্ন"},
+    data: {names: ["রাকিব", "সুমন"], age: "২৫ বছর", line: "রাকিব আর সুমন"},
   },
   {
     id: "P03",

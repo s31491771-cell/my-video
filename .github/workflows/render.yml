@@ -61,12 +61,17 @@ jobs:
       - name: Render preview stills (Sample60)
         run: |
           mkdir -p out/preview
-          npx remotion still Sample60 out/preview/01-opening.png --frame=20
-          npx remotion still Sample60 out/preview/02-friends.png --frame=150
+          npx remotion still Sample60 out/preview/01-opening.png --frame=40
+          npx remotion still Sample60 out/preview/02-friends.png --frame=160
           npx remotion still Sample60 out/preview/03-office.png --frame=320
-          npx remotion still Sample60 out/preview/04-2025-rakib.png --frame=760
-          npx remotion still Sample60 out/preview/05-suman.png --frame=930
-          npx remotion still Sample60 out/preview/06-habit.png --frame=1650
+          npx remotion still Sample60 out/preview/04-same-life.png --frame=430
+          npx remotion still Sample60 out/preview/05-2025.png --frame=640
+          npx remotion still Sample60 out/preview/06-rakib.png --frame=760
+          npx remotion still Sample60 out/preview/07-suman-beat.png --frame=822
+          npx remotion still Sample60 out/preview/08-suman.png --frame=960
+          npx remotion still Sample60 out/preview/09-question.png --frame=1200
+          npx remotion still Sample60 out/preview/10-answer.png --frame=1440
+          npx remotion still Sample60 out/preview/11-habit.png --frame=1700
 
       - name: Render sample MP4 (first 60 seconds)
         run: |

@@ -1,8 +1,17 @@
 {
   "project": "bengali-finance-pay-yourself-first-sample60",
   "composition_id": "Sample60",
-  "status": "sample_60s_ready_for_render",
+  "status": "sample_60s_bright_editorial_ready_for_render",
   "created_at": "2026-11-16T13:30:00+05:30",
+  "visual_style": {
+    "reference": "user-supplied final-video.mp4 (49.47 s)",
+    "background": "#F7F4EC warm cream paper + subtle dot grid and paper grain",
+    "ink": "#102848 navy",
+    "accents": ["#18B878 green", "#3080E0 blue", "#F06060 coral", "#F0D8C0 sand", "#F2C14E sun"],
+    "approach": "flat-vector editorial illustration, white cards, bar charts, progress ring, phone/app mockup, sticker cutouts of the real character photos, generous whitespace, cue-locked pop-ins",
+    "transitions": "hard cuts at scene boundaries (matches reference edit)",
+    "camera": "light paper drift, no vignette/letterbox/grain-heavy cinematic grade"
+  },
   "render": {
     "width": 1920,
     "height": 1080,
@@ -38,6 +47,7 @@
     "score_sample": {
       "project_path": "public/audio/score-sample.wav",
       "generator": "scripts/generate_score.py",
+      "style": "bright felt-piano arpeggio, soft pad, brushed shaker, F-major family",
       "duration_seconds": 59.3,
       "sample_rate": 48000,
       "channels": 1,

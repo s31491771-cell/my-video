@@ -49,7 +49,9 @@
     "created_sample_plan_and_film_primitives",
     "created_sample_scenes_and_composition",
     "registered_Sample60_in_root",
-    "updated_workflow_qc_manifest_docs_for_sample"
+    "updated_workflow_qc_manifest_docs_for_sample",
+    "restyled_sample60_to_bright_editorial_reference_look",
+    "regenerated_brighter_score_bed"
   ],
   "sample": {
     "composition_id": "Sample60",
